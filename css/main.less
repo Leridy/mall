@@ -1,18 +1,78 @@
 /*author：Leridy_Lei 
   version:1.0
   description: for a shopping mall website
-  
+
 */
+//设定字符编码
 @charset "utf-8";
+// 全屏宽高
 @full_width:100%;
 @full_height:100%;
+// 全局边距清零
+*{
+	margin: 0;
+	padding: 0;
+}
+//向左浮动类属性
 .right{
 	float: right;
-	clear: both;
 }
-
+// 向右浮动属性
 .left{
 	float: left;
-	clear: both;
+}
+// a标签初始化
+a{
+	color: gray;
+	-webkit-transition: all  0.3s;
+	-o-transition: all  0.3s;
+	transition: all  0.3s;
 }
 
+a:hover{
+	color: red;
+}
+//页面主体样式
+html,body{
+	width: @full_width;
+	height: @full_height;
+	background-color: #fff;
+	font-family: "Microsoft Yahei","Microsoft JhengHei","sans-serif";
+}
+//container类属性
+.container{
+	width: 80%;
+	margin: 0px auto;
+}
+//banner_top类样式
+.banner_top{
+	@height:40px; 
+	font-size: 15px;
+	font-weight: 400;
+	background-color: #F1F1F1;
+	width: @full_width;
+	height:@height;
+	&_left{
+	// banner_top_left样式
+		.left;
+		width: 20%;
+		margin-left: 10%;
+		line-height: @height;
+	}
+	&_right{
+	// banner_top_right样式
+		.right;
+		line-height: @height;
+		width: 20%;
+		margin-left: 30%;
+		&_follow{
+			// 关注我们的社交网络的样式
+			list-style: none;
+			&_item{
+				// 列表项目
+				display: inline-block;
+				margin-left: 5px
+			}
+		}
+	}
+}

@@ -1,14 +1,62 @@
 /*author：Leridy_Lei 
   version:1.0
   description: for a shopping mall website
-  
+
 */
 @charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+}
 .right {
   float: right;
-  clear: both;
 }
 .left {
   float: left;
-  clear: both;
+}
+a {
+  color: gray;
+  -webkit-transition: all  0.3s;
+  -o-transition: all  0.3s;
+  transition: all  0.3s;
+}
+a:hover {
+  color: red;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  font-family: "Microsoft Yahei", "Microsoft JhengHei", "sans-serif";
+}
+.container {
+  width: 80%;
+  margin: 0px auto;
+}
+.banner_top {
+  font-size: 15px;
+  font-weight: 400;
+  background-color: #F1F1F1;
+  width: 100%;
+  height: 40px;
+}
+.banner_top_left {
+  float: left;
+  width: 20%;
+  margin-left: 10%;
+  line-height: 40px;
+}
+.banner_top_right {
+  float: right;
+  line-height: 40px;
+  width: 20%;
+  margin-left: 30%;
+}
+.banner_top_right_follow {
+  list-style: none;
+}
+.banner_top_right_follow_item {
+  display: inline-block;
+  margin-left: 5px;
 }
