@@ -1,1 +1,14 @@
+/*author：Leridy_Lei 
+  version:1.0
+  description: for a shopping mall website
+  
+*/
 @charset "utf-8";
+.right {
+  float: right;
+  clear: both;
+}
+.left {
+  float: left;
+  clear: both;
+}
