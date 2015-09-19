@@ -1,0 +1,11 @@
+<?php
+//数据库地址
+define("DB_HOST","localhost");
+//数据库用户名
+define("DB_USER","root");
+//数据库密码
+define("DB_PWD","");
+//数据库名
+define("DB_DBNAME","shop");
+//数据库编码
+define("DB_CHARSET","utf8");
