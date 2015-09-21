@@ -24,7 +24,7 @@
 // a标签初始化
 a{
 	text-decoration: none;
-	color: black;
+	color: gray;
 	-webkit-transition: all  0.3s;
 	-o-transition: all  0.3s;
 	transition: all  0.3s;
@@ -55,12 +55,6 @@ html,body{
 	width: @full_width;
 	height:@height;
 	box-shadow:0px 2px 2px #e5e8e8;
-	a{
-		color:gray;
-		&:hover{
-			color: #ff9966;
-		}
-	}
 	&_left{
 	// site_top_left样式
 		.left;
@@ -90,7 +84,7 @@ html,body{
 // page内容主体开始
 .page_body{
 	margin-top: 2px;
-	color:#;
+	color:#000000;
 }
 // page_body类属性设置
 #logo{
@@ -126,51 +120,46 @@ html,body{
 	&_search{
 		float: right;
 		margin-top:25px;
-		margin-left:5%;
-		width: 25%;
+		width: 200px;
 		height: 50px;
 		border: solid #E0E0E0 1px;
-		-webkit-transition: border 0.1s;
-		-o-transition: border 0.1s;
-		transition: border 0.1s;
+		-webkit-transition: all 0.3s;
+		-o-transition: all 0.3s;
+		transition: all 0.3s;
 		&:hover{
-				border-color: #cccccc;
-				& button{
-					outline: 1px #cccccc solid;
+				border-color: #ff9966;
+				&  button{
+					border-left: 1px #ff9966 solid;
 				}
 			}
 		&_input{
 			border: none;
 			padding-left:5px;
 			line-height: 50px;
-			width: 67.9%;
+			width: 145px;
 			box-sizing: content-box;
-			-webkit-transition: all 0.1s;
-			-o-transition: all 0.1s;
-			transition: all 0.1s;
+			-webkit-transition: all 0.3s;
+			-o-transition: all 0.3s;
+			transition: all 0.3s;
 			&:focus{
-				outline:1px solid #ff9966;
-				// border:1px solid #ff9966;
-			    & + button{
-					outline: 1px #ff9966 solid;
-				}
+				outline:none
 			}
 			
 		}
 		button{
-			float: right;
 			background-color: #fff;
 			color: gray;
 			border: none;
-			width: 30%;
+			border-left: 1px solid #E0E0E0;
+			width: 45px;
 			height:50px;
-			-webkit-transition: all 0.1s;
-			-o-transition: all 0.1s;
-			transition: all 0.1s;
+			-webkit-transition: all 0.3s;
+			-o-transition: all 0.3s;
+			transition: all 0.3s;
 			&:hover{
 				background-color: #ff9966;
 				color: #fff;
-				outline: 1px #ff9966 solid;
+				border-left: #ff9966;
 			}
 		}
 
