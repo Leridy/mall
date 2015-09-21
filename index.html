@@ -15,30 +15,56 @@
 	<!-- 主css接入 -->
 	<link rel="stylesheet" href="css/normalize.css">
 	<!-- 网页标签初始化css接入 -->
-	<link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.css">
+	<!-- <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.css"> -->
+	<link rel="stylesheet" href="css/font-awesome-4.4.0/css/font-awesome.min.css">
 	<!-- font-awesome接入 -->
 	<title>mall</title>
 	<!-- 网站标题 -->
 </head>
 <body>
-	<div class="banner_top ">
-		 <div class="banner_top_left">
-		    <p class="welcome">欢迎光临XXX</p>
+	<div class="site_top ">
+		 <div class="site_top_left">
+		    <a class="welcome" href="#"><i class="fa fa-home"></i> 欢迎光临XX箱包店铺</a>
 		 </div>
 		 <!-- 顶部栏左侧 -->
-		 <div class="banner_top_right">
-		    <ul class="banner_top_right_follow">
-		        <li class="banner_top_right_follow_item">关注我们：</li>
-		    	<li class="banner_top_right_follow_item"><a href="#" class="item"><i class="fa fa-weibo"></i></a></li>
-		    	<li class="banner_top_right_follow_item"><a href="#" class="item"><i class="fa fa-weixin"></i></a></li>
-		    	<li class="banner_top_right_follow_item"><a href="#" class="item"><i class="fa fa-tencent-weibo"></i></a></li>
-		    	<li class="banner_top_right_follow_item"><a href="#" class="item"><i class="fa fa-google-plus"></i></a></li>
-		    	<li class="banner_top_right_follow_item"><a href="#" class="item"><i class="fa fa-facebook"></i></a></li>
+		 <div class="site_top_right">
+		    <ul class="site_top_right_follow">
+		        <li class="site_top_right_follow_item">关注我们：</li>
+		    	<li class="site_top_right_follow_item"><a href="#" class="item" title="Weibo 新浪微博"><i class="fa fa-weibo"></i></a></li>
+		    	<li class="site_top_right_follow_item"><a href="#" class="item" title="Wechat 微信"><i class="fa fa-weixin"></i></a></li>
+		    	<li class="site_top_right_follow_item"><a href="#" class="item" title="Twitter 推特"><i class="fa fa-twitter"></i></a></li>
+		    	<li class="site_top_right_follow_item"><a href="#" class="item" title="Google+ 谷歌加"><i class="fa fa-google-plus"></i></a></li>
+		    	<li class="site_top_right_follow_item"><a href="#" class="item" title="Facebook 脸书"><i class="fa fa-facebook"></i></a></li>
 		    </ul>
 		    <!-- 关注我们的社交网络 -->
 		 </div>
 		 <!-- 顶部栏右侧 -->
 	</div>
 	<!-- 顶栏完结 -->
+	<div class="container page_body">
+		<nav class="nav">
+			<div class="nav_logo"><a href="#" title="箱包官网"><img src="images/logo.png" alt="brand logo" id="logo" ></a></div>
+			<!-- 导航栏logo/标志 -->
+				<ul class="nav_list">
+					<li class="nav_list_item"> <a href="#">小米背包</a></li>
+					<li class="nav_list_item"> <a href="#">小米箱包</a></li>
+					<li class="nav_list_item"> <a href="#">箱包配件</a></li>
+					<li class="nav_list_item"> <a href="#">客户服务</a></li>
+					<li class="nav_list_item"> <a href="#">商务合作</a></li>
+				</ul>
+	  			<!-- 导航栏选项 -->
+	  			<div class="nav_search">
+        			<form id="searchForm" class="" action="" method="get">
+            			<label for="search" class="hide">站内搜索</label>
+            			<input class="nav_search_input" type="search" id="search" name="keyword" autocomplete="off">
+            			<button type="submit"> <i class="fa fa-search"></i></button>
+            		</form>
+	  			</div>
+	  			<!-- 导航栏搜索框 -->
+		</nav>
+		<!-- 导航完结 -->
+		
+	</div>
+	<!-- 首页主体完结 -->
 </body>
 </html>

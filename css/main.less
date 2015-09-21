@@ -23,6 +23,7 @@
 }
 // a标签初始化
 a{
+	text-decoration: none;
 	color: gray;
 	-webkit-transition: all  0.3s;
 	-o-transition: all  0.3s;
@@ -30,7 +31,7 @@ a{
 }
 
 a:hover{
-	color: red;
+	color:#FF9966;
 }
 //页面主体样式
 html,body{
@@ -38,29 +39,32 @@ html,body{
 	height: @full_height;
 	background-color: #fff;
 	font-family: "Microsoft Yahei","Microsoft JhengHei","sans-serif";
+	min-width: 1280px;
 }
 //container类属性
 .container{
-	width: 80%;
+	width: 70%;
 	margin: 0px auto;
 }
-//banner_top类样式
-.banner_top{
+//site_top类样式
+.site_top{
 	@height:40px; 
 	font-size: 15px;
 	font-weight: 400;
 	background-color: #F1F1F1;
 	width: @full_width;
 	height:@height;
+	box-shadow:0px 2px 2px #e5e8e8;
 	&_left{
-	// banner_top_left样式
+	// site_top_left样式
 		.left;
 		width: 20%;
 		margin-left: 10%;
 		line-height: @height;
+
 	}
 	&_right{
-	// banner_top_right样式
+	// site_top_right样式
 		.right;
 		line-height: @height;
 		width: 20%;
@@ -74,5 +78,90 @@ html,body{
 				margin-left: 5px
 			}
 		}
+	}
+}
+
+// page内容主体开始
+.page_body{
+	margin-top: 2px;
+	color:#000000;
+}
+// page_body类属性设置
+#logo{
+	width: 50px;
+	height:50px;
+}
+
+.hide{display: none;}
+
+.nav{
+	height:100px;
+	background-color:#fff;
+	width:@full_width;
+	position: relative;
+	&_logo{
+		margin-top: 25px;
+		float: left;
+	}
+	&_list{
+		margin-left: 18%;
+		list-style: none;
+		&_item{
+			display: inline-block;
+			float: left;
+			line-height: 100px;
+			
+			font-size: 16px;
+			a{
+				padding: 26px 18px 38px 18px;
+			}
+		}
+	}
+	&_search{
+		float: right;
+		margin-top:25px;
+		width: 200px;
+		height: 50px;
+		border: solid #E0E0E0 1px;
+		-webkit-transition: all 0.3s;
+		-o-transition: all 0.3s;
+		transition: all 0.3s;
+		&:hover{
+				border-color: #ff9966;
+				&  button{
+					border-left: 1px #ff9966 solid;
+				}
+			}
+		&_input{
+			border: none;
+			padding-left:5px;
+			line-height: 50px;
+			width: 145px;
+			box-sizing: content-box;
+			-webkit-transition: all 0.3s;
+			-o-transition: all 0.3s;
+			transition: all 0.3s;
+			&:focus{
+				outline:none
+			}
+			
+		}
+		button{
+			background-color: #fff;
+			color: gray;
+			border: none;
+			border-left: 1px solid #E0E0E0;
+			width: 45px;
+			height:50px;
+			-webkit-transition: all 0.3s;
+			-o-transition: all 0.3s;
+			transition: all 0.3s;
+			&:hover{
+				background-color: #ff9966;
+				color: #fff;
+				border-left: #ff9966;
+			}
+		}
+
 	}
 }
