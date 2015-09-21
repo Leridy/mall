@@ -17,7 +17,7 @@
 }
 
 body {
-	background: #1ABC9C;
+	background: #ff9966;
 	font-family: "Segoe UI","Microsoft YaHei";
 }
 
@@ -130,10 +130,10 @@ header a{
 .clear-backend > input:hover + span,
 .clear-backend > input:checked + span {
 	background: #fff;
-	color: #1ABC9C;
+	color: #ff9966;
 }
 .clear-backend > input:checked + span + i {
-	color: #1ABC9C;
+	color: #ff9966;
 }
 
 .clear-backend > i {
@@ -189,7 +189,7 @@ header a{
 }
 
 .top-bar a:hover {
-	color: #1ABC9C;
+	color: #ff9966;
 }
 
 .top-bar li:hover {

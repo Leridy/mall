@@ -44,13 +44,13 @@ if(!checkLogined()) {
 			<span>用户</span>
 
 			<input type="radio" class="tab-4" name="tab">
-			<span>动态</span>
+			<span>交易</span>
 
 			<input type="radio" class="tab-5" name="tab">
 			<span>资料</span>
 
 			<input type="radio" class="tab-6" name="tab">
-			<span>收藏</span>
+			<span>新闻</span>
 
 			<input type="radio" class="tab-7" name="tab">
 			<span>图片</span>
