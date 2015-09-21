@@ -66,6 +66,8 @@ html,body{
 	font-size: 12px;
 	line-height: 28px;
 }
+// hide类的样式属性
+.hide{display: none;}
 //site_top类样式
 .site_top{
 	@height:40px; 
@@ -118,7 +120,7 @@ html,body{
 	height:50px;
 }
 
-.hide{display: none;}
+
 
 .nav{
 	height:100px;
@@ -224,8 +226,10 @@ footer{
 				}
 
 		}
+	// footer中footer_svc类的样式属性
 	}
 	.footer_links{
+		.clearfix();
 		margin: 40px 15%;
 		.col-links{
 			float: left;
@@ -238,6 +242,7 @@ footer{
 				font-size: 14px;
 			}
 		}
+		// footer中col-links的样式属性
 		.footer_contact{
 			float: right;
 			width: 20%;
@@ -261,13 +266,16 @@ footer{
 				}
 			}
 		}
-
+		// footer中col-links的样式属性
 	}
 	.site_info{
 		.clearfix();
+		margin-top: 20px;
 		background-color: #F1F1F1;
 		height: 50px;
 		line-height: 50px;
 		font-size: 12px;
+    	// footer中site_info类的样式属性
+	
 	}
 } 
