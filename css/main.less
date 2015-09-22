@@ -44,7 +44,7 @@ html,body{
 	height: @full_height;
 	background-color: #fff;
 	font-family: "Microsoft Yahei","Microsoft JhengHei","sans-serif";
-	min-width: 1366px;
+	min-width: 1340px;
 }
 //container类属性
 .container{
@@ -115,41 +115,67 @@ html,body{
 	color:#;
 }
 // page_body类属性设置
-#logo{
+.nav_logo{
+	background-size: cover;
+	background-image: url(../images/logo.png);
 	width: 50px;
-	height:50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	& >a{
+		display: block;
+		width: 50px;
+		height: 50px;
+	}
+	// 导航栏处logo部分的css样式
 }
 
 
 
 .nav{
 	height:100px;
+	// 导航栏高度100px
 	background-color:#fff;
+	// 导航栏背景白色
 	width:@full_width;
+	// 导航栏宽度100%
 	position: relative;
+	// 导航栏位置 相对定位
 	&_logo{
 		margin-top: 25px;
+		// logo顶端间距 25px
 		float: left;
+		// logo向左浮动
 	}
 	&_list{
 		margin-left: 18%;
+		// 导航栏列表左间距18%
 		list-style: none;
+		// 导航栏列表样式为空
 		&_item{
 			display: inline-block;
+			// 导航栏项目显示状态：inline-block
 			float: left;
+			// 导航栏项目向左浮动
 			line-height: 100px;
-			
+			// 导航栏项目行高100px
 			font-size: 16px;
+			//字体大小16px
 			a{
 				padding: 26px 18px 38px 18px;
+				// 导航栏项目中链接的内间距
 			}
 		}
 	}
 	&_search{
 		float: right;
+		// 搜索部分向右浮动
 		margin-top:25px;
+		// 搜索部分上边距25px
 		width: 25%;
+		// 搜索栏宽度25%
 		height: 50px;
+		// 搜索栏高度50px
 		border: solid #E0E0E0 1px;
 		-webkit-transition: border 0.1s;
 		-o-transition: border 0.1s;
@@ -158,6 +184,7 @@ html,body{
 				border-color: #cccccc;
 				& button{
 					outline: 1px #cccccc solid;
+					// 当nav_search层鼠标移入时button outline属性变化
 				}
 			}
 		&_input{
@@ -165,7 +192,7 @@ html,body{
 			padding-left:5px;
 			line-height: 50px;
 			height: 50px;
-			width: 67.9%;
+			width: 67.8%;
 			box-sizing: content-box;
 			-webkit-transition: all 0.1s;
 			-o-transition: all 0.1s;
@@ -177,6 +204,7 @@ html,body{
 					outline: 1px #ff9966 solid;
 				}
 			}
+			// 搜索框 输入部分 样式
 			
 		}
 		button{
@@ -194,13 +222,11 @@ html,body{
 				color: #fff;
 				outline: 1px #ff9966 solid;
 			}
+			// 搜索按钮样式
 		}
 
 	}
 }
-
-
-
 
 
 //footer属性
@@ -279,3 +305,66 @@ footer{
 	
 	}
 } 
+
+/********************************************基本模块样式***************************************************/
+
+
+/********************************************login.php文件样式*********************************************/ 
+
+.login_box{
+	background-color: #f0f0f0;
+	width: 40%;
+	text-align: center;
+	margin: 50px auto;
+	padding: 30px 50px;
+	box-shadow: 5px 5px 5px #e5e8e8;
+	h1{
+		font-size: 25px;
+	}
+	input{
+		padding-left: 10px;
+		border: none;
+		margin-top: 20px;
+
+		&:focus{
+			outline: none;
+		}
+	}
+	label{
+		display: none;
+	}
+	.btn{
+		margin: 20px auto;
+		padding: 0;
+		background-color: #ff9966;
+		color: #fff;
+		-webkit-transition: background-color 0.5s;
+		-o-transition: background-color 0.5s;
+		transition: background-color 0.5s;
+		&:hover{
+				background-color: orange;
+				}
+	}
+	.input{
+		width: 300px;
+		height: 50px;
+	}
+	input[type="checkbox"]{
+		width: 20px;
+		border: none;
+		background-color: #fff;
+
+	}
+	.checkbox{
+		display: inline-block;
+		margin: 0 5px;
+
+	}
+	img{
+		width: 120px;
+		height: 50px;
+		vertical-align:middle;
+		margin-top: 10px;
+	}
+
+}
