@@ -14,7 +14,7 @@ require_once 'string.func.php';
  */
 function verifyImage($type=1,$length=4,$pixel=1,$line=1,$session_name = "verify")
 {
-    session_start();
+    //session_start();
     $width = 80;
     $height = 40;
     $image = imagecreatetruecolor($width, $height);

@@ -2,8 +2,8 @@
 /**
  * 登录文件
  */
-require_once '../include.php';
 if($_REQUEST["logout"]){
+	require_once '../include.php';
 	logout();
 }
 ?>

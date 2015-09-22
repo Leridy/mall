@@ -6,6 +6,6 @@ define("DB_USER","root");
 //数据库密码
 define("DB_PWD","");
 //数据库名
-define("DB_DBNAME","shop");
+define("DB_DBNAME","mall");
 //数据库编码
 define("DB_CHARSET","utf8");
