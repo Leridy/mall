@@ -100,7 +100,7 @@ function fetchAll($sql,$result_type=MYSQL_ASSOC){
 
 /**
  * 得到结果集中的记录条数
- * @param unknown_type $sql
+ * @param string $sql
  * @return number
  */
 function getResultNum($sql){
