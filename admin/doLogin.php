@@ -23,9 +23,9 @@ if($verify==$verify1){
 		echo "登陆成功";
 		header("Location: index.php");
 	}else{
-		echo '登陆失败，<a href="login.php">重新登陆</a>';
+		echo '登陆失败，<a href="login.html">重新登陆</a>';
 	}
 }else{
-	echo '验证码错误，<a href="login.php">重新登陆</a>';
+	echo '验证码错误，<a href="login.html">重新登陆</a>';
 }
 unset($_SESSION['verify']);

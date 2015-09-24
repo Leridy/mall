@@ -3,7 +3,15 @@
  * 后台首页文件
  */
 require_once '../include.php';
-if(!checkLogined()) {
+if(checkLogined()) {
+	//重定向浏览器
+	header("Location: login.php");
+	//确保重定向后，后续代码不会被执行
+	exit;
+}elseif($_REQUEST["logout"]){
+	require_once '../include.php';
+	logout();
+}
 ?>
 <!doctype html>
 <html lang="zh">
@@ -34,41 +42,41 @@ if(!checkLogined()) {
 			</div>
 
 			<!-- tab-menu -->
-			<input type="radio" class="tab-1" name="tab" checked="checked">
+			<input type="radio" class="tab-1" name="tab" checked="checked" placeholder="">
 			<span>主页</span>
 
-			<input type="radio" class="tab-2" name="tab">
+			<input type="radio" class="tab-2" name="tab" placeholder="">
 			<span>产品</span>
 
-			<input type="radio" class="tab-3" name="tab">
+			<input type="radio" class="tab-3" name="tab" placeholder="">
 			<span>用户</span>
 
-			<input type="radio" class="tab-4" name="tab">
+			<input type="radio" class="tab-4" name="tab" placeholder="">
 			<span>交易</span>
 
-			<input type="radio" class="tab-5" name="tab">
+			<input type="radio" class="tab-5" name="tab" placeholder="">
 			<span>资料</span>
 
-			<input type="radio" class="tab-6" name="tab">
+			<input type="radio" class="tab-6" name="tab" placeholder="">
 			<span>新闻</span>
 
-			<input type="radio" class="tab-7" name="tab">
+			<input type="radio" class="tab-7" name="tab" placeholder="">
 			<span>图片</span>
 
-			<input type="radio" class="tab-8" name="tab">
+			<input type="radio" class="tab-8" name="tab" placeholder="">
 			<span>统计</span>
 
-			<input type="radio" class="tab-9" name="tab">
+			<input type="radio" class="tab-9" name="tab" placeholder="">
 			<span>反馈</span>
 
-			<input type="radio" class="tab-10" name="tab">
+			<input type="radio" class="tab-10" name="tab" placeholder="">
 			<span>设置</span>
 
 			<!-- tab-top-bar -->
 			<div class="top-bar">
 				<ul>
 					<li>
-						<a href="login.php?logout=true" title="注销登陆">
+						<a href="index.php?logout=true" title="注销登陆">
 							<span>注销登陆</span>
 						</a>
 					</li>
@@ -89,7 +97,50 @@ if(!checkLogined()) {
 					<h1>Two</h1>
 				</section>
 				<section class="tab-item-3">
-					<h1>Three</h1>
+					<h1>用户</h1>
+					<table>
+						<thead>
+						<tr>
+							<td>用户名</td>
+							<td>email</td>
+							<td>管理</td>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>test</td>
+							<td>email</td>
+							<td><a href="javascript:void(0);">修改</a><a href="javascript:void(0);">删除</a></td>
+						</tr>
+						<tr>
+							<td>test1</td>
+							<td>qqqqqqq</td>
+							<td><a href="javascript:void(0);">修改</a><a href="javascript:void(0);">删除</a></td>
+						</tr>
+						</tbody>
+					</table>
+					<h1>管理员</h1>
+					<table>
+						<thead>
+						<tr>
+							<td>用户名</td>
+							<td>email</td>
+							<td>管理</td>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>admin</td>
+							<td>email</td>
+							<td><a href="javascript:void(0);">修改</a><a href="javascript:void(0);">删除</a></td>
+						</tr>
+						<tr>
+							<td>admin1</td>
+							<td>qqqqqqq</td>
+							<td><a href="javascript:void(0);">修改</a><a href="javascript:void(0);">删除</a></td>
+						</tr>
+						</tbody>
+					</table>
 				</section>
 				<section class="tab-item-4">
 					<h1>Four</h1>
@@ -118,10 +169,3 @@ if(!checkLogined()) {
 
 </body>
 </html>
-<?php
-}else{
-	//重定向浏览器
-	header("Location: login.php");
-//确保重定向后，后续代码不会被执行
-	exit;
-}
