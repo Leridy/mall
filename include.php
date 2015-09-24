@@ -12,5 +12,5 @@ require_once 'lib/string.func.php';
 require_once "configs/configs.php";
 require_once 'admin/admin.func.php';
 require_once 'user.func.php';
-require_once 'userLogin.page.php';
+//require_once 'userLogin.html';
 connect();

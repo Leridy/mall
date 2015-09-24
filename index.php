@@ -3,11 +3,13 @@
  * 入口文件
  */
 require_once './include.php';
+//注销
 if($_REQUEST['logout']) {
     echo 'userLogout()';
     userLogout();
 }
 if(!checkUserLogin()) {
+//已登录用户
     echo <<< EOP
 <html>
 <head>
@@ -21,10 +23,11 @@ u have login<br><a href="index.php?logout=true">logout</a>
 EOP;
     exit;
 }else{
-
+//未登录
+    //登录
     if($_REQUEST['login']){
         echo 'userLogin()';
-        //userLogin();
+        userLogin();
         exit;
     }
 }
