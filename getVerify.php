@@ -2,5 +2,5 @@
 /**
  * 验证码文件
  */
-require_once '../include.php';
+require_once './include.php';
 verifyImage();
