@@ -40,7 +40,7 @@
 		 		<!-- 用户名 -->
 		 		<li class="userinfo_item "><a href="#" title="shopping cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 		 		<!-- 购物车 -->
-		 		<li class="userinfo_item "><a href="#" title="sign out"><i class="fa fa-sign-out"></i> Sign Out</a></li>
+		 		<li class="userinfo_item "><a href="#" title="sign out"><i class="fa fa-sign-out"></i> Exit</a></li>
 		 		<!-- 退出 -->
 		 	</ul>
 		 </div>
@@ -75,15 +75,15 @@
 			<h1>Login</h1>
 			<form action="doLogin.php" method="post">
 				<label>帐号</label>
-				<input type="text"  name="username" placeholder="Account or Email Address" class="input"><br>
+				<input type="text"  name="username" placeholder="Username or Email Address" class="input"><br>
 				<label>密码</label>
 				<input type="password" placeholder="Password" name="password" class="input"><br>
 				<label>验证码</label>
-				<input type="text" name="verify" placeholder="Verification Code Blow" class="input"><br>
+				<input type="text" name="verify" placeholder="Verification Code Below" class="input"><br>
 				<img src="getVerify.php" alt="" id="verify" onclick="document.getElementById('verify').src='getVerify.php'"/>
 				<a href="javascript:void(0)" onclick="document.getElementById('verify').src='getVerify.php'">Unclear?</a>
 				<input type="checkbox" id="a1" class="checked" name="autoFlag" value="1" class="checkbox"><label for="a1" class="checkbox">  Log in a week</label><br>
-				<input type="submit" value="登陆" class="btn btn-small">
+				<input type="submit" value="LOGIN" class="btn btn-small">
 			</form>
 		</div>
 		
@@ -92,10 +92,10 @@
 
 	<footer class="footer " id="footer">
 		<ul class="footer_svc container">
-			<li><a href="#" title="service"><i class="fa fa-suitcase"></i> 24 Hours Rapid Delivery</a></li>
-			<li><a href="#" title="service"><i class="fa fa-credit-card"></i> Pay By Credit Card</a></li>
-			<li><a href="#" title="service"><i class="fa fa-globe"></i> Global Express</a></li>
-			<li><a href="#" title="service"><i class="fa fa-thumb-tack"></i> Good Service</a></li>
+			<li><i class="fa fa-suitcase"></i> 24 Hours Rapid Delivery</li>
+			<li><i class="fa fa-credit-card"></i> Pay By Credit Card</li>
+			<li><i class="fa fa-globe"></i> Global Express</li>
+			<li><i class="fa fa-thumb-tack"></i> Good Service</li>
 		</ul>
 		<div class="footer_links">
 			<dl class="col-links">

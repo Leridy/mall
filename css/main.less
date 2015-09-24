@@ -3,20 +3,17 @@
   description: for a shopping mall website
 
 */
+//设定字符编码
+@charset "utf-8";
+//主题颜色
+@theme_color:#ff9966;
+// 全屏宽高
+@full_width:100%;
+@full_height:100%;
 // 清除浮动
 .clearfix{
 	overflow: hidden;
 	clear: both;
-}
-//设定字符编码
-@charset "utf-8";
-// 全屏宽高
-@full_width:100%;
-@full_height:100%;
-// 全局边距清零
-*{
-	margin: 0;
-	padding: 0;
 }
 //向左浮动类属性
 .right{
@@ -25,27 +22,6 @@
 // 向右浮动属性
 .left{
 	float: left;
-}
-// a标签初始化
-a{
-	text-decoration: none;
-	color: #333;
-	-webkit-transition:color  0.3s;
-	-o-transition:color   0.3s;
-	transition:color  0.3s;
-}
-
-a:hover{
-	color:#FF9966;
-}
-//页面主体样式
-html,body{
-	width: @full_width;
-	height: @full_height;
-	background-color: #fff;
-	font-family:"Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;;
-
-	min-width: 1340px;
 }
 //container类属性
 .container{
@@ -58,7 +34,7 @@ html,body{
 // btn 按钮类属性
 .btn{
 	display: block;
-	border: 1px solid #ff9966;
+	border: 1px solid @theme_color;
 	}
 // btn-small按钮属性
 .btn-small{
@@ -69,6 +45,32 @@ html,body{
 }
 // hide类的样式属性
 .hide{display: none !important;}
+// 全局边距清零
+*{
+	margin: 0;
+	padding: 0;
+}
+// a标签初始化
+a{
+	text-decoration: none;
+	color: #333;
+	-webkit-transition:color  0.3s;
+	-o-transition:color   0.3s;
+	transition:color  0.3s;
+}
+a:hover{
+	color:@theme_color;
+}
+//页面主体样式
+html,body{
+	width: @full_width;
+	height: @full_height;
+	background-color: #fff;
+	font-family:"Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;;
+
+	min-width: 1340px;
+}
+/***********************************************通用型及全局型css代码完结************************************************************/ 
 //site_top类样式
 .site_top{
 	@height:40px; 
@@ -81,7 +83,7 @@ html,body{
 	a{
 		color:gray;
 		&:hover{
-			color: #ff9966;
+			color: @theme_color;
 		}
 	}
 	&_left{
@@ -173,7 +175,7 @@ html,body{
 			//字体粗度400
 			font-style: italic;
 			// 文字风格斜体
-			border-bottom:#ff9966 solid 0px;
+			border-bottom:@theme_color solid 0px;
 			-webkit-transition: border-bottom 0.1s ;
 			-o-transition: border-bottom 0.1s ;
 			transition: border-bottom 0.1s ;
@@ -182,7 +184,7 @@ html,body{
 				// 导航栏项目中链接的内间距
 			}
 			&:hover{
-				border-bottom:#ff9966 solid 3px;
+				border-bottom:@theme_color solid 3px;
 			}
 		}
 	}
@@ -219,10 +221,10 @@ html,body{
 			-o-transition: all 0.1s;
 			transition: all 0.1s;
 			&:focus{
-				outline:1px solid #ff9966;
-				// border:1px solid #ff9966;
+				outline:1px solid @theme_color;
+				// border:1px solid @theme_color;
 			    & + button{
-					outline: 1px #ff9966 solid;
+					outline: 1px @theme_color solid;
 				}
 			}
 			// 搜索框 输入部分 样式
@@ -239,9 +241,9 @@ html,body{
 			-o-transition: all 0.1s;
 			transition: all 0.1s;
 			&:hover{
-				background-color: #ff9966;
+				background-color: @theme_color;
 				color: #fff;
-				outline: 1px #ff9966 solid;
+				outline: 1px @theme_color solid;
 			}
 			// 搜索按钮样式
 		}
@@ -261,7 +263,7 @@ footer{
 		list-style: none;
 		padding: 27px 0%;
 		border-bottom: 1px solid #e0e0e0;
-
+		color: gray;
 		li{
 			margin-right: -5px;
 			display: inline-table;
@@ -298,7 +300,7 @@ footer{
 			border-left:1px #E0E0E0 solid;
 			text-align: center;
 			.phone{
-				color: #ff9966;
+				color: @theme_color;
 				font-weight: 500;
 				font-size:20px;
 			}
@@ -309,7 +311,7 @@ footer{
 			.btn{
 				margin: 20px auto;
 				&:hover{
-					background-color: #ff9966;
+					background-color: @theme_color;
 					color: #fff;
 				}
 			}
@@ -347,10 +349,10 @@ footer{
 
 } 
 
-/********************************************基本模块样式***************************************************/
+/********************************************主体型样式结束，单独颜面样式从下方开始***************************************************/
 
 
-/********************************************login.php文件样式*********************************************/ 
+/********************************************login.php文件样式***********************************************************************/ 
 
 .login_box{
 	background-color: #f0f0f0;
@@ -377,7 +379,7 @@ footer{
 	.btn{
 		margin: 20px auto;
 		padding: 0;
-		background-color: #ff9966;
+		background-color: @theme_color;
 		color: #fff;
 		-webkit-transition: background-color 0.5s;
 		-o-transition: background-color 0.5s;
