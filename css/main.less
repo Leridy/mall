@@ -1,7 +1,6 @@
 /*author：Leridy_Lei 
   version:1.0
   description: for a shopping mall website
-
 */
 //设定字符编码
 @charset "utf-8";
@@ -45,6 +44,21 @@
 }
 // hide类的样式属性
 .hide{display: none !important;}
+//导航栏中下拉子菜单样式表;
+.aChild{
+	&:after{
+		position: relative;
+		content: "\f107";
+		font-style:normal;
+		left:-10px;
+	}
+
+}
+.aChild:hover{
+	&:after{
+		content: "\f106";
+	}
+}
 // 全局边距清零
 *{
 	margin: 0;
@@ -163,6 +177,7 @@ html,body{
 		list-style: none;
 		// 导航栏列表样式为空
 		&_item{
+			position:relative;
 			display: inline-block;
 			// 导航栏项目显示状态：inline-block
 			float: left;
@@ -183,9 +198,46 @@ html,body{
 				padding: 26px 12px 38px 12px;
 				// 导航栏项目中链接的内间距
 			}
-			&:hover{
-				border-bottom:@theme_color solid 3px;
+			.nav_list_child{
+				opacity: 0;
+				top:-1000px;
+				position:absolute;
+				width: 150px;
+				list-style: none;
+				background-color: #f0f0f0;
+				-webkit-transition: all 0.4s ease-out 0.1s;
+				-o-transition: all 0.4s ease-out 0.1s;
+				transition: all 0.4s ease-out 0.1s;
+				.child_item{
+					height:30px;
+					line-height: 30px;
+					font-size: 12px;
+					
+					&:hover{
+						background-color:@theme_color;
+						&>a{
+							color: #fff;
+						}
+					}
+					a{
+						display: block;
+						padding: 0;
+						width: 110px;
+						padding:0 11px; 
+					}
+				}
 			}
+			&:hover{
+				background-color: #f0f0f0;
+				border-bottom:@theme_color solid 3px;
+				&>.nav_list_child{
+				display:block; 
+				position:absolute;
+				top: 100px;
+				opacity: 1;
+			}
+			}
+
 		}
 	}
 	&_search{
