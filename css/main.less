@@ -209,7 +209,7 @@ html,body{
 				width: 150px;
 				list-style: none;
 				background-color: #f0f0f0;
-				.transition(all;0.4s;ease-out;0.05s);
+				.transition(all;0.4s;ease;0.05s);
 				.child_item{
 					height:30px;
 					line-height: 30px;
@@ -252,9 +252,7 @@ html,body{
 		height: 50px;
 		// 搜索栏高度50px
 		border: solid #E0E0E0 1px;
-		-webkit-transition: border 0.1s;
-		-o-transition: border 0.1s;
-		transition: border 0.1s;
+		.transition(border;0.1s);
 		&:hover{
 				border-color: #cccccc;
 				& button{
