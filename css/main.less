@@ -9,6 +9,12 @@
 // 全屏宽高
 @full_width:100%;
 @full_height:100%;
+//transition的方法
+.transition(@prop:all;@time:0.5s;@mod:ease;@delay:0s){
+	-webkit-transition: @prop @time @mod @delay;
+	-o-transition: @prop @time @mod @delay;
+	transition: @prop @time @mod @delay;
+}
 // 清除浮动
 .clearfix{
 	overflow: hidden;
@@ -68,9 +74,7 @@
 a{
 	text-decoration: none;
 	color: #333;
-	-webkit-transition:color  0.3s;
-	-o-transition:color   0.3s;
-	transition:color  0.3s;
+	.transition(color;0.3s);
 }
 a:hover{
 	color:@theme_color;
@@ -119,7 +123,7 @@ html,body{
 			list-style: none;
 			&_item{
 				display: inline;
-				float: left;
+				.left;
 				margin-right: 15px;
 			}
 			#logo{
@@ -136,7 +140,8 @@ html,body{
 // page内容主体开始
 .page_body{
 	margin-top: 2px;
-	color:#;
+	color:black;
+	background-color:#f9f9f9;
 }
 // page_body类属性设置
 .nav_logo{
@@ -168,7 +173,7 @@ html,body{
 	&_logo{
 		margin-top: 25px;
 		// logo顶端间距 25px
-		float: left;
+		.left;
 		// logo向左浮动
 	}
 	&_list{
@@ -180,7 +185,7 @@ html,body{
 			position:relative;
 			display: inline-block;
 			// 导航栏项目显示状态：inline-block
-			float: left;
+			.left;
 			// 导航栏项目向左浮动
 			line-height: 100px;
 			// 导航栏项目行高100px
@@ -191,23 +196,20 @@ html,body{
 			font-style: italic;
 			// 文字风格斜体
 			border-bottom:@theme_color solid 0px;
-			-webkit-transition: border-bottom 0.1s ;
-			-o-transition: border-bottom 0.1s ;
-			transition: border-bottom 0.1s ;
+			.transition(border-bottom;0.1s);
 			a{
 				padding: 26px 12px 38px 12px;
 				// 导航栏项目中链接的内间距
 			}
 			.nav_list_child{
+				z-index: 100;
 				opacity: 0;
 				top:-1000px;
 				position:absolute;
 				width: 150px;
 				list-style: none;
 				background-color: #f0f0f0;
-				-webkit-transition: all 0.4s ease-out 0.1s;
-				-o-transition: all 0.4s ease-out 0.1s;
-				transition: all 0.4s ease-out 0.1s;
+				.transition(all;0.4s;ease-out;0.05s);
 				.child_item{
 					height:30px;
 					line-height: 30px;
@@ -241,7 +243,7 @@ html,body{
 		}
 	}
 	&_search{
-		float: right;
+		.right;
 		// 搜索部分向右浮动
 		margin-top:25px;
 		// 搜索部分上边距25px
@@ -269,9 +271,7 @@ html,body{
 			height: 50px;
 			width: 67.87%;
 			box-sizing: content-box;
-			-webkit-transition: all 0.1s;
-			-o-transition: all 0.1s;
-			transition: all 0.1s;
+			.transition(all;0.2s);
 			&:focus{
 				outline:1px solid @theme_color;
 				// border:1px solid @theme_color;
@@ -283,15 +283,13 @@ html,body{
 			
 		}
 		button{
-			float: right;
+			.right;
 			background-color: #fff;
 			color: gray;
 			border: none;
 			width: 30%;
 			height:50px;
-			-webkit-transition: all 0.1s;
-			-o-transition: all 0.1s;
-			transition: all 0.1s;
+			.transition(all;0.1s);
 			&:hover{
 				background-color: @theme_color;
 				color: #fff;
@@ -334,7 +332,7 @@ footer{
 		.clearfix();
 		margin: 40px 15%;
 		.col-links{
-			float: left;
+			.left;
 			width: 15%;
 			dt{
 				margin-bottom: 30px;
@@ -346,7 +344,7 @@ footer{
 		}
 		// footer中col-links的样式属性
 		.footer_contact{
-			float: right;
+			.right;
 			width: 20%;
 			height: 150px;
 			border-left:1px #E0E0E0 solid;
@@ -433,9 +431,7 @@ footer{
 		padding: 0;
 		background-color: @theme_color;
 		color: #fff;
-		-webkit-transition: background-color 0.5s;
-		-o-transition: background-color 0.5s;
-		transition: background-color 0.5s;
+		.transition(background-color;0.5s);
 		&:hover{
 				background-color: orange;
 				}
@@ -462,4 +458,61 @@ footer{
 		margin-top: 5px;
 	}
 
+}
+
+/* **************************主页布置样式部分**************************/
+
+.products{
+	height:350px;
+	width: 100%;
+	list-style: none;
+	margin:0px 0;
+	header{
+		.clearfix();
+		height: 50px;
+		line-height: 50px;
+		margin: 0 1%;
+		.title{
+			font-weight:400;
+		}
+
+	}
+	.products_item{
+		.left;
+		width:18%;
+		margin:0 1%;
+		height:250px;
+		background-color: #fff;
+		.transition(all;0.3s);
+		&:hover{
+			box-shadow:0 5px 30px #e1e1e1;
+			margin-top: -5px;
+		}
+		&_img{
+			position: relative;
+			width: 100%;
+			height:70%
+		}
+		&_info{
+			margin: 0 5px;
+			display: block;
+			width: 100%;
+			height: 30%;
+			font-size: 12px;
+			p{
+				strong{
+					color: @theme_color;
+				}
+			}
+			.products_link{
+				display: block;
+				width: 82%;
+				font-size:18px;
+				white-space: nowrap;
+				text-overflow:ellipsis;
+				overflow: hidden;
+			}
+		}
+
+	}
 }
