@@ -83,10 +83,11 @@
 a{
 	text-decoration: none;
 	color: #333;
-	.transition(color;0.3s);
+	.transition(all;0.4s);
 }
 a:hover{
 	color:@theme_color;
+	font-weight: 500;
 }
 //页面主体样式
 html,body{
@@ -649,7 +650,7 @@ footer{
 		text-align: center;
 		width: 120px;
 		// 设置select栏的位置和大小
-		h3{
+		.pagination{
 			display: block;
 			width: 120px;
 			position:relative;
@@ -666,12 +667,13 @@ footer{
 				>.select_list{ 
 					height:200px;
 					position:absolute;
-					top:-100px;
+					top:-90px;
 					opacity: 1;
 					// h3鼠标经过时下一级中.select_list的样式
 				}
 			}
 			.select_list{
+				border: 1px solid @theme_color;
 				width: 120px;
 				z-index: 100;
 				top: 0px;
