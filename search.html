@@ -11,15 +11,16 @@
 	<!-- 设置网站关键字关键字 -->
 	<meta name="description" content="">
 	<!-- 网站描述 -->
-	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="css/main.css">
 	<!-- 主css接入 -->
-	<link rel="stylesheet" href="./css/normalize.css">
+	<link rel="stylesheet" href="css/normalize.css">
 	<!-- 网页标签初始化css接入 -->
 	<!-- <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.css"> -->
-	<link rel="stylesheet" href="./css/font-awesome-4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/font-awesome-4.4.0/css/font-awesome.min.css">
 	<!-- font-awesome接入 -->
-	<title>Login - XXmall</title>
+	<title>XX mall</title>
 	<!-- 网站标题 -->
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	  <script src="js/html5shiv.min.js"></script>
 	<![endif]-->
@@ -37,7 +38,7 @@
 				<!-- 无登陆情况下 登陆按钮 通过hide类控制显示-->
 				<li class="userinfo_item hide"><a href="#" title="login"><i class="fa fa-sign-in"></i> Join Us</a></li>
 				<!-- 无登陆情况下 注册按钮 通过hide类控制显示-->
-		 		<li class="userinfo_item "><img src="./images/logo.png" alt="Userhead" id="logo"></li>
+		 		<li class="userinfo_item "><img src="images/logo.png" alt="Userhead" id="logo"></li>
 		 		<!-- 用户头像 -->
 		 		<li class="userinfo_item "><a href="#" id="name" title="Leridy">Leridy</a></li>
 		 		<!-- 用户名 -->
@@ -57,6 +58,7 @@
 				<ul class="nav_list">
 					<li class="nav_list_item"> <a href="#">Home</a></li>
 					<li class="nav_list_item aChild"> <a href="#">Products</a>
+					<!-- aChild 控制 相关显示属性  -->
 						<ul class="nav_list_child">
 							<li class="child_item"><a href="#">Prints</a></li>
 							<li class="child_item"><a href="#">Prints Parts</a></li>
@@ -80,26 +82,15 @@
 	  			</div>
 	  			<!-- 导航栏搜索框 -->
 		</nav>
-		<!-- 导航完结 -->
-
-		<div class="login_box">
-			<h1>Login</h1>
-			<form action="doLogin.php" method="post">
-				<label>帐号</label>
-				<input type="text"  name="username" placeholder="Username or Email Address" class="input"><br>
-				<label>密码</label>
-				<input type="password" placeholder="Password" name="password" class="input"><br>
-				<label>验证码</label>
-				<input type="text" name="verify" placeholder="Verification Code Below" class="input"><br>
-				<img src="getVerify.php" alt="" id="verify" onclick="document.getElementById('verify').src='getVerify.php'"/>
-				<a href="javascript:void(0)" onclick="document.getElementById('verify').src='getVerify.php'">Unclear?</a>
-				<input type="checkbox" id="a1" class="checked checkbox" name="autoFlag" value="1"><label for="a1" class="checkbox">  Log in a week</label><br>
-				<input type="submit" value="LOGIN" class="btn btn-small">
-			</form>
-		</div>
-		
+		<!-- 导航完结 页面内容在下-->
+		div.
+		div.breadcrumbs>
 	</div>
-	<!-- 首页主体完结 -->
+
+
+	<!-- 页面主题完结 footer在下 -->
+
+
 
 	<footer class="footer " id="footer">
 		<ul class="footer_svc container">
@@ -166,6 +157,7 @@
 		</div>
 		<!-- 网站信息结束 -->
 	</footer>
-	<!-- 底部结束 -->
+	<!-- 底部完结 -->
+	<!-- javascript 引入 -->
 </body>
 </html>
