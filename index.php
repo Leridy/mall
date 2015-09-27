@@ -13,8 +13,8 @@ if($_REQUEST['page']=='logout') {
 }
 if(!checkUserLogin()) {
 //已登录用户
-    showHeader("page");
-    echo 'u have login<br><a href="index.php?page=logout">logout</a>';
+    showHeader("Index");
+    showHome();
     showFooter();
     exit;
 }else{
@@ -27,7 +27,15 @@ if(!checkUserLogin()) {
         showFooter();
         exit;
     }
+    //注册
+    if($_REQUEST['page']=='register'){
+        showHeader("Register");
+        showRegister();
+        showFooter();
+        exit;
+    }
+
 }
-showHeader("index");
-echo 'u have not <a href="index.php?page=login">login</a>';
+showHeader("Index");
+showHome();
 showFooter();

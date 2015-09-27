@@ -38,7 +38,7 @@ function showHeader($title){
 <body>
 <div class="site_top ">
     <div class="site_top_left">
-        <a class="welcome" href="#"><i class="fa fa-home"></i> Welcome to <?php echo "{$GLOBALS['brand']}"; ?> shop</a>
+        <a class="welcome" href="index.php"><i class="fa fa-home"></i> Welcome to <?php echo "{$GLOBALS['brand']}"; ?> shop</a>
     </div>
     <!-- 顶部栏左侧 -->
     <div class="site_top_right">
@@ -46,7 +46,7 @@ function showHeader($title){
             <!-- 用户信息 -->
             <li class="userinfo_item <?php echo $hide2; ?>" id="login"><a href="index.php?page=login" title="login"><i class="fa fa-user"></i> Login</a></li>
             <!-- 无登陆情况下 登陆按钮 通过hide类控制显示-->
-            <li class="userinfo_item <?php echo $hide2; ?>" id="reg"><a href="index.php?page=reg" title="login"><i class="fa fa-sign-in"></i> Join Us</a></li>
+            <li class="userinfo_item <?php echo $hide2; ?>" id="reg"><a href="index.php?page=register" title="login"><i class="fa fa-sign-in"></i> Join Us</a></li>
             <!-- 无登陆情况下 注册按钮 通过hide类控制显示-->
             <li class="userinfo_item <?php echo $hide1; ?>" id="face"><img src="getFace.php" alt="Userhead" id="logo"></li>
             <!-- 用户头像 -->
@@ -67,7 +67,7 @@ function showHeader($title){
 <!-- 顶栏完结 -->
 <div class="page_body">
     <nav class="nav container-inside">
-        <div class="nav_logo"><a href="#" title="HOME PAGE"> </a></div>
+        <div class="nav_logo"><a href="index.php" title="HOME PAGE"> </a></div>
         <!-- 导航栏logo/标志 -->
         <ul class="nav_list">
             <li class="nav_list_item"> <a href="#">Home</a></li>
@@ -197,8 +197,170 @@ function showFooter(){
 </html>
 <?php
 }
+function showRegister(){
+?>
+    <div class="login_box">
+        <h1>Register</h1>
+        <form action="doRegister.php" method="post">
+            <label>帐号</label>
+            <input type="text"  name="username" placeholder="Username" class="input"><br>
+            <label>密码</label>
+            <input type="password" placeholder="Password" name="password" class="input"><br>
+            <label>确认密码</label>
+            <input type="password" placeholder="Password" name="password2" class="input"><br>
+            <label>email</label>
+            <input type="email" placeholder="email" name="email" class="input"><br>
+            <label>验证码</label>
+            <input type="text" name="verify" placeholder="Verification Code Below" class="input"><br>
+            <img src="getVerify.php" alt="" id="verify" onclick="document.getElementById('verify').src='getVerify.php'"/>
+            <a href="javascript:void(0)" onclick="document.getElementById('verify').src='getVerify.php'">Unclear?</a>
+            <input type="submit" value="REGISTER" class="btn btn-small">
+        </form>
+    </div>
+<?php
+}
 function page($filename){
     $handle  =  fopen ( $filename ,  "r" );
     echo $contents  =  fread ( $handle ,  filesize ( $filename ));
     fclose ( $handle );
+}
+function showHome(){
+?>
+    <div class="container">
+        <ul class="products">
+            <header>
+                <h2 class="title left">Printers</h2>
+                <a href="#" class="more right" title="More Printers">More <i class="fa fa-angle-right"></i></a>
+            </header>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+        </ul>
+    </div>
+    <!-- 一号 展示单完结 -->
+    <div class="container">
+        <ul class="products">
+            <header>
+                <h2 class="title left">Printers</h2>
+                <a href="#" class="more right" title="More Printers">More <i class="fa fa-angle-right"></i></a>
+            </header>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer1.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer1.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer1.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer1.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer1.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+        </ul>
+    </div>
+    <!-- 二号 展示栏完结 -->
+    <div class="container">
+        <ul class="products">
+            <header>
+                <h2 class="title left">Printers</h2>
+                <a href="#" class="more right" title="More Printers">More <i class="fa fa-angle-right"></i></a>
+            </header>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+        </ul>
+    </div>
+    <!-- 三号 展示栏完结 -->
+    <div class="container">
+        <ul class="products">
+            <header>
+                <h2 class="title left">Printers</h2>
+                <a href="#" class="more right" title="More Printers">More <i class="fa fa-angle-right"></i></a>
+            </header>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer1.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer1.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer1.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer1.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+            <li class="products_item"><a href="#" title="Prints"><img src="images/printer1.jpg" alt="Prints" class="products_item_img"></a><span class="products_item_info">
+					<a href="#" class="products_link">HP Printer</a>
+					<p class="order">Order(2)</p>
+					<p class="price"><strong>US $269</strong>/price</p>
+				</span></li>
+        </ul>
+    </div>
+    <!-- 四号 展示栏完结 -->
+<?php
 }
