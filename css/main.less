@@ -87,7 +87,6 @@ a{
 }
 a:hover{
 	color:@theme_color;
-	font-weight: 500;
 }
 //页面主体样式
 html,body{
@@ -377,6 +376,9 @@ footer{
 		height: 50px;
 		line-height: 50px;
 		font-size: 12px;
+		a:hover{
+			font-weight:400;
+		}
     	// footer中site_info类的样式属性
 	   &_right{
 		// site_top_right样式
@@ -669,15 +671,16 @@ footer{
 					position:absolute;
 					top:-90px;
 					opacity: 1;
+					width: 120px;
 					// h3鼠标经过时下一级中.select_list的样式
 				}
 			}
 			.select_list{
 				border: 1px solid @theme_color;
-				width: 120px;
 				z-index: 100;
 				top: 0px;
 				height: 0px;
+				width: 0px;
 				opacity:0;
 				position:absolute;
 				overflow-x:hidden;
