@@ -10,8 +10,8 @@ $verify=$_POST['verify'];
 $verify1=$_SESSION['verify'];
 $autoFlag=$_POST['autoFlag'];
 if($verify==$verify1){
-	$sql="select * from user where username='{$username}' and password='{$password}'";
-	$row=checkUser($sql);
+	$sql="select * from ".DB_DBNAME.".user where username='{$username}' and password='{$password}'";
+	echo $row=checkUser($sql);
 	if($row){
 		//如果选了一周内自动登陆
 		if($autoFlag){

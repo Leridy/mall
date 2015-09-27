@@ -11,7 +11,7 @@ $verify=$_POST['verify'];
 $verify1=$_SESSION['verify'];
 //if($verify==$verify1){
 if(true){
-    $sql="INSERT INTO `mall`.`user` ( `username`, `password`,  `email`) VALUES ('{$username}', '{$password}','{$email}');";
+    $sql="INSERT INTO ".DB_DBNAME.".user ( `username`, `password`,  `email`) VALUES ('{$username}', '{$password}','{$email}');";
     if(mysql_query($sql)){
         echo '注册成功，<a href="index.php">返回首页</a>';
     }else{
