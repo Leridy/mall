@@ -50,3 +50,17 @@ function verifyImage($type=1,$length=4,$pixel=1,$line=1,$session_name = "verify"
     imagegif ( $image );
     imagedestroy ( $image );
 }
+
+/*
+ * 获取头像
+ */
+function getFace(){
+    header ( "content-type:image/png" );
+    if($_SESSION['userId']){
+        $sql="select face from user where id=".$_SESSION['userId'];
+        $url=fetchOne($sql);
+        $img=imagecreatefrompng($url['face']);
+        imagepng($img);
+        imagedestroy($img);
+    }
+}
