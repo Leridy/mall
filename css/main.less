@@ -107,6 +107,7 @@ html,body{
 	width: @full_width;
 	height:@height;
 	box-shadow:0px 2px 2px #e5e8e8;
+	position: relative;
 	a{
 		color:gray;
 		&:hover{
@@ -133,13 +134,28 @@ html,body{
 			&_item{
 				display: inline;
 				.left;
-				margin-right: 15px;
+				margin-right:15px;
 			}
 			#logo{
 
 				width: 40px;
 				height: 40px;
 				top: -1px;
+			}
+			.cart-num{
+				font-size:10px;
+				position:absolute;
+				top: 4px;
+				text-align: center;
+				display: inline-block;
+				border-radius:5px;
+				background-color: @theme_color;
+				width: auto; 
+				padding: 0 3px;
+				height: 15px;
+				margin-left: -8px;
+				line-height: 15px;
+				color:#fff;
 			}
 		}
 	}
