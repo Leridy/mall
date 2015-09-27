@@ -430,6 +430,7 @@ footer{
 	margin: 50px auto;
 	padding: 30px 50px;
 	box-shadow: 5px 5px 5px #e5e8e8;
+	position: relative;
 	h1{
 		font-size: 25px;
 	}
@@ -439,12 +440,88 @@ footer{
 		margin-top: 20px;
 
 		&:focus{
-			outline: none;
+			outline:2px solid @theme_color;
 		}
 	}
 	label{
 		display: none;
 	}
+	.required{
+		position: absolute;
+		line-height: 5px;
+		color:#fff;
+		font-size: 5px;
+		padding: 5px 5px;
+		margin-top: 15px;
+		margin-left: -30px;
+		background-color: @theme_color;
+		border-radius: 10px;
+	}
+	// 必须获取 span标签样式
+	.check{
+		margin-left: 10px;
+		position: absolute;
+		line-height: 50px;
+		margin-top: 20px;
+	}
+	// 检查 span标签样式
+	.ok:before,.strong:before{
+		color: green;
+		text-shadow:0 0 20px #00ff00;
+	}
+	// ok 和 strong 基本样式
+	.username+.ok:before{
+		content: "\f00c  Username Available";
+		color: green;
+		text-shadow:0 0 20px #00ff00;
+	}
+	// 用户名可用后后提示
+	.password1+.strong:before{
+		content: "\f00c  Strong Enough"
+	}
+	// 密码足够强时提示
+	.password2+.ok:before{
+		content: "\f00c  OK"
+	}
+	// 确认密码通过后后提示
+	.email+.ok:before{
+		content: "\f00c  Email Address Available"
+	}
+	// email通过后后提示
+	.verifycode+.ok:before{
+		content: "\f00c  OK"
+	 }//验证码通过后提示
+	// 检查通过(ok)标签样式集合
+
+	.no:before,.weak:before,.exist:before{
+		color:red;
+		text-shadow:0 0 20px red;
+	}
+	// no 和 weak 和 exist
+	.username+.no:before{
+		content: "\f00d  Username Already Exists";
+	}
+	// username 已存在时显示
+	.password1+.weak:before{
+		content: "\f00d  Too Weak";
+	}
+	// 密码不够强时提示
+	.password2+.no:before{
+		content: "\f00d   The Password is Not Consistent"
+	}
+	// 确认密码不通过提示
+	.email+.no:before{
+		content: "\f00d  Email Address is Not Correct"
+	}
+	// email不正确时提示
+	.email+.exist:before{
+		content: "\f00d  Email Address Has Been Used"
+	}
+	// email已经存在时提示
+	.verifycode+.no:before{
+		content: "\f00d  Verification Code is Not Corret"
+	}
+	// 验证码不正确时提示
 	.btn{
 		margin: 20px auto;
 		padding: 0;
