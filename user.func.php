@@ -1,15 +1,4 @@
 <?php
-/**
- * 用户函数文件
- */
-
-function userLogin(){
-    $filename  =  "userLogin.html" ;
-    $handle  =  fopen ( $filename ,  "r" );
-    echo $contents  =  fread ( $handle ,  filesize ( $filename ));
-    fclose ( $handle );
-
-}
 
 /**
  * 检查用户是否存在

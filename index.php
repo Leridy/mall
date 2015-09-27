@@ -3,43 +3,31 @@
  * 入口文件
  */
 require_once './include.php';
+
+$GLOBALS['brand']="Brand";
+
 //注销
-if($_REQUEST['logout']) {
-    echo 'userLogout()';
+if($_REQUEST['page']=='logout') {
+    //echo 'userLogout()';
     userLogout();
 }
 if(!checkUserLogin()) {
 //已登录用户
-    echo <<< EOP
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-u have login<br><a href="index.php?logout=true">logout</a>
-</body>
-</html>
-EOP;
+    showHeader("page");
+    echo 'u have login<br><a href="index.php?page=logout">logout</a>';
+    showFooter();
     exit;
 }else{
 //未登录
     //登录
-    if($_REQUEST['login']){
-        echo 'userLogin()';
-        userLogin();
+    if($_REQUEST['page']=='login'){
+        //echo 'userLogin()';
+        showHeader("Login");
+        showLogin();
+        showFooter();
         exit;
     }
 }
-//userLogin();
-?>
-
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-u have not <a href="index.php?login=true">login</a>
-</body>
-</html>
+showHeader("index");
+echo 'u have not <a href="index.php?page=login">login</a>';
+showFooter();
