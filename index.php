@@ -14,7 +14,11 @@ if($_REQUEST['page']=='logout') {
 if(!checkUserLogin()) {
 //已登录用户
     showHeader("Index");
-    showHome();
+    if($_REQUEST['keyword']){
+        showSearch();
+    }else{
+        showHome();
+    }
     showFooter();
     exit;
 }else{
@@ -34,8 +38,11 @@ if(!checkUserLogin()) {
         showFooter();
         exit;
     }
-
+    showHeader("Index");
+    if($_REQUEST['keyword']){
+        showSearch();
+    }else{
+        showHome();
+    }
+    showFooter();
 }
-showHeader("Index");
-showHome();
-showFooter();
