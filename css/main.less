@@ -463,6 +463,7 @@ footer{
 		position: absolute;
 		line-height: 50px;
 		margin-top: 20px;
+		font-size:5px; 
 	}
 	// 检查 span标签样式
 	.ok:before,.strong:before{
@@ -507,19 +508,19 @@ footer{
 	}
 	// 密码不够强时提示
 	.password2+.no:before{
-		content: "\f00d   The Password is Not Consistent"
+		content: "\f00d  Not Consistent"
 	}
 	// 确认密码不通过提示
 	.email+.no:before{
-		content: "\f00d  Email Address is Not Correct"
+		content: "\f00d  Email is Not Correct"
 	}
 	// email不正确时提示
 	.email+.exist:before{
-		content: "\f00d  Email Address Has Been Used"
+		content: "\f00d  Email Has Been Used"
 	}
 	// email已经存在时提示
 	.verifycode+.no:before{
-		content: "\f00d  Verification Code is Not Corret"
+		content: "\f00d  Not Corret"
 	}
 	// 验证码不正确时提示
 	.btn{
