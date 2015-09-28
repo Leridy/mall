@@ -20,8 +20,8 @@
     <!-- font-awesome接入 -->
     <title>Register - XXmall</title>
     <!-- 网站标题 -->
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.min.js"></script>
+    <!--[if lte IE]>
+        <script src="./js/html5shiv.min.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -89,16 +89,16 @@
             <input type="text"  name="username" placeholder="Username" class="input username"><span class="check no"></span><br>
             <!-- username 通过 ok 和 no控制验证提示 -->
             <label>密码</label>
-            <span class="required">Required</span><input type="password" placeholder="Password" name="password" class="input password1"><span class="check weak"></span><br>
+            <input type="password" placeholder="Password" name="password" class="input password1"><span class="check weak"></span><span class="required">Required</span><br>
             <!-- password1 通过 strong 和 weak 控制验证提示 -->
             <label>确认密码</label>
-            <span class="required">Required</span><input type="password" placeholder="Confirm Your Password" name="password2" class="input password2"><span class="check no"></span><br>
+            <input type="password" placeholder="Confirm Your Password" name="password2" class="input password2"><span class="check no"></span><span class="required">Required</span><br>
             <!-- password2 通过 ok 和 no 控制验证提示 -->
             <label>email</label>
-            <span class="required">Required</span><input type="email" placeholder="Your Email Address" name="email" class="input email"><span class="check no"></span><br>
+            <input type="email" placeholder="Your Email Address" name="email" class="input email"><span class="check no"></span><span class="required">Required</span><br>
             <!-- email 通过 ok 和 no 和 exist 控制验证提示 -->
             <label>验证码</label>
-            <span class="required">Required</span><input type="text" name="verify" placeholder="Verification Code Below" class="input verifycode"><span class="check no"></span><br>
+            <input type="text" name="verify" placeholder="Verification Code Below" class="input verifycode"><span class="check no"></span><span class="required">Required</span><br>
             <!-- verifycode通过 ok 和 no 控制验证提示 -->
             <img src="getVerify.php" alt="" id="verify" onclick="document.getElementById('verify').src='getVerify.php'"/>
             <a href="javascript:void(0)" onclick="document.getElementById('verify').src='getVerify.php'">Unclear?</a>
