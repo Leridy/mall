@@ -143,7 +143,7 @@ function showFooter(){
                 <dd><a href="#" rel="nofollow">After-sales Service</a></dd>
             </dl>
             <dl class="col-links">
-                <dt>Home Of Us</dt>
+                <dt>Home of Us</dt>
                 <dd><a href="#" rel="nofollow">Shipping FAQ</a></dd>
                 <dd><a href="#" rel="nofollow">Shipping FAQ</a></dd>
                 <dd><a href="#" rel="nofollow">Shipping FAQ</a></dd>
@@ -164,6 +164,7 @@ function showFooter(){
                 <p class="phone">+086-027-8888888</p>
                 <p>Monday~Sunday 8:00-18：00</p>
                 <p>（UTC+8 Time Zone）</p>
+                <p>China Mainland</p>
                 <a href="#" class="btn btn-small">
                     <i class="fa fa-commenting-o"></i>
                     Online Service
@@ -202,21 +203,27 @@ function showRegister(){
     <div class="login_box">
         <h1>Register</h1>
         <form action="doRegister.php" method="post">
-            <label>帐号</label>
-            <input type="text"  name="username" placeholder="Username" class="input"><br>
+            <label>用户名</label>
+            <input type="text"  name="username" placeholder="Username" class="input username"><span class="check no"></span><br>
+            <!-- username 通过 ok 和 no控制验证提示 -->
             <label>密码</label>
-            <input type="password" placeholder="Password" name="password" class="input"><br>
+            <input type="password" placeholder="Password" name="password" class="input password1"><span class="check weak"></span><span class="required">Required</span><br>
+            <!-- password1 通过 strong 和 weak 控制验证提示 -->
             <label>确认密码</label>
-            <input type="password" placeholder="Password" name="password2" class="input"><br>
+            <input type="password" placeholder="Confirm Your Password" name="password2" class="input password2"><span class="check no"></span><span class="required">Required</span><br>
+            <!-- password2 通过 ok 和 no 控制验证提示 -->
             <label>email</label>
-            <input type="email" placeholder="email" name="email" class="input"><br>
+            <input type="email" placeholder="Your Email Address" name="email" class="input email"><span class="check no"></span><span class="required">Required</span><br>
+            <!-- email 通过 ok 和 no 和 exist 控制验证提示 -->
             <label>验证码</label>
-            <input type="text" name="verify" placeholder="Verification Code Below" class="input"><br>
+            <input type="text" name="verify" placeholder="Verification Code Below" class="input verifycode"><span class="check no"></span><span class="required">Required</span><br>
+            <!-- verifycode通过 ok 和 no 控制验证提示 -->
             <img src="getVerify.php" alt="" id="verify" onclick="document.getElementById('verify').src='getVerify.php'"/>
             <a href="javascript:void(0)" onclick="document.getElementById('verify').src='getVerify.php'">Unclear?</a>
             <input type="submit" value="REGISTER" class="btn btn-small">
         </form>
     </div>
+
 <?php
 }
 function page($filename){
