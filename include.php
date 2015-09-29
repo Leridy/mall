@@ -13,4 +13,6 @@ require_once "configs/configs.php";
 require_once 'admin/admin.func.php';
 require_once 'user.func.php';
 require_once 'lib/page.func.php';
+require_once 'lib/upload.class.php';
+require_once 'lib/upload.func.php';
 connect();

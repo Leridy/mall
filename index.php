@@ -6,6 +6,8 @@ require_once './include.php';
 
 $GLOBALS['brand']="Brand";
 
+
+
 //注销
 if($_REQUEST['page']=='logout') {
     //echo 'userLogout()';
@@ -13,14 +15,24 @@ if($_REQUEST['page']=='logout') {
 }
 if(!checkUserLogin()) {
 //已登录用户
-    showHeader("Index");
-    if($_REQUEST['keyword']){
-        showSearch();
+    if($_REQUEST['page']=='home'){
+        showHeader("My Home");
+        showUserHome();
+        showFooter();
+    }elseif($_FILES) {
+        $upload = new upload("file" , "face");
+        $upload->uploadFace();
+        header("local:index.php");
     }else{
-        showHome();
+        showHeader("Index");
+        if ($_REQUEST['keyword']) {
+            showSearch();
+        } else {
+            showHome();
+        }
+        showFooter();
+        exit;
     }
-    showFooter();
-    exit;
 }else{
 //未登录
     //登录

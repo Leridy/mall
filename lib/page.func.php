@@ -51,7 +51,7 @@ function showHeader($title){
             <li class="userinfo_item <?php echo $hide1; ?>" id="face"><img src="getFace.php" alt="Userhead" id="logo"></li>
             <!-- 用户头像 -->
             <li class="userinfo_item <?php echo $hide1; ?>" id="username">
-                <a href="#" id="name" title="<?php echo "{$_SESSION['userName']}"; ?>">
+                <a href="index.php?page=home" id="name" title="<?php echo "{$_SESSION['userName']}"; ?>">
                     <?php echo "{$_SESSION['userName']}"; ?>
                 </a>
             </li>
@@ -595,5 +595,13 @@ function showSearch(){
         <!-- 选择跳转分页部分 -->
     </div>
     <!-- 分页部分完结 -->
+<?php
+}
+function showUserHome(){
+?>
+    <form  action="index.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="file"  multiple="multiple"/>
+        <input type="submit" class="" value="上传" />
+    </form>
 <?php
 }
