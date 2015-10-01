@@ -15,6 +15,17 @@
 	-o-transition: @prop @time @mod @delay;
 	transition: @prop @time @mod @delay;
 }
+
+//针对 - webkit- 核心浏览器的滚动条样式优化
+::-webkit-scrollbar {width: 8px; height:8px; }
+.page_body ::-webkit-scrollbar{height:5px;}
+::-webkit-scrollbar-thumb{background-color:@theme_color !important;}
+.nicescroll-rails div{border:0 !important;border-radius: 0 !important;}
+// 被选中的元素样式
+::selection{
+	background-color:@theme_color;
+	color: #fff;
+}
 // 清除浮动
 .clearfix{
 	overflow: hidden;
