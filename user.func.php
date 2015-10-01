@@ -12,7 +12,7 @@ function checkUser($sql){
  * 检测是否有用户登录.
  * @return bool
  */
-function checkUserLogin(){
+function checkUserSignIn(){
     if($_SESSION['userId']==""&&$_COOKIE['userId']==""){
         return true;
     }else{

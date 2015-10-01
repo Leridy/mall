@@ -1,7 +1,7 @@
 <?php
 
 function showHeader($title){
-    if(checkUserLogin()){
+    if(checkUserSignIn()){
         $hide1="hide";
         $hide2="";
     }else{
@@ -44,9 +44,9 @@ function showHeader($title){
     <div class="site_top_right">
         <ul class="userinfo">
             <!-- 用户信息 -->
-            <li class="userinfo_item <?php echo $hide2; ?>" id="login"><a href="index.php?page=login" title="login"><i class="fa fa-user"></i> Login</a></li>
+            <li class="userinfo_item <?php echo $hide2; ?>" id="signin"><a href="index.php?page=signin" title="Sign In"><i class="fa fa-user"></i> Sign In</a></li>
             <!-- 无登陆情况下 登陆按钮 通过hide类控制显示-->
-            <li class="userinfo_item <?php echo $hide2; ?>" id="reg"><a href="index.php?page=register" title="login"><i class="fa fa-sign-in"></i> Join Us</a></li>
+            <li class="userinfo_item <?php echo $hide2; ?>" id="signup"><a href="index.php?page=signup" title="Sign In"><i class="fa fa-sign-in"></i> Sign Up</a></li>
             <!-- 无登陆情况下 注册按钮 通过hide类控制显示-->
             <li class="userinfo_item <?php echo $hide1; ?>" id="face"><img src="getFace.php" alt="Userhead" id="logo"></li>
             <!-- 用户头像 -->
@@ -58,7 +58,7 @@ function showHeader($title){
             <!-- 用户名 -->
             <li class="userinfo_item " id="cart"><a href="#" title="shopping cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
             <!-- 购物车 -->
-            <li class="userinfo_item <?php echo $hide1; ?> id="logout"><a href="index.php?page=logout" title="sign out"><i class="fa fa-sign-out"></i> Exit</a></li>
+            <li class="userinfo_item <?php echo $hide1; ?> id="signout"><a href="index.php?page=SignOut" title="sign out"><i class="fa fa-sign-out"></i> Sign Out</a></li>
             <!-- 退出 -->
         </ul>
     </div>
@@ -98,11 +98,11 @@ function showHeader($title){
     <!-- 导航完结 -->
 <?php
 }
-function showLogin(){
+function showSignIn(){
 ?>
     <div class="login_box">
-			<h1>Login</h1>
-			<form action="doLogin.php" method="post">
+			<h1>Sign In</h1>
+			<form action="doSignIn.php" method="post">
 				<label>帐号</label>
 				<input type="text"  name="username" placeholder="Username or Email Address" class="input"><br>
 				<label>密码</label>
@@ -111,8 +111,8 @@ function showLogin(){
 				<input type="text" name="verify" placeholder="Verification Code Below" class="input"><br>
 				<img src="getVerify.php" alt="" id="verify" onclick="document.getElementById('verify').src='getVerify.php'"/>
 				<a href="javascript:void(0)" onclick="document.getElementById('verify').src='getVerify.php'">Unclear?</a>
-				<input type="checkbox" id="a1" class="checked checkbox" name="autoFlag" value="1"><label for="a1" class="checkbox">  Log in a week</label><br>
-				<input type="submit" value="LOGIN" class="btn btn-small">
+				<input type="checkbox" id="a1" class="checked checkbox" name="autoFlag" value="1"><label for="a1" class="checkbox">  Sign in a week</label><br>
+				<input type="submit" value="Sign In" class="btn btn-small">
 			</form>
 		</div>
 <?php
@@ -202,7 +202,7 @@ function showRegister(){
 ?>
     <div class="login_box">
         <h1>Register</h1>
-        <form action="doRegister.php" method="post">
+        <form action="doSignUp.php" method="post">
             <label>用户名</label>
             <input type="text"  name="username" placeholder="Username" class="input username"><span class="check no"></span><br>
             <!-- username 通过 ok 和 no控制验证提示 -->

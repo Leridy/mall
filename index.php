@@ -9,11 +9,11 @@ $GLOBALS['brand']="Brand";
 
 
 //注销
-if($_REQUEST['page']=='logout') {
+if($_REQUEST['page']=='signout') {
     //echo 'userLogout()';
     userLogout();
 }
-if(!checkUserLogin()) {
+if(!checkUserSignIn()) {
 //已登录用户
     if($_REQUEST['page']=='home'){
         showHeader("My Home");
@@ -36,16 +36,16 @@ if(!checkUserLogin()) {
 }else{
 //未登录
     //登录
-    if($_REQUEST['page']=='login'){
+    if($_REQUEST['page']=='signin'){
         //echo 'userLogin()';
-        showHeader("Login");
-        showLogin();
+        showHeader("Sign In");
+        showSignIn();
         showFooter();
         exit;
     }
     //注册
-    if($_REQUEST['page']=='register'){
-        showHeader("Register");
+    if($_REQUEST['page']=='signup'){
+        showHeader("Sign Up");
         showRegister();
         showFooter();
         exit;
