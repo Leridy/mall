@@ -18,7 +18,7 @@
     <!-- <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.css"> -->
     <link rel="stylesheet" href="./css/font-awesome-4.4.0/css/font-awesome.min.css">
     <!-- font-awesome接入 -->
-    <title>Register - XXmall</title>
+    <title>Sign Up - XXmall</title>
     <!-- 网站标题 -->
     <!--[if lte IE]>
         <script src="./js/html5shiv.min.js"></script>
@@ -33,9 +33,9 @@
     <div class="site_top_right">
         <ul class="userinfo">
             <!-- 用户信息 -->
-            <li class="userinfo_item hide"><a href="#" title="login"><i class="fa fa-user"></i> Login</a></li>
+            <li class="userinfo_item hide"><a href="#" title="Sign In"><i class="fa fa-user"></i>Sign In</a></li>
             <!-- 无登陆情况下 登陆按钮 通过hide类控制显示-->
-            <li class="userinfo_item hide"><a href="#" title="login"><i class="fa fa-sign-in"></i> Join Us</a></li>
+            <li class="userinfo_item hide"><a href="#" title="Sign Up"><i class="fa fa-sign-in"></i>Sign Up</a></li>
             <!-- 无登陆情况下 注册按钮 通过hide类控制显示-->
             <li class="userinfo_item "><img src="./images/logo.png" alt="Userhead" id="logo"></li>
             <!-- 用户头像 -->
@@ -83,7 +83,7 @@
     <!-- 导航完结 -->
 
     <div class="login_box">
-        <h1>Register</h1>
+        <h1>Sign Up</h1>
         <form action="doRegister.php" method="post">
             <label>用户名</label>
             <input type="text"  name="username" placeholder="Username" class="input username"><span class="check no"></span><br>
@@ -102,7 +102,7 @@
             <!-- verifycode通过 ok 和 no 控制验证提示 -->
             <img src="getVerify.php" alt="" id="verify" onclick="document.getElementById('verify').src='getVerify.php'"/>
             <a href="javascript:void(0)" onclick="document.getElementById('verify').src='getVerify.php'">Unclear?</a>
-            <input type="submit" value="REGISTER" class="btn btn-small">
+            <input type="submit" value="Sign Up" class="btn btn-small">
         </form>
     </div>
     </div>
