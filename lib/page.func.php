@@ -58,7 +58,7 @@ function showHeader($title){
             <!-- 用户名 -->
             <li class="userinfo_item " id="cart"><a href="#" title="shopping cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
             <!-- 购物车 -->
-            <li class="userinfo_item <?php echo $hide1; ?> id="signout"><a href="index.php?page=SignOut" title="sign out"><i class="fa fa-sign-out"></i> Sign Out</a></li>
+            <li class="userinfo_item <?php echo $hide1; ?> id="signout"><a href="index.php?page=signout" title="sign out"><i class="fa fa-sign-out"></i> Sign Out</a></li>
             <!-- 退出 -->
         </ul>
     </div>

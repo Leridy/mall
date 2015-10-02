@@ -8,30 +8,31 @@ $GLOBALS['brand']="Brand";
 
 
 
-//注销
-if($_REQUEST['page']=='signout') {
-    //echo 'userLogout()';
-    userLogout();
+//搜索
+if($_REQUEST['keyword']){
+    showHeader($_REQUEST['keyword']);
+    showSearch();
+    showFooter();
+    exit;
 }
-if(!checkUserSignIn()) {
 //已登录用户
+if(!checkUserSignIn()) {
+    //个人中心
     if($_REQUEST['page']=='home'){
         showHeader("My Home");
         showUserHome();
         showFooter();
-    }elseif($_FILES) {
+        exit();
+    }
+    //上传头像
+    if($_FILES) {
         $upload = new upload("file" , "face");
         $upload->uploadFace();
         header("local:index.php");
-    }else{
-        showHeader("Index");
-        if ($_REQUEST['keyword']) {
-            showSearch();
-        } else {
-            showHome();
-        }
-        showFooter();
-        exit;
+    }
+    //注销
+    if($_REQUEST['page']=='signout') {
+        userLogout();
     }
 }else{
 //未登录
@@ -50,11 +51,9 @@ if(!checkUserSignIn()) {
         showFooter();
         exit;
     }
-    showHeader("Index");
-    if($_REQUEST['keyword']){
-        showSearch();
-    }else{
-        showHome();
-    }
-    showFooter();
 }
+//首页
+showHeader("Home");
+showHome();
+showFooter();
+exit();
