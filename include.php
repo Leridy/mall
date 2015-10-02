@@ -15,4 +15,5 @@ require_once 'user.func.php';
 require_once 'lib/page.func.php';
 require_once 'lib/upload.class.php';
 require_once 'lib/upload.func.php';
+require_once 'lib/product.class.php';
 connect();

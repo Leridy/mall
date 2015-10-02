@@ -12,24 +12,30 @@ CREATE TABLE admin(
 INSERT INTO mall.admin (id, username, password, email) VALUES ('1', 'admin', '202cb962ac59075b964b07152d234b70', 'a@b.cc'),('2', 'test', '202cb962ac59075b964b07152d234b70', 'a@b.cc');
 
 -- 创建商品表
-DROP TABLE IF EXISTS products;
-CREATE TABLE products (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  name varchar(255) NOT NULL,
-  sn varchar(50) NOT NULL,
-  num int(10) unsigned DEFAULT '1',
-  mPrice decimal(10,2) NOT NULL,
-  iPrice decimal(10,2) NOT NULL,
-  desciption text,
-  pubTime int(10) unsigned NOT NULL,
-  isShow tinyint(1) DEFAULT '1',
-  isHot tinyint(1) DEFAULT '0',
-  cId smallint(5) unsigned NOT NULL,
-  PRIMARY KEY (id)
-) ;
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `productName` varchar(255) NOT NULL,
+  `brand` varchar(50) DEFAULT NULL,
+  `sn` varchar(50) NOT NULL,
+  `num` smallint(5) unsigned NOT NULL,
+  `fillPrice` decimal(10,2) unsigned NOT NULL,
+  `nowPrice` decimal(10,2) unsigned NOT NULL,
+  `description` mediumtext,
+  `publishTime` int(10) DEFAULT NULL,
+  `isShow` tinyint(4) NOT NULL DEFAULT '1',
+  `isHot` tinyint(4) NOT NULL DEFAULT '0',
+  `unitType` smallint(6) NOT NULL DEFAULT '10',
+  `weight` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `sizeLong` smallint(6) NOT NULL DEFAULT '0',
+  `sizeWidth` smallint(6) NOT NULL DEFAULT '0',
+  `sizeHeight` smallint(6) NOT NULL DEFAULT '0',
+  `sizeUnit` varchar(20) NOT NULL DEFAULT 'cm',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1001 ;
 
 -- 添加商品
-INSERT INTO mall.products VALUES ('1','product name','0000011111','10','100.00','50.00','product description','2015-09-22 16:02:35','1','1','1');
+INSERT INTO `products` (`id`, `productName`, `brand`, `sn`, `num`, `fillPrice`, `nowPrice`, `description`, `publishTime`, `isShow`, `isHot`, `unitType`, `weight`, `sizeLong`, `sizeWidth`, `sizeHeight`, `sizeUnit`) VALUES
+  (1004, 'xxx', 'brand', 'sb110', 999, '1.00', '1.00', 'description', 0, 1, 0, 10, 0, 0, 0, 0, 'cm');
 
 -- 创建用户表
 DROP TABLE IF EXISTS user;
