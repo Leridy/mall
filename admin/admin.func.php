@@ -15,7 +15,7 @@ function checkAdmin($sql){
  * 检测是否有管理员登陆.
  * @return bool
  */
-function checkLogined(){
+function checkAdminLogined(){
 	if($_SESSION['adminId']==""&&$_COOKIE['adminId']==""){
 		return true;
 	}else{

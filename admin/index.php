@@ -3,7 +3,7 @@
  * 后台首页文件
  */
 require_once '../include.php';
-if(checkLogined()) {
+if(checkAdminLogined()) {
 	//重定向浏览器
 	header("Location: login.php");
 	//确保重定向后，后续代码不会被执行
