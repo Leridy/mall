@@ -1,5 +1,12 @@
 <?php
+/**
+ * 页面文件
+ */
 
+/**
+ * 显示头部页面
+ * @param string
+ */
 function showHeader($title){
     if(checkUserSignIn()){
         $hide1="hide";
@@ -46,7 +53,7 @@ function showHeader($title){
             <!-- 用户信息 -->
             <li class="userinfo_item <?php echo $hide2; ?>" id="signin"><a href="index.php?page=signin" title="Sign In"><i class="fa fa-user"></i> Sign In</a></li>
             <!-- 无登陆情况下 登陆按钮 通过hide类控制显示-->
-            <li class="userinfo_item <?php echo $hide2; ?>" id="signup"><a href="index.php?page=signup" title="Sign In"><i class="fa fa-sign-in"></i> Sign Up</a></li>
+            <li class="userinfo_item <?php echo $hide2; ?>" id="signup"><a href="index.php?page=signup" title="Sign Up"><i class="fa fa-sign-in"></i> Sign Up</a></li>
             <!-- 无登陆情况下 注册按钮 通过hide类控制显示-->
             <li class="userinfo_item <?php echo $hide1; ?>" id="face"><img src="getFace.php" alt="Userhead" id="logo"></li>
             <!-- 用户头像 -->
@@ -98,6 +105,10 @@ function showHeader($title){
     <!-- 导航完结 -->
 <?php
 }
+
+/**
+ * 显示登陆页面
+ */
 function showSignIn(){
 ?>
     <div class="login_box">
@@ -117,6 +128,10 @@ function showSignIn(){
 		</div>
 <?php
 }
+
+/**
+ * 显示底部页面
+ */
 function showFooter(){
 ?>
     </div>
@@ -198,7 +213,11 @@ function showFooter(){
 </html>
 <?php
 }
-function showRegister(){
+
+/**
+ * 显示注册页面
+ */
+function showSignUp(){
 ?>
     <div class="login_box">
         <h1>Register</h1>
@@ -226,11 +245,20 @@ function showRegister(){
 
 <?php
 }
+
+/**
+ * 打开文件
+ * @param $filename
+ */
 function page($filename){
     $handle  =  fopen ( $filename ,  "r" );
     echo $contents  =  fread ( $handle ,  filesize ( $filename ));
     fclose ( $handle );
 }
+
+/**
+ * 显示首页主体
+ */
 function showHome(){
 ?>
     <div class="container">
@@ -371,6 +399,10 @@ function showHome(){
     <!-- 四号 展示栏完结 -->
 <?php
 }
+
+/**
+ * 显示搜索页面
+ */
 function showSearch(){
 ?>
     <div class="breadcrumbs container">
@@ -597,6 +629,10 @@ function showSearch(){
     <!-- 分页部分完结 -->
 <?php
 }
+
+/**
+ * 显示用户个人中心页面
+ */
 function showUserHome(){
 ?>
     <form  action="index.php" method="post" enctype="multipart/form-data">

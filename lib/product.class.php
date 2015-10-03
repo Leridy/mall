@@ -18,12 +18,35 @@ class product
     protected $sizeWidth;   //宽
     protected $sizeHeight;  //高
     protected $sizeUnit;    //尺寸单位
+    protected $caseId;
 
-    //构造函数
+    /**
+     * 构造函数
+     * @param string $ProductName
+     * @param string $brand
+     * @param string $sn
+     * @param int $num
+     * @param int $fillPrice
+     * @param int $nowPrice
+     * @param string $description
+     * @param int $publishTime
+     * @param int $isShow
+     * @param int $isHot
+     * @param int $unitType
+     * @param int $weight
+     * @param int $sizeLong
+     * @param int $sizeWidth
+     * @param int $sizeHeight
+     * @param string $sizeUnit
+     * @param int $caseId
+     */
     function __construct($ProductName=null, $brand=null, $sn=null, $num=999, $fillPrice=1, $nowPrice=1, $description="description",
                          $publishTime=0, $isShow=1, $isHot=0, $unitType=10, $weight=0, $sizeLong=0, $sizeWidth=0, $sizeHeight=0,
-                         $sizeUnit="cm"){
-        $this->productName = $ProductName;
+                         $sizeUnit="cm", $caseId=1){
+        $this->setProduct($ProductName, $brand, $sn, $num, $fillPrice, $nowPrice, $description,
+            $publishTime, $isShow, $isHot, $unitType, $weight, $sizeLong, $sizeWidth, $sizeHeight,
+            $sizeUnit, $caseId);
+        /*$this->productName = $ProductName;
         $this->brand       = $brand;
         $this->sn          = $sn;
         $this->num         = $num;
@@ -39,12 +62,32 @@ class product
         $this->sizeWidth   = $sizeWidth;
         $this->sizeHeight  = $sizeHeight;
         $this->sizeUnit    = $sizeUnit;
+        $this->caseId      = $caseId;*/
     }
 
-    //设置产品对象属性
+    /**
+     * 设置产品对象属性
+     * @param string $ProductName
+     * @param string $brand
+     * @param string $sn
+     * @param int $num
+     * @param int $fillPrice
+     * @param int $nowPrice
+     * @param string $description
+     * @param int $publishTime
+     * @param int $isShow
+     * @param int $isHot
+     * @param int $unitType
+     * @param int $weight
+     * @param int $sizeLong
+     * @param int $sizeWidth
+     * @param int $sizeHeight
+     * @param string $sizeUnit
+     * @param int $caseId
+     */
     public function setProduct($ProductName=null, $brand=null, $sn=null, $num=999, $fillPrice=1, $nowPrice=1, $description="description",
                                $publishTime=0, $isShow=1, $isHot=0, $unitType=10, $weight=0, $sizeLong=0, $sizeWidth=0, $sizeHeight=0,
-                               $sizeUnit="cm"){
+                               $sizeUnit="cm", $caseId=1){
         $this->productName = $ProductName;
         $this->brand       = $brand;
         $this->sn          = $sn;
@@ -61,9 +104,12 @@ class product
         $this->sizeWidth   = $sizeWidth;
         $this->sizeHeight  = $sizeHeight;
         $this->sizeUnit    = $sizeUnit;
+        $this->caseId      = $caseId;
     }
 
-    //从数据库获取产品属性到对象
+    /**
+     * 从数据库获取产品属性到对象
+     */
     public function getProductFromDatabase(){
         $data = $this->getProductArrayFromDatabase();
         foreach($data as $key=>$value){
@@ -71,7 +117,9 @@ class product
         }
     }
 
-    //跳过对象直接返回产品属性数组
+    /**
+     * 跳过对象直接返回产品属性数组
+     */
     public function getProductArrayFromDatabase(){
         $this->getIdByProductName();
         $sql = "SELECT * FROM products WHERE id = ".$this->id;
@@ -79,28 +127,34 @@ class product
         return $data;
     }
 
-    //从对象插入产品属性到数据库
+    /**
+     * 从对象插入产品属性到数据库
+     */
     public function insertProduct(){
         $sql = "INSERT INTO mall.products (
 productName, brand, sn, num, fillPrice, nowPrice, description,
 publishTime, isShow, isHot, unitType, weight, sizeLong,
-sizeWidth, sizeHeight, sizeUnit
+sizeWidth, sizeHeight, sizeUnit, caseId
 ) VALUES (
 '{$this->productName}', '{$this->brand}', '{$this->sn}', '{$this->num}', '{$this->fillPrice}', '{$this->nowPrice}', '{$this->description}',
 '{$this->publishTime}', '{$this->isShow}', '{$this->isHot}', '{$this->unitType}', '{$this->weight}', '{$this->sizeLong}',
-'{$this->sizeWidth}', '{$this->sizeHeight}', '{$this->sizeUnit}'
+'{$this->sizeWidth}', '{$this->sizeHeight}', '{$this->sizeUnit}', '{$this->caseId}'
 );";
         fetchOne($sql);
     }
 
-    //从对象更新数据库
+    /**
+     * 从对象更新数据库
+     */
     public function updateProduct(){
         $this->getIdByProductName();
         $sql = "UPDATE products SET brand = '".$this->brand."' WHERE products.id = {$this->id};";
         fetchOne($sql);
     }
 
-    //删除该对象对应的数据库信息
+    /**
+     * 删除该对象对应的数据库信息
+     */
     public function deleteProduct(){
         $this->getIdByProductName();
         $sql = "DELETE FROM products WHERE products.id = ".$this->id;
@@ -117,7 +171,9 @@ sizeWidth, sizeHeight, sizeUnit
         return 1;
     }
 
-    //通过产品名获取产品id
+    /**
+     * 通过产品名获取产品id
+     */
     public function getIdByProductName(){
         if ($this->id == 0){
             $sql = "SELECT id FROM products WHERE products.productName = '".$this->productName."'";
@@ -126,7 +182,10 @@ sizeWidth, sizeHeight, sizeUnit
         }
     }
 
-    //设置对象的产品id
+    /**
+     * 设置对象的产品id
+     * @param int $id
+     */
     public function setId($id){
         $this->id = $id;
     }
