@@ -77,12 +77,34 @@
 		content: "\f106";
 	}
 }
+// 底部说明文字样式
+.sub_info{
+		vertical-align: baseline;
+		color: #999;
+		font-size: 12px;
+		}
 // page_body类样式设置
+
 .page_body{
 	margin-top: 2px;
 	color:black;
 	background-color:#f9f9f9;
 	padding-bottom: 30px;
+}
+// 面包屑导航样式
+.breadcrumbs{
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	a{
+		&:after{
+			content: "\f105";
+			margin: 0px 5px;
+		}
+		&:last-child:after{
+			display:none;
+		}
+	}
 }
 
 // 全局边距清零
@@ -98,6 +120,10 @@ a{
 }
 a:hover{
 	color:@theme_color;
+}
+// 标题标签初始化
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
 }
 //页面主体样式
 html,body{
@@ -628,20 +654,7 @@ footer{
 
 /************************************************* 首页展示页面样式完结 搜索结果页开始 ************************************/
 
-.breadcrumbs{
-	height: 40px;
-	line-height: 40px;
-	font-size: 14px;
-	a{
-		&:after{
-			content: "\f105";
-			margin: 0px 5px;
-		}
-		&:last-child:after{
-			display:none;
-		}
-	}
-}
+
 
 
 .filter_box{
@@ -820,3 +833,167 @@ footer{
 
 }
 
+/* ***********************************商品详情页样式************************************************ */
+
+.detail_page{
+	background-color:#fff;
+	padding-top: 20px;
+	.clearfix;
+	.product_info{
+		width: 100%;
+		height: 586px;
+		&_img{
+			float: left;
+			width:40%;
+			height:500px;
+			background-size:cover;
+			background-position:center;
+			border: 1px solid #f0f0f0;
+			box-shadow: 0px 5px 20px #f0f0f0;
+		}
+		&_name{
+			width: 50%;
+			display:block;
+			float: left;
+			font-size: 18px;
+			margin-left: 15px;
+			padding-left: 15px;
+		}
+		&_order{
+			float: left;
+			width: 50%;
+			margin-left: 15px;
+			padding-left: 15px;
+			padding-bottom: 15px;
+			border-bottom: 1px solid #f0f0f0;
+			.order_num{
+				cursor: pointer;
+				font-size: 18px;
+				&:hover{
+					color: @theme_color;
+				}
+			}
+		}
+		&_price{
+			width: 50%;
+			display: block;
+			padding-top: 20px;
+			float: left;
+			margin-left: 15px;
+			dt{
+				float: left;
+				width: 75px;
+				padding: 0 10px 0 15px;
+				line-height: 13px;
+				color: #999;
+			}
+			dd{
+				line-height: 13px;
+				color: @theme_color;
+				margin-left: 100px;
+				span{
+					font-size: 20px;
+					font-weight:bold;
+				}
+				.price_count{
+					color: #999;
+    				font-weight: normal;
+    				font-size: 8px;
+				}
+
+			}
+		}
+		&_order_option{
+			width: 50%;
+			background-color: #f0f0f0;
+			float: left;
+			font-size: 12px;
+			margin-left: 15px;
+			padding-left: 15px;
+			.sub_info{
+				margin-left: 75px;
+				margin-bottom: 10px;
+				}
+			#buy_now_form{
+				padding-top: 15px;
+				label{
+				float: left;
+				width: 75px;
+				line-height: 13px;
+				color: #999;
+				}
+				.shipping_cost{
+					font-weight: bold;
+					font-size: 18px;
+					line-height: 13px;
+					.shipping_to{
+						font-weight: normal;
+					}
+				}
+				.shipping_link{
+					font-size: 18px;
+					line-height: 13px;
+					&:after{
+						content: " \f150";
+						color: #999;
+						margin-left: 10px;
+					}
+
+				}
+				#product_info_quantity{
+					    height: 14px;
+    					padding: 5px 4px;
+    					font-family: inherit;
+    					font-weight: 400;
+    					font-size: 12px;
+    					line-height: 14px;
+    					color: #333;
+    					background-color: #fff;
+    					border: 1px solid #ccc;
+    					-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    					-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    					box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    					&+.sub_info{
+    						display: block;
+    					}
+				}
+				.product_info_total_price,.unit{
+					font-weight: bold;
+					font-size: 18px;
+					line-height: 13px;
+				}
+				.btn{
+					text-align: center;
+					float: left;
+					font-size: 20px;
+					width: 150px;
+					height: 45px;
+					line-height: 45px;
+					margin-top: 30px;
+					margin-bottom: 30px;
+					margin-left: 75px;
+					background-color:@theme_color;
+					font-weight:bold;
+					color: #fff;
+					border-radius:5px; 
+					.transition(background-color;0.3s);
+					&:hover{
+						background-color:orange;
+						
+					}
+				}
+				.buy_now{
+					&:before{
+						content: "\f0a6"
+					}
+				}
+				.add_to_cart{
+					background-color: #F96C6C;
+					&:before{
+						content: "\f217";
+					}
+				}
+			}
+		}
+	}
+}
