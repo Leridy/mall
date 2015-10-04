@@ -17,7 +17,7 @@ if(isset($_REQUEST['keyword'])){
 }
 $page=isset($_REQUEST['page'])?$_REQUEST['page']:null;
 //已登录用户
-if(!checkUserSignIn()) {
+if(checkUserSignIn()){
     //个人中心
     if($page=='home'){
         showHeader("My Home");
@@ -26,13 +26,13 @@ if(!checkUserSignIn()) {
         exit();
     }
     //上传头像
-    if($_FILES) {
+    if($_FILES){
         $upload = new upload("file" , "face");
         $upload->uploadFace();
         header("local:index.php");
     }
     //注销
-    if($page=='signout') {
+    if($page=='signout'){
         userLogout();
     }
 }else{

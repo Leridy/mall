@@ -9,11 +9,11 @@
  */
 function showHeader($title){
     if(checkUserSignIn()){
-        $hide1="hide";
-        $hide2="";
-    }else{
         $hide1="";
         $hide2="hide";
+    }else{
+        $hide1="hide";
+        $hide2="";
     }
 ?>
 <!DOCTYPE html>
@@ -55,7 +55,7 @@ function showHeader($title){
             <!-- 无登陆情况下 登陆按钮 通过hide类控制显示-->
             <li class="userinfo_item <?php echo $hide2; ?>" id="signup"><a href="index.php?page=signup" title="Sign Up"><i class="fa fa-sign-in"></i> Sign Up</a></li>
             <!-- 无登陆情况下 注册按钮 通过hide类控制显示-->
-            <li class="userinfo_item <?php echo $hide1; ?>" id="face"><img src="getFace.php" alt="Userhead" id="logo"></li>
+            <li class="userinfo_item <?php echo $hide1; ?>" id="face"><img src="<?php getFace(); ?>" alt="Userhead" id="logo"></li>
             <!-- 用户头像 -->
             <li class="userinfo_item <?php echo $hide1; ?>" id="username">
                 <a href="index.php?page=home" id="name" title="<?php echo "{$_SESSION['userName']}"; ?>">

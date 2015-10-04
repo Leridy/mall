@@ -55,18 +55,10 @@ function verifyImage($type=1,$length=4,$pixel=1,$line=1,$session_name = "verify"
  * 获取头像
  */
 function getFace(){
-    header ( "content-type:image/png" );
-    if($_SESSION['userId']){
+    if(isset($_SESSION['userId'])){
+        //header ( "content-type:image/png" );
         $sql="select face from user where id=".$_SESSION['userId'];
         $url=fetchOne($sql);
-        $url=$url['face'];
-        $ext=explode('.', $url);
-        $ext=strtolower(end($ext));
-        $ext=$ext=="jpg"?"jpeg":$ext;
-        $imagecreatefrom="imagecreatefrom".$ext;
-        $image="image".$ext;
-        $img=$imagecreatefrom($url);
-        $image($img);
-        imagedestroy($img);
+        echo $url=$url['face'];
     }
 }
