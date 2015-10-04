@@ -14,9 +14,9 @@ function checkUser($sql){
  */
 function checkUserSignIn(){
     if(!isset($_SESSION['userId'])&&!isset($_COOKIE['userId'])){
-        return true;
-    }else{
         return false;
+    }else{
+        return true;
     }
 }
 
