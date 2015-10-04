@@ -2,16 +2,15 @@
 /**
  * 登录验证文件
  */
-require_once './include.php';
-$username=$_POST['username'];
-$username=addslashes($username);
+require_once 'include.php';
+$username=addslashes($_POST['username']);
 $password=md5($_POST['password']);
 $verify=$_POST['verify'];
 $verify1=$_SESSION['verify'];
-$autoFlag=$_POST['autoFlag'];
+$autoFlag=isset($_POST['autoFlag'])?$_POST['autoFlag']:null;
 if($verify==$verify1){
 	$sql="select * from ".DB_DBNAME.".user where username='{$username}' and password='{$password}'";
-	echo $row=checkUser($sql);
+	$row=checkUser($sql);
 	if($row){
 		//如果选了一周内自动登陆
 		if($autoFlag){

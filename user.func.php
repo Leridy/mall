@@ -13,7 +13,7 @@ function checkUser($sql){
  * @return bool
  */
 function checkUserSignIn(){
-    if($_SESSION['userId']==""&&$_COOKIE['userId']==""){
+    if(!isset($_SESSION['userId'])&&!isset($_COOKIE['userId'])){
         return true;
     }else{
         return false;

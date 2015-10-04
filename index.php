@@ -9,16 +9,17 @@ $GLOBALS['brand']="Brand";
 
 
 //搜索
-if($_REQUEST['keyword']){
+if(isset($_REQUEST['keyword'])){
     showHeader($_REQUEST['keyword']);
     showSearch();
     showFooter();
     exit;
 }
+$page=isset($_REQUEST['page'])?$_REQUEST['page']:null;
 //已登录用户
 if(!checkUserSignIn()) {
     //个人中心
-    if($_REQUEST['page']=='home'){
+    if($page=='home'){
         showHeader("My Home");
         showUserHome();
         showFooter();
@@ -31,13 +32,13 @@ if(!checkUserSignIn()) {
         header("local:index.php");
     }
     //注销
-    if($_REQUEST['page']=='signout') {
+    if($page=='signout') {
         userLogout();
     }
 }else{
 //未登录
     //登录
-    if($_REQUEST['page']=='signin'){
+    if($page=='signin'){
         //echo 'userLogin()';
         showHeader("Sign In");
         showSignIn();
@@ -45,9 +46,9 @@ if(!checkUserSignIn()) {
         exit;
     }
     //注册
-    if($_REQUEST['page']=='signup'){
+    if($page=='signup'){
         showHeader("Sign Up");
-        showRegister();
+        showSignUp();
         showFooter();
         exit;
     }

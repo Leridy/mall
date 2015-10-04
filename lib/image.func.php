@@ -60,7 +60,8 @@ function getFace(){
         $sql="select face from user where id=".$_SESSION['userId'];
         $url=fetchOne($sql);
         $url=$url['face'];
-        $ext=strtolower(end(explode('.', $url)));
+        $ext=explode('.', $url);
+        $ext=strtolower(end($ext));
         $ext=$ext=="jpg"?"jpeg":$ext;
         $imagecreatefrom="imagecreatefrom".$ext;
         $image="image".$ext;

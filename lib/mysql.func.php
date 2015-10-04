@@ -6,12 +6,10 @@
 
 /**
  * 连接数据库
- * @return array
+ * @return mysqli
  */
 function connect(){
-    $link=mysql_connect(DB_HOST,DB_USER,DB_PWD) or die("数据库连接失败Error:".mysql_errno().":".mysql_error());
-    mysql_set_charset(DB_CHARSET);
-    mysql_select_db(DB_DBNAME) or die("指定数据库打开失败");
+    $link=mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_DBNAME) or die("数据库连接失败Error:".mysqli_errno($link).":".mysqli_error($link));
     return $link;
 }
 
@@ -72,13 +70,15 @@ function delete($table,$where=null){
 
 /**
  *得到指定一条记录
+ * @param mysqli $link
  * @param string $sql
  * @param int $result_type
  * @return string:
  */
 function fetchOne($sql,$result_type=MYSQL_ASSOC){
-    $result=mysql_query($sql);
-    $row=mysql_fetch_array($result,$result_type);
+    $link=connect();
+    $result=mysqli_query($link,$sql);
+    $row=mysqli_fetch_array($result,$result_type);
     return $row;
 }
 
