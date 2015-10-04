@@ -82,6 +82,7 @@
 		vertical-align: baseline;
 		color: #999;
 		font-size: 12px;
+		margin-bottom: 10px;
 		}
 // page_body类样式设置
 
@@ -836,6 +837,23 @@ footer{
 /* ***********************************商品详情页样式************************************************ */
 
 .detail_page{
+	dl{
+		display: block;
+		padding-top: 20px;
+		float: left;
+		margin-left: 15px;
+	}
+	dt{
+		float: left;
+		width: 75px;
+		padding: 0 10px 0 15px;
+		line-height: 13px;
+		color: #999;
+		}
+	dd{
+		line-height: 13px;
+		margin-left: 100px;
+		}
 	background-color:#fff;
 	padding-top: 20px;
 	.clearfix;
@@ -858,6 +876,7 @@ footer{
 			font-size: 18px;
 			margin-left: 15px;
 			padding-left: 15px;
+			margin-top: 0px;
 		}
 		&_order{
 			float: left;
@@ -876,21 +895,8 @@ footer{
 		}
 		&_price{
 			width: 50%;
-			display: block;
-			padding-top: 20px;
-			float: left;
-			margin-left: 15px;
-			dt{
-				float: left;
-				width: 75px;
-				padding: 0 10px 0 15px;
-				line-height: 13px;
-				color: #999;
-			}
 			dd{
-				line-height: 13px;
 				color: @theme_color;
-				margin-left: 100px;
 				span{
 					font-size: 20px;
 					font-weight:bold;
@@ -912,7 +918,6 @@ footer{
 			padding-left: 15px;
 			.sub_info{
 				margin-left: 75px;
-				margin-bottom: 10px;
 				}
 			#buy_now_form{
 				padding-top: 15px;
@@ -969,8 +974,8 @@ footer{
 					width: 150px;
 					height: 45px;
 					line-height: 45px;
-					margin-top: 30px;
-					margin-bottom: 30px;
+					margin-top: 10px;
+					margin-bottom: 15px;
 					margin-left: 75px;
 					background-color:@theme_color;
 					font-weight:bold;
@@ -993,7 +998,101 @@ footer{
 						content: "\f217";
 					}
 				}
+				.add_to_wish_list{
+					margin-left: 75px;
+					display: block;
+					width: 50%;
+					float: left;
+					margin-bottom: 10px;
+				}
+				.add_to_wish_list_link{
+					color: #999;
+
+					&:hover{
+						color: @theme_color;
+					}
+					&::before{
+						content: "\f004 ";
+					}
+					&::after{
+						content: "  \f107"
+					}
+					&+.sub_info{
+						margin-left: 10px;
+					}
+
+				}
+			}
+		}
+		#seller_promise_list{
+		width: 50%;
+		float: left;
+		font-size: 12px;
+			.return_policy_info{
+				line-height: 15px;
+				&::before{
+					font-size: 15px;
+					content: "\f274  ";
+					color: #78AAD6;
+				}
+				.view_return_policy{
+					&::after{
+						content: "  \f0da";
+						color: #999;
+						line-height: 15px;
+					}
+				}
+			}
+			.seller_guarantees_info{
+				line-height: 15px;
+				&::before{
+					font-size: 18px;
+					content: "\f017  ";
+					color: #78AAD6;
+				}
+			}
+		}
+		.buyer_banner{
+			width: 50%;
+			margin-right:107px;
+			margin-top: 15px;
+			float: right;
+			padding: 20px 4px;
+			background-color: #f0f0f0;
+			i{
+				float: left;
+				color: #407AAA;
+				font-size: 60px;
+				margin-left: 15px;
+			}
+			.buyer_protection{
+				display: block;
+				font-size: 25px;
+				color: #407AAA;
+				font-weight: bold;
+				margin-left: 80px;
+				line-height: 25px;
+			}
+			.buyer_protection_info{
+				display: inline-block;
+				margin-left: 20px;
+				font-size: 12px;
+				width: 42.6%;
+				&::before{
+					content: "\f046  "
+				}
+			}
+			.view_buyer_protection{
+				float: right;
+				line-height: 20px;
+				margin-right:30px;
+				font-size: 12px;
+				&::after{
+					content: " \f0da";
+					color:#999;
+				}
 			}
 		}
 	}
 }
+/* 商品信息部分样式完结 */
