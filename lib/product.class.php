@@ -18,7 +18,7 @@ class product
     protected $sizeWidth;   //宽
     protected $sizeHeight;  //高
     protected $sizeUnit;    //尺寸单位
-    protected $caseId;
+    protected $caseId;      //该产品所属的分类
 
     /**
      * 构造函数
@@ -119,6 +119,7 @@ class product
 
     /**
      * 跳过对象直接返回产品属性数组
+     * @return array
      */
     public function getProductArrayFromDatabase(){
         $this->getIdByProductName();
@@ -173,13 +174,23 @@ sizeWidth, sizeHeight, sizeUnit, caseId
 
     /**
      * 通过产品名获取产品id
+     * @return int
      */
-    public function getIdByProductName(){
+    protected function getIdByProductName(){
         if ($this->id == 0){
             $sql = "SELECT id FROM products WHERE products.productName = '".$this->productName."'";
             $id = fetchOne($sql);
             $this->id = $id['id'];
         }
+        return $this->id;
+    }
+
+    /**
+     * 获取产品id
+     * @return int
+     */
+    public function getId(){
+        return $this->id?$this->id:$this->getIdByProductName();
     }
 
     /**
