@@ -641,3 +641,112 @@ function showUserHome(){
     </form>
 <?php
 }
+
+/**
+ * 显示产品页面
+ * @param int $id
+ */
+function showProduct($id){
+    $sql="SELECT * FROM products WHERE id = '".$id."'";
+    $row=fetchOne($sql);
+    showHeader($row['productName']);
+?>
+<div class="breadcrumbs container">
+    <a href="index.php" title="Home">Home</a>
+    <a href="#" title="All Result">All Result</a>
+    <a href="#" title="Printers">Printers</a>
+    <a href="#" title=" Pick up roller separation pad"> <?php echo $row['productName'] ?></a>
+</div>
+<!-- 面包屑导航完结 下面为商品详情部分-->
+<div class="detail_page container-inside">
+        <div class="product_info">
+            <div class="product_info_img" style="background-image:URL(./images/printer.jpg)"></div>
+            <h1 class="product_info_name"><?php echo $row['productName'] ?></h1>
+            <!-- 商品名 -->
+            <div class="product_info_order">
+					<span class="order_num">
+						<strong>2</strong>
+						orders</span>
+            </div>
+            <!-- 商品订购信息 -->
+            <dl class="product_info_price">
+                <dt>Price:</dt>
+                <dd>
+                    <div class="current_price">
+                        <span class="unit">US$</span>
+                        <!-- 价格单位 -->
+                        <span class="price"><?php echo $row['nowPrice'] ?></span>
+                        <!-- 单件价格 -->
+                        <span class="price_count">/lot</span>
+                        <!-- 数量单位 -->
+                        <div class="sub_info"><?php echo $row['unitType'] ?> pieces/lot,US$ <?php echo $row['nowPrice']/$row['unitType'] ?> /piece</div>
+                        <!-- 数量单位描述 -->
+                    </div>
+                </dd>
+            </dl>
+            <!-- 商品价格信息 -->
+            <div class="product_info_order_option">
+                <form action="" method="post" id="buy_now_form">
+                    <label for="shipping">Shipping: </label>
+                    <input type="text" class="hide country" name="country" value="">
+                    <!-- 由JavaScript填入获取填入国家 默认隐藏-->
+                    <input type="text" class="hide company" name="company" value="">
+                    <!-- 由JavaScript填入获取填入快递公司 默认隐藏 -->
+						<span class="shipping_cost">
+							<span class="shipping_cost">Free Shipping</span>
+							<span class="shipping_to">to</span>
+						</span>
+                    <a href="#" class="shipping_link">
+                        <span class="shipping_country">United States</span>
+                        <!-- 由JavaScript填入获取填入快递国家 -->
+                        <span class="shipping_via">via</span>
+                        <span class="shipping_company">ePacket</span>
+                        <!-- 由JavaScript填入获取填入快递公司 -->
+                    </a>
+                    <div class="sub_info">Delivery: <span class="shipping_days">5-15</span> days (ships out within 6 business days)</div>
+                    <!-- 邮递设置 -->
+                    <label for="quantity:">Quantity: </label>
+                    <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off"><span class="sub_info"> lot (<?php echo $row['num'] ?> lots available)</span>
+                    <!-- 订单中物品数量 -->
+                    <label for="TotalPrice">Total Price: </label>
+                    <span class="unit">US$</span>
+                    <span class="product_info_total_price"><?php echo $row['nowPrice'] ?></span>
+                    <div class="sub_info">Depends on the product properties you select and shipping fee</div>
+                    <!-- 订单总价 -->
+                    <a href="#" class="btn btn-small buy_now" > Buy Now</a> <a href="#" class="btn btn-small add_to_cart"> Add to Cart</a>
+                    <!-- 立即购买和加入购物车按钮 -->
+                    <div class="add_to_wish_list">
+                        <a href="#" class="add_to_wish_list_link"> Add to Wish List</a><span class="sub_info"><strong class="wish_list_num">0</strong> adds</span>
+                    </div>
+                    <!-- 添加到心愿单 -->
+                </form>
+                <!-- 商品订购表单 -->
+            </div>
+            <!-- 订购信息表单完结 -->
+            <div id="seller_promise_list">
+                <dl class="return_policy">
+                    <dt>Return Policy:</dt>
+                    <dd>
+                        <div class="return_policy_info">Returns accepted if product not as described, buyer pays return shipping fee; or keep the product & agree refund with seller. <a href="#" class="view_return_policy">View details </a></div>
+                    </dd>
+                </dl>
+                <dl class="seller_guarantees">
+                    <dt>Seller Guarantees:</dt>
+                    <dd>
+                        <div class="seller_guarantees_info">On-time Delivery <br/>27 days</div>
+                    </dd>
+                </dl>
+            </div>
+            <!-- 商家承诺和保证完结，保持静态输出 -->
+            <div class="buyer_banner">
+                <i class="fa fa-shield"></i>
+                <span class="buyer_protection">Buyer Protection</span>
+                <span class="buyer_protection_info"> Full Refund if you don't receive your order </span><span class="buyer_protection_info"> Refund or Keep items not as described</span>
+                <a href="#" class="view_buyer_protection">Learn More </a>
+            </div>
+        </div>
+        <!-- 商品信息完结 -->
+
+    </div>
+<?php
+ }

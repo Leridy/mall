@@ -4,9 +4,14 @@
  */
 require_once './include.php';
 
-$GLOBALS['brand']="Brand";
+$GLOBALS['brand']="IDEAL PRINTER PARTS";
 
-
+if(isset($_REQUEST['productId'])){
+    //showHeader($_REQUEST['productId']);
+    showProduct($_REQUEST['productId']);
+    showFooter();
+    exit();
+}
 
 //搜索
 if(isset($_REQUEST['keyword'])){
