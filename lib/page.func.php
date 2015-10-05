@@ -648,20 +648,22 @@ function showUserHome(){
  */
 function showProduct($id){
     $sql="SELECT * FROM products WHERE id = '".$id."'";
-    $row=fetchOne($sql);
-    showHeader($row['productName']);
+    $data=fetchOne($sql);
+    showHeader($data['productName']);
+    $cate=new category();
+    $cate->setId($data['categoryId']);
+    $category=$cate->getCategoryName();
 ?>
 <div class="breadcrumbs container">
     <a href="index.php" title="Home">Home</a>
-    <a href="#" title="All Result">All Result</a>
-    <a href="#" title="Printers">Printers</a>
-    <a href="#" title=" Pick up roller separation pad"> <?php echo $row['productName'] ?></a>
+    <a href="index.php?categoryId=<?php echo $data['categoryId']; ?>" title="<?php echo $category; ?>"><?php echo $category; ?></a>
+    <a href="#" title=" Pick up roller separation pad"> <?php echo $data['productName'] ?></a>
 </div>
 <!-- 面包屑导航完结 下面为商品详情部分-->
 <div class="detail_page container-inside">
         <div class="product_info">
             <div class="product_info_img" style="background-image:URL(./images/printer.jpg)"></div>
-            <h1 class="product_info_name"><?php echo $row['productName'] ?></h1>
+            <h1 class="product_info_name"><?php echo $data['productName'] ?></h1>
             <!-- 商品名 -->
             <div class="product_info_order">
 					<span class="order_num">
@@ -675,11 +677,11 @@ function showProduct($id){
                     <div class="current_price">
                         <span class="unit">US$</span>
                         <!-- 价格单位 -->
-                        <span class="price"><?php echo $row['nowPrice'] ?></span>
+                        <span class="price"><?php echo $data['nowPrice'] ?></span>
                         <!-- 单件价格 -->
                         <span class="price_count">/lot</span>
                         <!-- 数量单位 -->
-                        <div class="sub_info"><?php echo $row['unitType'] ?> pieces/lot,US$ <?php echo $row['nowPrice']/$row['unitType'] ?> /piece</div>
+                        <div class="sub_info"><?php echo $data['unitType'] ?> pieces/lot,US$ <?php echo $data['nowPrice']/$data['unitType'] ?> /piece</div>
                         <!-- 数量单位描述 -->
                     </div>
                 </dd>
@@ -706,11 +708,11 @@ function showProduct($id){
                     <div class="sub_info">Delivery: <span class="shipping_days">5-15</span> days (ships out within 6 business days)</div>
                     <!-- 邮递设置 -->
                     <label for="quantity:">Quantity: </label>
-                    <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off"><span class="sub_info"> lot (<?php echo $row['num'] ?> lots available)</span>
+                    <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off"><span class="sub_info"> lot (<?php echo $data['num'] ?> lots available)</span>
                     <!-- 订单中物品数量 -->
                     <label for="TotalPrice">Total Price: </label>
                     <span class="unit">US$</span>
-                    <span class="product_info_total_price"><?php echo $row['nowPrice'] ?></span>
+                    <span class="product_info_total_price"><?php echo $data['nowPrice'] ?></span>
                     <div class="sub_info">Depends on the product properties you select and shipping fee</div>
                     <!-- 订单总价 -->
                     <a href="#" class="btn btn-small buy_now" > Buy Now</a> <a href="#" class="btn btn-small add_to_cart"> Add to Cart</a>

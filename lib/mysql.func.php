@@ -74,13 +74,12 @@ function delete($table,$where=null){
  * 得到指定一条记录
  * @param string $sql
  * @param int $result_type
- * @return array|null
+ * @return array
  */
 function fetchOne($sql,$result_type=MYSQL_ASSOC){
     $link=connect();
     $result=mysqli_query($link,$sql);
-    $row=mysqli_fetch_array($result,$result_type);
-    return $row;
+    return $result==false? array():mysqli_fetch_array($result,$result_type);
 }
 
 
