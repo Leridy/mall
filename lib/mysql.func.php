@@ -23,10 +23,11 @@ function insert($table,$array){
     $keys=join(",",array_keys($array));
     $vals="'".join("','",array_values($array))."'";
     $sql="insert {$table}($keys) values({$vals})";
-    mysql_query($sql);
-    return mysql_insert_id();
+    $link=connect();
+    mysqli_query($link,$sql);
+    return mysqli_insert_id($link);
 }
-//update imooc_admin set username='king' where id=1
+
 /**
  * 记录的更新操作
  * @param string $table
@@ -64,16 +65,16 @@ function update($table,$array,$where=null){
 function delete($table,$where=null){
     $where=$where==null?null:" where ".$where;
     $sql="delete from {$table} {$where}";
-    mysql_query($sql);
-    return mysql_affected_rows();
+    $link = connect();
+    mysqli_query($link, $sql);
+    return mysqli_affected_rows($link);
 }
 
 /**
- *得到指定一条记录
- * @param mysqli $link
+ * 得到指定一条记录
  * @param string $sql
  * @param int $result_type
- * @return string:
+ * @return array|null
  */
 function fetchOne($sql,$result_type=MYSQL_ASSOC){
     $link=connect();
@@ -90,9 +91,10 @@ function fetchOne($sql,$result_type=MYSQL_ASSOC){
  * @return array:
  */
 function fetchAll($sql,$result_type=MYSQL_ASSOC){
-    $result=mysql_query($sql);
+    $link=connect();
+    $result=mysqli_query($link, $sql);
     $rows[]=array();
-    while(@$row=mysql_fetch_array($result,$result_type)){
+    while(@$row=mysqli_fetch_array($result,$result_type)){
         $rows[]=$row;
     }
     return $rows;
@@ -104,7 +106,8 @@ function fetchAll($sql,$result_type=MYSQL_ASSOC){
  * @return number
  */
 function getResultNum($sql){
-    $result=mysql_query($sql);
+    $link=connect();
+    $result=mysqli_query($link, $sql);
     return mysql_num_rows($result);
 }
 
@@ -113,6 +116,7 @@ function getResultNum($sql){
  * @return number
  */
 function getInsertId(){
-    return mysql_insert_id();
+    $link=connect();
+    return mysqli_insert_id($link);
 }
 
