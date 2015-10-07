@@ -8,7 +8,7 @@ if(checkAdminLogined()) {
 	header("Location: login.php");
 	//确保重定向后，后续代码不会被执行
 	exit;
-}elseif($_REQUEST["logout"]){
+}elseif(isset($_REQUEST["logout"])){
 	require_once '../include.php';
 	logout();
 }

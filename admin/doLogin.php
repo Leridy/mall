@@ -8,7 +8,7 @@ $username=addslashes($username);
 $password=md5($_POST['password']);
 $verify=$_POST['verify'];
 $verify1=$_SESSION['verify'];
-$autoFlag=$_POST['autoFlag'];
+if(isset($_POST['autoFlag']))$autoFlag=$_POST['autoFlag'];
 if($verify==$verify1){
 	$sql="select * from admin where username='{$username}' and password='{$password}'";
 	$row=checkAdmin($sql);
