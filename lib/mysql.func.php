@@ -93,9 +93,10 @@ function fetchAll($sql,$result_type=MYSQL_ASSOC){
     $link=connect();
     $result=mysqli_query($link, $sql);
     $rows[]=array();
-    while(@$row=mysqli_fetch_array($result,$result_type)){
+    while($row=mysqli_fetch_array($result,$result_type)){
         $rows[]=$row;
     }
+    array_shift($rows);
     return $rows;
 }
 
