@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * Class product
+ */
 class product
 {
     protected $data=array(
@@ -26,7 +30,7 @@ class product
      * 构造函数
      * @param array $data
      */
-    function __construct($data){
+    function __construct($data=null){
         $this->setProduct($data);
     }
 
@@ -35,6 +39,7 @@ class product
      * @param array $data
      */
     public function setProduct($data){
+        if($data!=null)
         foreach($data as $key => $value){
             if(array_key_exists($key,$this->data)){
                 $this->data[$key] = $data[$key];
@@ -57,6 +62,12 @@ class product
         $this->getIdByProductName();
         $sql = "SELECT * FROM products WHERE id = ".$this->id;
         $data = fetchOne($sql);
+        return $data;
+    }
+
+    public function getAllProductArrayFromDatebase(){
+        $sql="SELECT * FROM products";
+        $data=fetchAll($sql);
         return $data;
     }
 
