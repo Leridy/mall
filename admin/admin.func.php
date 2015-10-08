@@ -38,5 +38,5 @@ function logout(){
 		setcookie("adminName","",time()-1);
 	}
 	session_destroy();
-	header("location:login.html");
+	header("location:index.php");
 }
