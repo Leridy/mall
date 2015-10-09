@@ -1189,13 +1189,58 @@ footer{
   		-ms-backface-visibility: hidden;
   		backface-visibility: hidden;
 	}
-	.detail_info_item{
-		
+	.detail_info_item{	
 		width:25%;
 		background-color: #fff;
 		position: relative;
 		float: left;
+		.info_box{
+			margin: 5px 10px;
+			h2{
+				height: 30px;
+				line-height: 30px;
+				font-weight: bold;
+				font-size:18px;
+				display: block;
+				width:200px;
+				background-color: @theme_color;
+				color: #fff;
+				text-align: center;
+			}
+			.infos{
+				border: 1px dashed #c0c0c0;
+				padding: 20px 0px;
+				.info_message{
+					margin-left: 50px;
+					line-height: 20px;
+				}
+				img{
+					width: 500px;
+					height: 400px;
+					margin-left: 50px;
+					margin-top: 20px;
+					.transition(all;0.4s;ease-out;0.4s);
+					&:hover{
+						box-shadow:0px 10px 40px #999;
+						transform: scale(1.1,1.1);
 
-		
+					}
+				}
+				dl{
+					padding-top: 5px;
+					dt{
+						margin-left: 150px;
+						float: left;
+						text-align: right;
+						width: 160px;
+						color: #999;
+					}
+					dd{
+						margin-left:  270px;
+						text-indent: 15px;
+					}
+				}
+			}
+		}
 	}
 }
