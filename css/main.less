@@ -1100,7 +1100,6 @@ footer{
 	.clearfix();
 	overflow: hidden;
 	padding-top: 15px;
-	padding-bottom: 30px;
 	position: relative;
 	height: auto;
 	.clearfix();
@@ -1145,6 +1144,7 @@ footer{
 	}
 
 	#nav_tab_item_1:checked ~ #detail_viewport{
+		.transition(all;0.2s;ease-out);
 		-webkit-transform: translateX(0%);
     	-moz-transform:translateX(0%) ;
     	-o-transform: translateX(0%);
@@ -1152,6 +1152,7 @@ footer{
     	transform: translateX(0%);
 	}
 	#nav_tab_item_2:checked ~ #detail_viewport{
+		.transition(all;0.2s;ease-out);
 		-webkit-transform: translateX(-25%);
     	-moz-transform:translateX(-25%) ;
     	-o-transform: translateX(-25%);
@@ -1160,6 +1161,7 @@ footer{
 	}
 
 	#nav_tab_item_3:checked ~ #detail_viewport{
+		.transition(all;0.2s;ease-out);
 		-webkit-transform: translateX(-50%);
     	-moz-transform:translateX(-50%) ;
     	-o-transform: translateX(-50%);
@@ -1167,6 +1169,7 @@ footer{
     	transform: translateX(-50%);
 	}
 	#nav_tab_item_4:checked ~ #detail_viewport{
+		.transition(all;0.2s;ease-out);
 		-webkit-transform: translateX(-75%);
     	-moz-transform:translateX(-75%) ;
     	-o-transform: translateX(-75%);
@@ -1174,24 +1177,25 @@ footer{
     	transform: translateX(-75%);
 	}
 	#detail_viewport{
-		background-color: #fff;
+		.clearfix();
+		box-shadow:0px 0px 20px #e0e0e0;
 		margin-top: 22px;
 		border-top: 2px solid @theme_color;
     	width: 400%;
-  		height: 450px;
+  		height:auto;
   		position: relative;
   		-webkit-backface-visibility: hidden;
   		-moz-backface-visibility: hidden;
   		-ms-backface-visibility: hidden;
   		backface-visibility: hidden;
 	}
-	.detail_info{
-		width: 400%;
-		height:auto;
-		&_item{
+	.detail_info_item{
+		
 		width:25%;
+		background-color: #fff;
 		position: relative;
 		float: left;
-		}
+
+		
 	}
 }
