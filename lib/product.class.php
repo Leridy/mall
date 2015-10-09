@@ -7,7 +7,7 @@ class product
 {
     protected $data=array(
         "id"            =>null,           //产品id
-        "ProductName"   =>null,           //名称
+        "productName"   =>null,           //名称
         "brand"         =>null,           //品牌
         "sn"            =>null,           //编号
         "num"           =>999,            //库存

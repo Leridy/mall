@@ -649,21 +649,42 @@ function showUserHome(){
 function showProduct($id){
     $sql="SELECT * FROM products WHERE id = '".$id."'";
     $data=fetchOne($sql);
-    showHeader($data['productName']);
+    $id=$data['id'];
+    $productName=$data['productName'];
+    $brand=$data['brand'];
+    $sn=$data['sn'];
+    $num=$data['num'];
+    $fillPrice=$data['fillPrice'];
+    $nowPrice=$data['nowPrice'];
+    $description=$data['description'];
+    $publishTime=$data['publishTime'];
+    $isShow=$data['isShow'];
+    $isHot=$data['isHot'];
+    $unitType=$data['unitType'];
+    $weight=$data['weight'];
+    $sizeLong=$data['sizeLong'];
+    $sizeWidth=$data['sizeWidth'];
+    $sizeHeight=$data['sizeHeight'];
+    $sizeUnit=$data['sizeUnit'];
+    $categoryId=$data['categoryId'];
+
+    showHeader($productName);
     $cate=new category();
-    $cate->setId($data['categoryId']);
+    $cate->setId($categoryId);
     $category=$cate->getCategoryName();
+    print_r($data);
 ?>
-<div class="breadcrumbs container">
-    <a href="index.php" title="Home">Home</a>
-    <a href="index.php?categoryId=<?php echo $data['categoryId']; ?>" title="<?php echo $category; ?>"><?php echo $category; ?></a>
-    <a href="#" title=" Pick up roller separation pad"> <?php echo $data['productName'] ?></a>
-</div>
-<!-- 面包屑导航完结 下面为商品详情部分-->
-<div class="detail_page container-inside">
+    <div class="breadcrumbs container">
+        <a href="#" title="Home">Home</a>
+        <a href="#" title="Printers">Printers</a>
+        <a href="#" title="<?php echo $category; ?>"><?php echo $category; ?></a>
+        <a href="#" title=" <?php echo $productName; ?>"> <?php echo $productName; ?></a>
+    </div>
+    <!-- 面包屑导航完结 下面为商品详情部分-->
+    <div class="detail_page container-inside">
         <div class="product_info">
             <div class="product_info_img" style="background-image:URL(./images/printer.jpg)"></div>
-            <h1 class="product_info_name"><?php echo $data['productName'] ?></h1>
+            <h1 class="product_info_name"><?php echo $productName ?></h1>
             <!-- 商品名 -->
             <div class="product_info_order">
 					<span class="order_num">
@@ -677,11 +698,11 @@ function showProduct($id){
                     <div class="current_price">
                         <span class="unit">US$</span>
                         <!-- 价格单位 -->
-                        <span class="price"><?php echo $data['nowPrice'] ?></span>
+                        <span class="price"><?php echo $nowPrice; ?></span>
                         <!-- 单件价格 -->
                         <span class="price_count">/lot</span>
                         <!-- 数量单位 -->
-                        <div class="sub_info"><?php echo $data['unitType'] ?> pieces/lot,US$ <?php echo $data['nowPrice']/$data['unitType'] ?> /piece</div>
+                        <div class="sub_info"><?php echo $unitType; ?> pieces/lot,US$ <?php echo $fillPrice/$unitType; ?> /piece</div>
                         <!-- 数量单位描述 -->
                     </div>
                 </dd>
@@ -708,11 +729,11 @@ function showProduct($id){
                     <div class="sub_info">Delivery: <span class="shipping_days">5-15</span> days (ships out within 6 business days)</div>
                     <!-- 邮递设置 -->
                     <label for="quantity:">Quantity: </label>
-                    <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off"><span class="sub_info"> lot (<?php echo $data['num'] ?> lots available)</span>
+                    <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="<?php echo $num; ?>" maxlength="5" autocomplete="off" placeholder=""><span class="sub_info"> lot (<?php echo $num; ?> lots available)</span>
                     <!-- 订单中物品数量 -->
                     <label for="TotalPrice">Total Price: </label>
                     <span class="unit">US$</span>
-                    <span class="product_info_total_price"><?php echo $data['nowPrice'] ?></span>
+                    <span class="product_info_total_price"><?php echo $nowPrice; ?></span>
                     <div class="sub_info">Depends on the product properties you select and shipping fee</div>
                     <!-- 订单总价 -->
                     <a href="#" class="btn btn-small buy_now" > Buy Now</a> <a href="#" class="btn btn-small add_to_cart"> Add to Cart</a>
@@ -748,7 +769,80 @@ function showProduct($id){
             </div>
         </div>
         <!-- 商品信息完结 -->
+    </div>
+    <!-- 商品页上部分完成 -->
+    <div class="detail_extend_main container">
+        <div class="detail_nav_tab">
+            <input type="radio" name="nav_tab" id="nav_tab_item_1" class="nav_tab_item" checked>
+            <a href="#" class="nav_tab_link" id="nav_tab_link_1">Product Details</a>
+            <input type="radio" name="nav_tab" id="nav_tab_item_2" class="nav_tab_item">
+            <a href="#" class="nav_tab_link" id="nav_tab_link_2">Feedback</a>
+            <input type="radio" name="nav_tab" id="nav_tab_item_3" class="nav_tab_item">
+            <a href="#" class="nav_tab_link" id="nav_tab_link_3">Shipping and Payment</a>
+            <input type="radio" name="nav_tab" id="nav_tab_item_4" class="nav_tab_item">
+            <a href="#" class="nav_tab_link" id="nav_tab_link_4">Seller Guarantees</a>
+            <div id="detail_viewport">
+                <div id="detail_info">
+                    <div class="detail_info_item" id="detail_info_1">
+                        <div class="info_box">
+                            <h2>Item Specifics</h2>
+                            <div class="infos">
+                                <dl>
+                                    <dt>Brand Name:</dt>
+                                    <dd><?php echo $brand ?></dd>
+                                </dl>
+                                <dl>
+                                    <dt>Model Number:</dt>
+                                    <dd><?php echo $sn ?></dd>
+                                </dl>
+                                <dl>
+                                    <dt>Type:</dt>
+                                    <dd>other</dd>
+                                </dl>
+                                <dl>
+                                    <dt>is_customized:</dt>
+                                    <dd>Yes</dd>
+                                </dl>
 
+                            </div>
+                        </div>
+                        <div class="info_box">
+                            <h2>Product Description</h2>
+                            <div class="infos">
+                                <p><?php echo $description; ?></p>
+                            </div>
+                        </div>
+                        <div class="info_box">
+                            <h2>Packaging Details</h2>
+                            <div class="infos">
+                                <dl>
+                                    <dt>Unit Type:</dt>
+                                    <dd>lot (<?php echo $unitType ?> pieces/lot)</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Package Weight:</dt>
+                                    <dd><?php echo $weight ?>kg (<?php echo number_format($weight*2.20462262,2,'.','') ?>lb.)</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Package Size:</dt>
+                                    <dd><?php echo $sizeLong."cm x ".$sizeWidth."cm x ".$sizeHeight."cm (". number_format(0.393700788*$sizeLong,2,'.','')."in x ". number_format(0.393700788*$sizeWidth,2,'.','')."in x ". number_format(0.393700788*$sizeHeight,2,'.','')."in)"; ?></dd>
+                                </dl>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail_info_item" id="detail_info_2">
+                        Feedback
+                    </div>
+                    <div class="detail_info_item" id="detail_info_3">
+                        Shipping and Payment
+                    </div>
+                    <div class="detail_info_item" id="detail_info_4">
+                        Seller Guarantees
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 <?php
- }
+}
