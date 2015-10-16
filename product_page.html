@@ -1,391 +1,390 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-	<meta charset="UTF-8"> 
-	<!-- 设置文本编码 -->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!-- 设置浏览器对最新和html5属性的支持 -->
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-	<!-- 检测显示器窗口大小 禁止浏览器初始缩放-->
-	<meta name="keywords" content="">
-	<!-- 设置网站关键字关键字 -->
-	<meta name="description" content="">
-	<!-- 网站描述 -->
-	<link rel="stylesheet" href="css/main.css">
-	<!-- 主css接入 -->
-	<link rel="stylesheet" href="css/normalize.css">
-	<!-- 网页标签初始化css接入 -->
-	<!-- <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.css"> -->
-	<link rel="stylesheet" href="css/font-awesome-4.4.0/css/font-awesome.min.css">
-	<!-- font-awesome接入 -->
-	<title>Product_PAGE -XXmail</title>
-	<!-- 网站标题 -->
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
+    <meta charset="UTF-8">
+    <!-- 设置文本编码 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 设置浏览器对最新和html5属性的支持 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 检测显示器窗口大小 禁止浏览器初始缩放-->
+    <meta name="keywords" content="">
+    <!-- 设置网站关键字关键字 -->
+    <meta name="description" content="">
+    <!-- 网站描述 -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- 主css接入 -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- 网页标签初始化css接入 -->
+    <!-- <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.css"> -->
+    <link rel="stylesheet" href="css/font-awesome-4.4.0/css/font-awesome.min.css">
+    <!-- font-awesome接入 -->
+    <title>Product_PAGE -XXmail</title>
+    <!-- 网站标题 -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
 	  <script src="js/html5shiv.min.js"></script>
 	<![endif]-->
 </head>
+
 <body>
-	<div class="site_top ">
-		 <div class="site_top_left">
-		    <a class="welcome" href="#"><i class="fa fa-home"></i> Welcome to XX shop</a>
-		 </div>
-		 <!-- 顶部栏左侧 -->
-		 <div class="site_top_right">
-		 	<ul class="userinfo">
-				<!-- 用户信息 -->
-				<li class="userinfo_item hide"><a href="#" title="login"><i class="fa fa-user"></i> Login</a></li>
-				<!-- 无登陆情况下 登陆按钮 通过hide类控制显示-->
-				<li class="userinfo_item hide"><a href="#" title="login"><i class="fa fa-sign-in"></i> Join Us</a></li>
-				<!-- 无登陆情况下 注册按钮 通过hide类控制显示-->
-		 		<li class="userinfo_item "><img src="images/logo.png" alt="Userhead" id="logo"></li>
-		 		<!-- 用户头像 -->
-		 		<li class="userinfo_item "><a href="#" id="name" title="Leridy">Leridy</a></li>
-		 		<!-- 用户名 -->
-		 		<li class="userinfo_item "><a href="#" title="shopping cart"><i class="fa fa-shopping-cart"></i><span class="cart-num">1000</span> Cart</a></li>
-		 		<!-- 购物车 -->
-		 		<li class="userinfo_item "><a href="#" title="sign out"><i class="fa fa-sign-out"></i> Exit</a></li>
-		 		<!-- 退出 -->
-		 	</ul>
-		 </div>
-		 <!-- 顶部栏右侧 -->
-	</div>
-	<!-- 顶栏完结 -->
-	<div class="page_body">
-		<nav class="nav container-inside">
-			<div class="nav_logo"><a href="#" title="HOME PAGE"> </a></div>
-			<!-- 导航栏logo/标志 -->
-				<ul class="nav_list">
-					<li class="nav_list_item"> <a href="#">Home</a></li>
-					<li class="nav_list_item aChild"> <a href="#">Products</a>
-					<!-- aChild 控制 相关显示属性  -->
-						<ul class="nav_list_child">
-							<li class="child_item"><a href="#">Prints</a></li>
-							<li class="child_item"><a href="#">Prints Parts</a></li>
-							<li class="child_item"><a href="#">Prints Parts</a></li>
-							<li class="child_item"><a href="#">Prints Parts</a></li>
-							<li class="child_item"><a href="#">Prints Parts</a></li>
-						</ul>
-						<!-- 子菜单列表 -->
-					</li>
-					<li class="nav_list_item"> <a href="#">Sell Items</a></li>
-					<li class="nav_list_item"> <a href="#">Top Selling</a></li>
-					<li class="nav_list_item"> <a href="#">New Arrivals</a></li>
-					
-				</ul>
-	  			<!-- 导航栏选项 -->
-	  			<div class="nav_search">
-        			<form id="searchForm" class="" action="" method="get">
-            			<label for="search" class="hide">站内搜索</label>
-            			<input class="nav_search_input" type="search" id="search" name="keyword" autocomplete="off" placeholder="Search...">
-            			<button type="submit"> <i class="fa fa-search"></i></button>
-            		</form>
-	  			</div>
-	  			<!-- 导航栏搜索框 -->
-		</nav>
-		<!-- 导航完结 页面内容在下-->
-		<div class="breadcrumbs container">
-			<a href="#" title="Home">Home</a>
-			<a href="#" title="All Result">All Result</a>
-			<a href="#" title="Printers">Printers</a>
-			<a href="#" title=" Pick up roller separation pad"> Pick up roller separation pad</a>
-		</div>
-		<!-- 面包屑导航完结 下面为商品详情部分-->
-		<div class="detail_page container-inside">
-			<div class="product_info">
-			<div class="product_info_img" style="background-image:URL(./images/printer.jpg)"></div>
-				<h1 class="product_info_name">free shipping RM1-6397-000 Separation Pad Assembly-Tray2 for LaserJet P2035 P2055 5pcs/lot laser printer part</h1>
-				<!-- 商品名 -->
-				<div class="product_info_order">
-					<span class="order_num">
+    <div class="site_top ">
+        <div class="site_top_left">
+            <a class="welcome" href="#"><i class="fa fa-home"></i> Welcome to XX shop</a>
+        </div>
+        <!-- 顶部栏左侧 -->
+        <div class="site_top_right">
+            <ul class="userinfo">
+                <!-- 用户信息 -->
+                <li class="userinfo_item hide"><a href="#" title="login"><i class="fa fa-user"></i> Login</a></li>
+                <!-- 无登陆情况下 登陆按钮 通过hide类控制显示-->
+                <li class="userinfo_item hide"><a href="#" title="login"><i class="fa fa-sign-in"></i> Join Us</a></li>
+                <!-- 无登陆情况下 注册按钮 通过hide类控制显示-->
+                <li class="userinfo_item "><img src="images/logo.png" alt="Userhead" id="logo"></li>
+                <!-- 用户头像 -->
+                <li class="userinfo_item "><a href="#" id="name" title="Leridy">Leridy</a></li>
+                <!-- 用户名 -->
+                <li class="userinfo_item "><a href="#" title="shopping cart"><i class="fa fa-shopping-cart"></i><span class="cart-num">1000</span> Cart</a></li>
+                <!-- 购物车 -->
+                <li class="userinfo_item "><a href="#" title="sign out"><i class="fa fa-sign-out"></i> Exit</a></li>
+                <!-- 退出 -->
+            </ul>
+        </div>
+        <!-- 顶部栏右侧 -->
+    </div>
+    <!-- 顶栏完结 -->
+    <div class="page_body">
+        <nav class="nav container-inside">
+            <div class="nav_logo">
+                <a href="#" title="HOME PAGE"> </a>
+            </div>
+            <!-- 导航栏logo/标志 -->
+            <ul class="nav_list">
+                <li class="nav_list_item"> <a href="#">Home</a></li>
+                <li class="nav_list_item aChild"> <a href="#">Products</a>
+                    <!-- aChild 控制 相关显示属性  -->
+                    <ul class="nav_list_child">
+                        <li class="child_item"><a href="#">Prints</a></li>
+                        <li class="child_item"><a href="#">Prints Parts</a></li>
+                        <li class="child_item"><a href="#">Prints Parts</a></li>
+                        <li class="child_item"><a href="#">Prints Parts</a></li>
+                        <li class="child_item"><a href="#">Prints Parts</a></li>
+                    </ul>
+                    <!-- 子菜单列表 -->
+                </li>
+                <li class="nav_list_item"> <a href="#">Sell Items</a></li>
+                <li class="nav_list_item"> <a href="#">Top Selling</a></li>
+                <li class="nav_list_item"> <a href="#">New Arrivals</a></li>
+            </ul>
+            <!-- 导航栏选项 -->
+            <div class="nav_search">
+                <form id="searchForm" class="" action="" method="get">
+                    <label for="search" class="hide">站内搜索</label>
+                    <input class="nav_search_input" type="search" id="search" name="keyword" autocomplete="off" placeholder="Search...">
+                    <button type="submit"> <i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <!-- 导航栏搜索框 -->
+        </nav>
+        <!-- 导航完结 页面内容在下-->
+        <div class="breadcrumbs container">
+            <a href="#" title="Home">Home</a>
+            <a href="#" title="All Result">All Result</a>
+            <a href="#" title="Printers">Printers</a>
+            <a href="#" title=" Pick up roller separation pad"> Pick up roller separation pad</a>
+        </div>
+        <!-- 面包屑导航完结 下面为商品详情部分-->
+        <div class="detail_page container-inside">
+            <div class="product_info">
+                <div class="product_info_img" style="background-image:URL(./images/printer.jpg)"></div>
+                <h1 class="product_info_name">free shipping RM1-6397-000 Separation Pad Assembly-Tray2 for LaserJet P2035 P2055 5pcs/lot laser printer part</h1>
+                <!-- 商品名 -->
+                <div class="product_info_order">
+                    <span class="order_num">
 						<strong>2</strong> 
-						orders</span> 
-				</div>
-				<!-- 商品订购信息 -->
-				<dl class="product_info_price">
-					<dt>Price:</dt>
-					<dd>
-						<div class="current_price">
-							<span class="unit">US$</span>
-							<!-- 价格单位 -->
-							<span class="price">12.00</span>
-							<!-- 单件价格 -->
-							<span class="price_count">/lot</span>
-							<!-- 数量单位 -->
-							<div class="sub_info">5 pieces/lot,US$ 2.40 /piece</div>
-							<!-- 数量单位描述 -->
-						</div>
-					</dd>
-				</dl>
-				<!-- 商品价格信息 -->
-				<div class="product_info_order_option">
-					<form action="" method="post" id="buy_now_form">
-						<label for="shipping">Shipping: </label>
-						<input type="text" class="hide country" name="country" value="">
-						<!-- 由JavaScript填入获取填入国家 默认隐藏-->
-						<input type="text" class="hide company" name="company" value="">
-						<!-- 由JavaScript填入获取填入快递公司 默认隐藏 -->
-						<span class="shipping_cost">
+						orders</span>
+                </div>
+                <!-- 商品订购信息 -->
+                <dl class="product_info_price">
+                    <dt>Price:</dt>
+                    <dd>
+                        <div class="current_price">
+                            <span class="unit">US$</span>
+                            <!-- 价格单位 -->
+                            <span class="price">12.00</span>
+                            <!-- 单件价格 -->
+                            <span class="price_count">/lot</span>
+                            <!-- 数量单位 -->
+                            <div class="sub_info">5 pieces/lot,US$ 2.40 /piece</div>
+                            <!-- 数量单位描述 -->
+                        </div>
+                    </dd>
+                </dl>
+                <!-- 商品价格信息 -->
+                <div class="product_info_order_option">
+                    <form action="" method="post" id="buy_now_form">
+                        <label for="shipping">Shipping: </label>
+                        <input type="text" class="hide country" name="country" value="">
+                        <!-- 由JavaScript填入获取填入国家 默认隐藏-->
+                        <input type="text" class="hide company" name="company" value="">
+                        <!-- 由JavaScript填入获取填入快递公司 默认隐藏 -->
+                        <span class="shipping_cost">
 							<span class="shipping_cost">Free Shipping</span>
-							<span class="shipping_to">to</span>
-						</span>
-						<a href="#" class="shipping_link">
-							<span class="shipping_country">United States</span>
-							<!-- 由JavaScript填入获取填入快递国家 -->
-							<span class="shipping_via">via</span>
-							<span class="shipping_company">ePacket</span>
-							<!-- 由JavaScript填入获取填入快递公司 -->
-						</a>
-						<div class="sub_info">Delivery: <span class="shipping_days">5-15</span> days (ships out within 6 business days)</div>
-						<!-- 邮递设置 -->
-						<label for="quantity:">Quantity: </label>
-						<input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off"><span class="sub_info"> lot (998 lots available)</span>
-						<!-- 订单中物品数量 -->
-						<label for="TotalPrice">Total Price: </label>
-						<span class="unit">US$</span>
-						<span class="product_info_total_price">12.00</span>
-						<div class="sub_info">Depends on the product properties you select and shipping fee</div>
-						<!-- 订单总价 -->
-						<a href="#" class="btn btn-small buy_now" > Buy Now</a> <a href="#" class="btn btn-small add_to_cart"> Add to Cart</a>
-						<!-- 立即购买和加入购物车按钮 -->
-						<div class="add_to_wish_list">
-							<a href="#" class="add_to_wish_list_link"> Add to Wish List</a><span class="sub_info"><strong class="wish_list_num">0</strong> adds</span>
-						</div>
-						<!-- 添加到心愿单 -->
-					</form>	
-					<!-- 商品订购表单 -->
-				</div>
-				<!-- 订购信息表单完结 -->
-				<div id="seller_promise_list">
-					<dl class="return_policy">
-						<dt>Return Policy:</dt>
-						<dd>
-							<div class="return_policy_info">Returns accepted if product not as described, buyer pays return shipping fee; or keep the product & agree refund with seller. <a href="#" class="view_return_policy">View details </a></div>
-						</dd>
-					</dl>
-					<dl class="seller_guarantees">
-						<dt>Seller Guarantees:</dt>
-						<dd>
-							<div class="seller_guarantees_info">On-time Delivery <br/>27 days</div>
-						</dd>
-					</dl>
-				</div>
-				<!-- 商家承诺和保证完结，保持静态输出 -->
-				<div class="buyer_banner">
-					<i class="fa fa-shield"></i>
-					<span class="buyer_protection">Buyer Protection</span>
-					<span class="buyer_protection_info"> Full Refund if you don't receive your order </span><span class="buyer_protection_info"> Refund or Keep items not as described</span>
-					<a href="#" class="view_buyer_protection">Learn More </a>
-				</div>
-			</div>
-			<!-- 商品信息完结 -->
-		</div>
-		<!-- 商品页上部分完成 -->
-		<div class="detail_extend_main container">
-			<div class="detail_nav_tab">
-			    <input type="radio" name="nav_tab"id="nav_tab_item_1" class="nav_tab_item" checked>
-			    <a href="#" class="nav_tab_link" id="nav_tab_link_1">Product Details</a>
-			    <input type="radio" name="nav_tab"id="nav_tab_item_2" class="nav_tab_item">
-			    <a href="#" class="nav_tab_link" id="nav_tab_link_2">Feedback(11)</a>
-			    <input type="radio" name="nav_tab"id="nav_tab_item_3" class="nav_tab_item">
-			    <a href="#" class="nav_tab_link" id="nav_tab_link_3">Shipping and Payment</a>
-			    <input type="radio" name="nav_tab"id="nav_tab_item_4" class="nav_tab_item">
-			    <a href="#" class="nav_tab_link" id="nav_tab_link_4">Seller Guarantees</a>
-			 	<div id="detail_viewport">
-			    	<div id="detail_info">
-			    		<div class="detail_info_item item_specifics_tab" id="detail_info_1">
-			    			<div class="info_box">
-			    				<h2>Item Specifics</h2>
-			    				<div class="infos">
-			    					<dl>
-			    						<dt>Brand Name:</dt>
-			    						<dd>RM1-6397</dd>
-			    					</dl>
-			    					<dl>
-			    						<dt>Model Number:</dt>
-			    						<dd>RM1-6397-0000</dd>
-			    					</dl>
-			    					<dl>
-			    						<dt>Type:</dt>
-			    						<dd>other</dd>
-			    					</dl>
-			    					<dl>
-			    						<dt>is_customized:</dt>
-			    						<dd>Yes</dd>
-			    					</dl>
-
-			    				</div>
-			    			</div>
-			    			<div class="info_box">
-			    				<h2>Product Description</h2>
-			    				<div class="infos">
-			    				<p class="info_message">Laser jet P2035 Separation pad</p>
-			    				<p class="info_message">Part no: RM1-6397-000</p>
-								<p class="info_message">New Compatible,Good quality </p>
- 
-								<p class="info_message">We can mix order for you, pls leave message to us.</p>
-								<p class="info_message">Thanks
- 
-								Noted: it is new original pictures ,not new compatible.</p>
-								<img src="./images/logo.png" class="product_img">
-			    				</div>
-			    			</div>
-			    			<div class="info_box">
-			    				<h2>Packaging Details</h2>
-			    				<div class="infos">
-			    					<dl>
-			    						<dt>Unit Type:</dt>
-			    						<dd>lot (5 pieces/lot)</dd>
-			    					</dl>
-			    					<dl>
-			    						<dt>Package Weight:</dt>
-			    						<dd>0.300kg (0.66lb.)</dd>
-			    					</dl>
-			    					<dl>
-			    						<dt>Package Size:</dt>
-			    						<dd>15cm x 15cm x 10cm (5.91in x 5.91in x 3.94in)</dd>
-			    					</dl>
-
-			    				</div>
-			    			</div>
-			   		 	</div>
-			   		 	<!-- Item Specifics 标签页面完成 -->
-			    		<div class="detail_info_item feedback_tab" id="detail_info_2">
-			    			<div class="info_box">
-			    				<h2>Feedback Survey </h2>
-			    				<div class="infos">
-			    					<div class="star_rating star">
-			    						<p>Rating Star:</p><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i>
-			    						<p class="sub_info">Note:All information displayed is based on feedback received for this product over the past 6 months.</p>
-			    					</div>
-			    					<div class="rating_product">
-			    						<p >Feedback Rating for This Product:</p>
-			    						<ul class="rating">
-			    							<li class="positive">Positive:<span class="percentage">100%</span><span class="sub_info">(Depends on feedback of 4 and 5 stars )</span></li>
-			    							<li class="Neutral ">Neutral:<span class="percentage">0%</span><span class="sub_info">(Depends on feedback of 3 stars)</span></li>
-			    							<li class="Negative">Negative:<span class="percentage">0%</span><span class="sub_info">(Depends on feedback of 1 and 2 stars)</span></li>
-			    						</ul>
-			    					</div>
-			    				</div>
-			    			</div>
-			    			<div class="info_box">
-			    				<h2>Comments & Feedbacks</h2>
-			    				<div class="infos">
-			    					<ul class="feedbacks">
-			    							<li class="feedback_item">
-			    								<ul class="feedback_item_info">
-			    									<li class="user_logo">User</li>
-			    									<li class="user_name">Name</li>
-			    									<li class="user_country">State</li>
-			    									<li class="user_stars">Stars</li>
-			    									<li class="user_feedback tfix">Feedback</li>
-			    								</ul>
-			    							</li>
-			    							<li class="feedback_item">
-			    								<ul class="feedback_item_info">
-			    									<li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
-			    									<li class="user_name">Leridy</li>
-			    									<li class="user_country">China</li>
-			    									<li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
-			    									<li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
-			    								</ul>
-			    							</li>
-			    							<li class="feedback_item">
-			    								<ul class="feedback_item_info">
-			    									<li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
-			    									<li class="user_name">Leridy</li>
-			    									<li class="user_country">China</li>
-			    									<li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
-			    									<li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
-			    								</ul>
-			    							</li>
-			    							<li class="feedback_item">
-			    								<ul class="feedback_item_info">
-			    									<li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
-			    									<li class="user_name">Leridy</li>
-			    									<li class="user_country">China</li>
-			    									<li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
-			    									<li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
-			    								</ul>
-			    							</li>
-			    							<li class="feedback_item">
-			    								<ul class="feedback_item_info">
-			    									<li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
-			    									<li class="user_name">Leridy</li>
-			    									<li class="user_country">China</li>
-			    									<li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
-			    									<li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
-			    								</ul>
-			    							</li>
-			    							<li class="feedback_item">
-			    								<ul class="feedback_item_info">
-			    									<li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
-			    									<li class="user_name">Leridy</li>
-			    									<li class="user_country">China</li>
-			    									<li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
-			    									<li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
-			    								</ul>
-			    							</li>
-			    							<li class="feedback_item">
-			    								<ul class="feedback_item_info">
-			    									<li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
-			    									<li class="user_name">Leridy</li>
-			    									<li class="user_country">China</li>
-			    									<li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
-			    									<li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
-			    								</ul>
-			    							</li>
-			    							<li class="feedback_item">
-			    								<ul class="feedback_item_info">
-			    									<li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
-			    									<li class="user_name">Leridy</li>
-			    									<li class="user_country">China</li>
-			    									<li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
-			    									<li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
-			    								</ul>
-			    							</li>
-			    							<li class="feedback_item">
-			    								<ul class="feedback_item_info">
-			    									<li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
-			    									<li class="user_name">Leridy</li>
-			    									<li class="user_country">China</li>
-			    									<li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
-			    									<li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
-			    								</ul>
-			    							</li>
-			    							<li class="feedback_item">
-			    								<ul class="feedback_item_info">
-			    									<li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
-			    									<li class="user_name">Leridy</li>
-			    									<li class="user_country">China</li>
-			    									<li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
-			    									<li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
-			    								</ul>
-			    							</li>
-			    							<li class="feedback_item">
-			    								<ul class="feedback_item_info">
-			    									<li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
-			    									<li class="user_name">Leridy</li>
-			    									<li class="user_country">China</li>
-			    									<li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
-			    									<li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
-			    								</ul>
-			    							</li>
-			    					</ul>	
-			    				</div>
-			    			</div>
-			    		</div>
-			    		<div class="detail_info_item" id="detail_info_3">
-			    			
-			    			<div class="info_box">
-			    				<h2>Shipping & Payment</h2>
-			    				<div class="infos">
-			    					<header class="action">
-			    						<div class="inform">Calculate your shipping cost by country/region and quantity.</div>
-			    						<span class="desc">Quantity:</span><input type="number" value="1">
-			    						<span class="desc">  Ship to:</span>
-										<div class="country_select">
-											<h3 class="pagination">Country <i class="fa fa-sort"></i>
+                        <span class="shipping_to">to</span>
+                        </span>
+                        <a href="#" class="shipping_link">
+                            <span class="shipping_country">United States</span>
+                            <!-- 由JavaScript填入获取填入快递国家 -->
+                            <span class="shipping_via">via</span>
+                            <span class="shipping_company">ePacket</span>
+                            <!-- 由JavaScript填入获取填入快递公司 -->
+                        </a>
+                        <div class="sub_info">Delivery: <span class="shipping_days">5-15</span> days (ships out within 6 business days)</div>
+                        <!-- 邮递设置 -->
+                        <label for="quantity:">Quantity: </label>
+                        <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off"><span class="sub_info"> lot (998 lots available)</span>
+                        <!-- 订单中物品数量 -->
+                        <label for="TotalPrice">Total Price: </label>
+                        <span class="unit">US$</span>
+                        <span class="product_info_total_price">12.00</span>
+                        <div class="sub_info">Depends on the product properties you select and shipping fee</div>
+                        <!-- 订单总价 -->
+                        <a href="#" class="btn btn-small buy_now"> Buy Now</a> <a href="#" class="btn btn-small add_to_cart"> Add to Cart</a>
+                        <!-- 立即购买和加入购物车按钮 -->
+                        <div class="add_to_wish_list">
+                            <a href="#" class="add_to_wish_list_link"> Add to Wish List</a><span class="sub_info"><strong class="wish_list_num">0</strong> adds</span>
+                        </div>
+                        <!-- 添加到心愿单 -->
+                    </form>
+                    <!-- 商品订购表单 -->
+                </div>
+                <!-- 订购信息表单完结 -->
+                <div id="seller_promise_list">
+                    <dl class="return_policy">
+                        <dt>Return Policy:</dt>
+                        <dd>
+                            <div class="return_policy_info">Returns accepted if product not as described, buyer pays return shipping fee; or keep the product & agree refund with seller. <a href="#" class="view_return_policy">View details </a></div>
+                        </dd>
+                    </dl>
+                    <dl class="seller_guarantees">
+                        <dt>Seller Guarantees:</dt>
+                        <dd>
+                            <div class="seller_guarantees_info">On-time Delivery
+                                <br/>27 days</div>
+                        </dd>
+                    </dl>
+                </div>
+                <!-- 商家承诺和保证完结，保持静态输出 -->
+                <div class="buyer_banner">
+                    <i class="fa fa-shield"></i>
+                    <span class="buyer_protection">Buyer Protection</span>
+                    <span class="buyer_protection_info"> Full Refund if you don't receive your order </span><span class="buyer_protection_info"> Refund or Keep items not as described</span>
+                    <a href="#" class="view_buyer_protection">Learn More </a>
+                </div>
+            </div>
+            <!-- 商品信息完结 -->
+        </div>
+        <!-- 商品页上部分完成 -->
+        <div class="detail_extend_main container">
+            <div class="detail_nav_tab">
+                <input type="radio" name="nav_tab" id="nav_tab_item_1" class="nav_tab_item" checked>
+                <a href="#" class="nav_tab_link" id="nav_tab_link_1">Product Details</a>
+                <input type="radio" name="nav_tab" id="nav_tab_item_2" class="nav_tab_item">
+                <a href="#" class="nav_tab_link" id="nav_tab_link_2">Feedback(11)</a>
+                <input type="radio" name="nav_tab" id="nav_tab_item_3" class="nav_tab_item">
+                <a href="#" class="nav_tab_link" id="nav_tab_link_3">Shipping and Payment</a>
+                <input type="radio" name="nav_tab" id="nav_tab_item_4" class="nav_tab_item">
+                <a href="#" class="nav_tab_link" id="nav_tab_link_4">Seller Guarantees</a>
+                <div id="detail_viewport">
+                    <div id="detail_info">
+                        <div class="detail_info_item item_specifics_tab" id="detail_info_1">
+                            <div class="info_box">
+                                <h2>Item Specifics</h2>
+                                <div class="infos">
+                                    <dl>
+                                        <dt>Brand Name:</dt>
+                                        <dd>RM1-6397</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Model Number:</dt>
+                                        <dd>RM1-6397-0000</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Type:</dt>
+                                        <dd>other</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>is_customized:</dt>
+                                        <dd>Yes</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="info_box">
+                                <h2>Product Description</h2>
+                                <div class="infos">
+                                    <p class="info_message">Laser jet P2035 Separation pad</p>
+                                    <p class="info_message">Part no: RM1-6397-000</p>
+                                    <p class="info_message">New Compatible,Good quality </p>
+                                    <p class="info_message">We can mix order for you, pls leave message to us.</p>
+                                    <p class="info_message">Thanks Noted: it is new original pictures ,not new compatible.</p>
+                                    <img src="./images/logo.png" class="product_img">
+                                </div>
+                            </div>
+                            <div class="info_box">
+                                <h2>Packaging Details</h2>
+                                <div class="infos">
+                                    <dl>
+                                        <dt>Unit Type:</dt>
+                                        <dd>lot (5 pieces/lot)</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Package Weight:</dt>
+                                        <dd>0.300kg (0.66lb.)</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Package Size:</dt>
+                                        <dd>15cm x 15cm x 10cm (5.91in x 5.91in x 3.94in)</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item Specifics 标签页面完成 -->
+                        <div class="detail_info_item feedback_tab" id="detail_info_2">
+                            <div class="info_box">
+                                <h2>Feedback Survey </h2>
+                                <div class="infos">
+                                    <div class="star_rating star">
+                                        <p>Rating Star:</p><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i>
+                                        <p class="sub_info">Note:All information displayed is based on feedback received for this product over the past 6 months.</p>
+                                    </div>
+                                    <div class="rating_product">
+                                        <p>Feedback Rating for This Product:</p>
+                                        <ul class="rating">
+                                            <li class="positive">Positive:<span class="percentage">100%</span><span class="sub_info">(Depends on feedback of 4 and 5 stars )</span></li>
+                                            <li class="Neutral ">Neutral:<span class="percentage">0%</span><span class="sub_info">(Depends on feedback of 3 stars)</span></li>
+                                            <li class="Negative">Negative:<span class="percentage">0%</span><span class="sub_info">(Depends on feedback of 1 and 2 stars)</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info_box">
+                                <h2>Comments & Feedbacks</h2>
+                                <div class="infos">
+                                    <ul class="feedbacks">
+                                        <li class="feedback_item">
+                                            <ul class="feedback_item_info">
+                                                <li class="user_logo">User</li>
+                                                <li class="user_name">Name</li>
+                                                <li class="user_country">State</li>
+                                                <li class="user_stars">Stars</li>
+                                                <li class="user_feedback tfix">Feedback</li>
+                                            </ul>
+                                        </li>
+                                        <li class="feedback_item">
+                                            <ul class="feedback_item_info">
+                                                <li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
+                                                <li class="user_name">Leridy</li>
+                                                <li class="user_country">China</li>
+                                                <li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
+                                                <li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
+                                            </ul>
+                                        </li>
+                                        <li class="feedback_item">
+                                            <ul class="feedback_item_info">
+                                                <li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
+                                                <li class="user_name">Leridy</li>
+                                                <li class="user_country">China</li>
+                                                <li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
+                                                <li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
+                                            </ul>
+                                        </li>
+                                        <li class="feedback_item">
+                                            <ul class="feedback_item_info">
+                                                <li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
+                                                <li class="user_name">Leridy</li>
+                                                <li class="user_country">China</li>
+                                                <li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
+                                                <li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
+                                            </ul>
+                                        </li>
+                                        <li class="feedback_item">
+                                            <ul class="feedback_item_info">
+                                                <li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
+                                                <li class="user_name">Leridy</li>
+                                                <li class="user_country">China</li>
+                                                <li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
+                                                <li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
+                                            </ul>
+                                        </li>
+                                        <li class="feedback_item">
+                                            <ul class="feedback_item_info">
+                                                <li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
+                                                <li class="user_name">Leridy</li>
+                                                <li class="user_country">China</li>
+                                                <li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
+                                                <li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
+                                            </ul>
+                                        </li>
+                                        <li class="feedback_item">
+                                            <ul class="feedback_item_info">
+                                                <li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
+                                                <li class="user_name">Leridy</li>
+                                                <li class="user_country">China</li>
+                                                <li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
+                                                <li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
+                                            </ul>
+                                        </li>
+                                        <li class="feedback_item">
+                                            <ul class="feedback_item_info">
+                                                <li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
+                                                <li class="user_name">Leridy</li>
+                                                <li class="user_country">China</li>
+                                                <li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
+                                                <li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
+                                            </ul>
+                                        </li>
+                                        <li class="feedback_item">
+                                            <ul class="feedback_item_info">
+                                                <li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
+                                                <li class="user_name">Leridy</li>
+                                                <li class="user_country">China</li>
+                                                <li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
+                                                <li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
+                                            </ul>
+                                        </li>
+                                        <li class="feedback_item">
+                                            <ul class="feedback_item_info">
+                                                <li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
+                                                <li class="user_name">Leridy</li>
+                                                <li class="user_country">China</li>
+                                                <li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
+                                                <li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
+                                            </ul>
+                                        </li>
+                                        <li class="feedback_item">
+                                            <ul class="feedback_item_info">
+                                                <li class="user_logo"><img src="./images/logo.png" alt="username" class="user_head"></li>
+                                                <li class="user_name">Leridy</li>
+                                                <li class="user_country">China</li>
+                                                <li class="star user_stars"><i class="full_star"></i><i class="full_star"></i><i class="full_star"></i><i class="half_star"></i><i class="empty_star"></i></li>
+                                                <li class="user_feedback">This is the best thing had bought from internet This is the best thing had bought from internet</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="detail_info_item" id="detail_info_3">
+                            <div class="info_box">
+                                <h2>Shipping & Payment</h2>
+                                <div class="infos">
+                                    <header class="action">
+                                        <div class="inform">Calculate your shipping cost by country/region and quantity.</div>
+                                        <span class="desc">Quantity:</span>
+                                        <input type="number" value="1">
+                                        <span class="desc">  Ship to:</span>
+                                        <div class="country_select">
+                                            <h3 class="pagination">Country <i class="fa fa-sort"></i>
 												<ul class="select_list">
 													<li class="child_item"><a href="#"><img src="./images/logo.png" alt="flag" class="flag">United States</a></li>
 													<li class="child_item"><a href="#"><img src="./images/logo.png" alt="flag" class="flag">United Kingdom</a></li>
@@ -405,162 +404,197 @@
 													<li class="child_item"><a href="#"><img src="./images/logo.png" alt="flag" class="flag">South Korea</a></li>
 												</ul>
 											</h3>
-										</div>
-			    					</header>
-			    					<!-- shipping 头部选项完结 -->
-			    					<ul class="shipping_list">
-			    						<li class="shipping_list_item tfix">
-			    							<ul class="shipping_list_item_info">
-			    								<li class="company_name tfix">Company</li>
-			    								<li class="shipping_cost tfix">Shipping Cost</li>
-			    								<li class="delivery_time tfix">Estimated Delivery Time</li>
-			    								<li class="processing_time tfix">Processing Time</li>
-			    							</ul>
-			    						</li>
-			    						<li class="shipping_list_item">
-			    							<ul class="shipping_list_item_info">
-			    								<li class="company_name"><img src="./images/logo.png" alt="ePacket" class="company_logo_img">ePacket</li>
-			    								<li class="shipping_cost">Free Shipping</li>
-			    								<li class="delivery_time">5-15 days</li>
-			    								<li class="processing_time">6 days</li>
-			    							</ul>
-			    						</li>			    				
-			    						<li class="shipping_list_item">
-			    							<ul class="shipping_list_item_info">
-			    								<li class="company_name">China Post Registered Air Mail</li>
-			    								<li class="shipping_cost">Free Shipping</li>
-			    								<li class="delivery_time">15-39 days <span class="sub_info">(It may take longer during the holiday seasons.)</span></li>
-			    								<li class="processing_time">Processing Time</li>
-			    							</ul>
-			    						</li>
-			    						<li class="shipping_list_item">
-			    							<ul class="shipping_list_item_info">
-			    								<li class="company_name">China Post Registered Air Mail</li>
-			    								<li class="shipping_cost">Free Shipping</li>
-			    								<li class="delivery_time">15-39 days <span class="sub_info">(It may take longer during the holiday seasons.)</span></li>
-			    								<li class="processing_time">Processing Time</li>
-			    							</ul>
-			    						</li>
-			    						<li class="shipping_list_item">
-			    							<ul class="shipping_list_item_info">
-			    								<li class="company_name">China Post Registered Air Mail</li>
-			    								<li class="shipping_cost">Free Shipping</li>
-			    								<li class="delivery_time">15-39 days <span class="sub_info">(It may take longer during the holiday seasons.)</span></li>
-			    								<li class="processing_time">Processing Time</li>
-			    							</ul>
-			    						</li>
-			    					</ul>
-			    				</div>
-			    			</div>
-			    			<!-- shipping 价格列表 完结 -->
-			    			<div class="info_box packaging_details">
-			    				<h2>Packaging Details</h2>
-			    				<div class="infos">
-			    					<dl>
-			    						<dt>Unit Type:</dt>
-			    						<dd>lot (5 pieces/lot)</dd>
-			    					</dl>
-			    					<dl>
-			    						<dt>Package Weight:</dt>
-			    						<dd>0.300kg (0.66lb.)</dd>
-			    					</dl>
-			    					<dl>
-			    						<dt>Package Size:</dt>
-			    						<dd>15cm x 15cm x 10cm (5.91in x 5.91in x 3.94in)</dd>
-			    					</dl>
-
-			    				</div>
-
-			    			</div>
-			    			<div class="info_box payment">
-			    				<h2>Payment</h2>
-			    				<div class="infos">
-			    					<div class="sub_info">Our Buyer Protection <span class="warn">ONLY</span> protects Payment Methods on AliExpress as below:</div>
-			    					<img src="./images/logo.png" alt="paypal" class="payment_logo">
-			    					<img src="./images/logo.png" alt="paypal" class="payment_logo">
-			    					<img src="./images/logo.png" alt="paypal" class="payment_logo">
-
-			    				</div>
-			    			</div>
-			    		</div>
-			    		<!-- Packaging Details -->
-			    		<div class="detail_info_item" id="detail_info_4">
-			    			Seller Guarantees
-			    		</div>
-			    	</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-	<!-- 页面主题完结 footer在下 -->
-	<footer class="footer " id="footer">
-		<ul class="footer_svc container">
-			<li><i class="fa fa-suitcase"></i> 24 Hours Rapid Delivery</li>
-			<li><i class="fa fa-credit-card"></i> Pay By Credit Card</li>
-			<li><i class="fa fa-globe"></i> Global Express</li>
-			<li><i class="fa fa-thumb-tack"></i> Good Service</li>
-		</ul>
-		<div class="footer_links">
-			<dl class="col-links">
-				<dt>Help Center</dt>
-				<dd><a href="#" rel="nofollow">Shopping Guilding</a></dd>
-				<dd><a href="#" rel="nofollow">Shopping Guilding</a></dd>
-				<dd><a href="#" rel="nofollow">Shopping Guilding</a></dd>
-			</dl>
-			<dl class="col-links">
-				<dt>Support</dt>
-				<dd><a href="#" rel="nofollow">After-sales Service</a></dd>
-				<dd><a href="#" rel="nofollow">After-sales Service</a></dd>
-				<dd><a href="#" rel="nofollow">After-sales Service</a></dd>
-			</dl>
-			<dl class="col-links">
-				<dt>Home of Us</dt>
-				<dd><a href="#" rel="nofollow">Shipping FAQ</a></dd>
-				<dd><a href="#" rel="nofollow">Shipping FAQ</a></dd>
-				<dd><a href="#" rel="nofollow">Shipping FAQ</a></dd>
-			</dl>
-			<dl class="col-links">
-				<dt> Policy</dt>
-				<dd><a href="#" rel="nofollow">Privacy Policy</a></dd>
-				<dd><a href="#" rel="nofollow">Privacy Policy</a></dd>
-				<dd><a href="#" rel="nofollow">Privacy Policy</a></dd>
-			</dl>
-			<dl class="col-links">
-				<dt>Links</dt>
-				<dd><a href="http://www.leridy.pw">Leridy</a></dd>
-				<dd><a href="http://www.leridy.pw">Leridy</a></dd>
-				<dd><a href="http://www.leridy.pw">Leridy</a></dd>
-			</dl>
-			<div class="footer_contact">
-				<p class="phone">+086-027-8888888</p>
-				<p>Monday~Sunday 8:00-18：00</p>
-				<p>（UTC+8 Time Zone）</p>
-				<p>China Mainland</p>
-				<a href="#" class="btn btn-small">
-					<i class="fa fa-commenting-o"></i>
-					Online Service
-				</a>
-			</div>
-		</div>
-		<!-- 底部链接结束 -->
-		<div class="site_info container-inside">
-			<a href="#" class="copyright" title="copyright">&copy; 2015 XX Mall ALL Rights Reserved</a> | Site Support：<a href="http://www.leridy.pw" title="技术支持"><i class="fa fa-cogs"></i> Leridy Group</a> | ICP：<a href="http://www.beian.gov.cn" title="备案">鄂ICP备100888888</a>
-			<div class="site_info_right">
-		    	<ul class="site_info_right_follow">
-		        	<li class="site_info_right_follow_item">Follow us：</li>
-		    		<li class="site_info_right_follow_item"><a href="#" class="item" title="Weibo 新浪微博"><i class="fa fa-weibo"></i></a></li>
-		    		<li class="site_info_right_follow_item"><a href="#" class="item" title="Wechat 微信"><i class="fa fa-weixin"></i></a></li>
-		    		<li class="site_info_right_follow_item"><a href="#" class="item" title="Twitter 推特"><i class="fa fa-twitter"></i></a></li>
-		    		<li class="site_info_right_follow_item"><a href="#" class="item" title="Google+ 谷歌加"><i class="fa fa-google-plus"></i></a></li>
-		    		<li class="site_info_right_follow_item"><a href="#" class="item" title="Facebook 脸书"><i class="fa fa-facebook"></i></a></li>
-		    	</ul>
-		    	<!-- 关注我们的社交网络 -->
-		 </div>
-		</div>
-		<!-- 网站信息结束 -->
-	</footer>
-	<!-- 底部完结 -->
-	<!-- javascript 引入 -->
+                                        </div>
+                                    </header>
+                                    <!-- shipping 头部选项完结 -->
+                                    <ul class="shipping_list">
+                                        <li class="shipping_list_item tfix">
+                                            <ul class="shipping_list_item_info">
+                                                <li class="company_name tfix">Company</li>
+                                                <li class="shipping_cost tfix">Shipping Cost</li>
+                                                <li class="delivery_time tfix">Estimated Delivery Time</li>
+                                                <li class="processing_time tfix">Processing Time</li>
+                                            </ul>
+                                        </li>
+                                        <li class="shipping_list_item">
+                                            <ul class="shipping_list_item_info">
+                                                <li class="company_name"><img src="./images/logo.png" alt="ePacket" class="company_logo_img">ePacket</li>
+                                                <li class="shipping_cost">Free Shipping</li>
+                                                <li class="delivery_time">5-15 days</li>
+                                                <li class="processing_time">6 days</li>
+                                            </ul>
+                                        </li>
+                                        <li class="shipping_list_item">
+                                            <ul class="shipping_list_item_info">
+                                                <li class="company_name">China Post Registered Air Mail</li>
+                                                <li class="shipping_cost">Free Shipping</li>
+                                                <li class="delivery_time">15-39 days <span class="sub_info">(It may take longer during the holiday seasons.)</span></li>
+                                                <li class="processing_time">Processing Time</li>
+                                            </ul>
+                                        </li>
+                                        <li class="shipping_list_item">
+                                            <ul class="shipping_list_item_info">
+                                                <li class="company_name">China Post Registered Air Mail</li>
+                                                <li class="shipping_cost">Free Shipping</li>
+                                                <li class="delivery_time">15-39 days <span class="sub_info">(It may take longer during the holiday seasons.)</span></li>
+                                                <li class="processing_time">Processing Time</li>
+                                            </ul>
+                                        </li>
+                                        <li class="shipping_list_item">
+                                            <ul class="shipping_list_item_info">
+                                                <li class="company_name">China Post Registered Air Mail</li>
+                                                <li class="shipping_cost">Free Shipping</li>
+                                                <li class="delivery_time">15-39 days <span class="sub_info">(It may take longer during the holiday seasons.)</span></li>
+                                                <li class="processing_time">Processing Time</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- shipping 价格列表 完结 -->
+                            <div class="info_box packaging_details">
+                                <h2>Packaging Details</h2>
+                                <div class="infos">
+                                    <dl>
+                                        <dt>Unit Type:</dt>
+                                        <dd>lot (5 pieces/lot)</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Package Weight:</dt>
+                                        <dd>0.300kg (0.66lb.)</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>Package Size:</dt>
+                                        <dd>15cm x 15cm x 10cm (5.91in x 5.91in x 3.94in)</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <!-- Packaging Details 完结-->
+                            <div class="info_box payment">
+                                <h2>Payment</h2>
+                                <div class="infos">
+                                    <div class="sub_info">Our Buyer Protection <span class="warn">ONLY</span> protects Payment Methods on Our online shop as below:</div>
+                                    <img src="./images/logo.png" alt="paypal" class="payment_logo">
+                                    <img src="./images/logo.png" alt="paypal" class="payment_logo">
+                                    <img src="./images/logo.png" alt="paypal" class="payment_logo">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 付款保障提示 完结 -->
+                        <div class="detail_info_item buyer_policy" id="detail_info_4">
+                        	<div class="info_box">
+                        		<h2>Promise & Guarantees</h2>
+                        		<div class="infos">
+                    				<div class="seller_promise_list">
+                    					<dl class="return_policy">
+                        					<dt>Return Policy:</dt>
+                        					<dd>
+                            					<div class="return_policy_info">If the product you receive is not as described or low quality, the seller promises that you may return it before order completion (when you click ‘Confirm Order Received’ or exceed confirmation timeframe) and receive a full refund. The return shipping fee will be paid by you. Or, you can choose to keep the product and agree the refund amount directly with the seller. <br/><a href="#" class="view_return_policy">View details </a>
+                            					</div>
+                        					</dd>
+                    					</dl>
+                    					<dl class="seller_guarantees">
+                        					<dt>Seller Guarantees:</dt>
+                        					<dd>
+                            					<div class="seller_guarantees_info">On-time Delivery
+												If you do not receive your purchase within 27 days, you can ask for a full refund before order completion (when you 	click ‘Confirm Order Received’ or exceed confirmation timeframe).
+                								</div>
+                        					</dd>
+                    					</dl>
+                					</div>
+                				</div>
+                			</div>
+                			<div class="info_box">
+                				<h2>Buyer Protection</h2>
+                				<div class="infos">
+                					<div class="buyer_banner">
+                    					<i class="fa fa-shield"></i>
+                    					<span class="buyer_protection">Buyer Protection</span>
+                    					<span class="buyer_protection_info"> Full Refund if you don't receive your order </span><span class="buyer_protection_info"> Refund or Keep items not as described</span>
+                    					<a href="#" class="view_buyer_protection">Learn More </a>
+                					</div>
+                				</div>
+                			</div>
+                			<!--  -->
+                        </div>
+                        <!-- 卖家承诺 和 买家保护 完结-->
+                    </div>
+                    <!-- detail info 完结 -->
+                </div>
+                <!-- detail viewport 完结 -->
+            </div>
+            <!-- detail nav tab 完结 -->
+        </div>
+        <!-- detail extend 完结 -->
+    </div>
+    <!-- 页面主题完结 footer在下 -->
+    <footer class="footer " id="footer">
+        <ul class="footer_svc container">
+            <li><i class="fa fa-suitcase"></i> 24 Hours Rapid Delivery</li>
+            <li><i class="fa fa-credit-card"></i> Pay By Credit Card</li>
+            <li><i class="fa fa-globe"></i> Global Express</li>
+            <li><i class="fa fa-thumb-tack"></i> Good Service</li>
+        </ul>
+        <div class="footer_links">
+            <dl class="col-links">
+                <dt>Help Center</dt>
+                <dd><a href="#" rel="nofollow">Shopping Guilding</a></dd>
+                <dd><a href="#" rel="nofollow">Shopping Guilding</a></dd>
+                <dd><a href="#" rel="nofollow">Shopping Guilding</a></dd>
+            </dl>
+            <dl class="col-links">
+                <dt>Support</dt>
+                <dd><a href="#" rel="nofollow">After-sales Service</a></dd>
+                <dd><a href="#" rel="nofollow">After-sales Service</a></dd>
+                <dd><a href="#" rel="nofollow">After-sales Service</a></dd>
+            </dl>
+            <dl class="col-links">
+                <dt>Home of Us</dt>
+                <dd><a href="#" rel="nofollow">Shipping FAQ</a></dd>
+                <dd><a href="#" rel="nofollow">Shipping FAQ</a></dd>
+                <dd><a href="#" rel="nofollow">Shipping FAQ</a></dd>
+            </dl>
+            <dl class="col-links">
+                <dt> Policy</dt>
+                <dd><a href="#" rel="nofollow">Privacy Policy</a></dd>
+                <dd><a href="#" rel="nofollow">Privacy Policy</a></dd>
+                <dd><a href="#" rel="nofollow">Privacy Policy</a></dd>
+            </dl>
+            <dl class="col-links">
+                <dt>Links</dt>
+                <dd><a href="http://www.leridy.pw">Leridy</a></dd>
+                <dd><a href="http://www.leridy.pw">Leridy</a></dd>
+                <dd><a href="http://www.leridy.pw">Leridy</a></dd>
+            </dl>
+            <div class="footer_contact">
+                <p class="phone">+086-027-8888888</p>
+                <p>Monday~Sunday 8:00-18：00</p>
+                <p>（UTC+8 Time Zone）</p>
+                <p>China Mainland</p>
+                <a href="#" class="btn btn-small">
+                    <i class="fa fa-commenting-o"></i> Online Service
+                </a>
+            </div>
+        </div>
+        <!-- 底部链接结束 -->
+        <div class="site_info container-inside">
+            <a href="#" class="copyright" title="copyright">&copy; 2015 XX Mall ALL Rights Reserved</a> | Site Support：<a href="http://www.leridy.pw" title="技术支持"><i class="fa fa-cogs"></i> Leridy Group</a> | ICP：<a href="http://www.beian.gov.cn" title="备案">鄂ICP备100888888</a>
+            <div class="site_info_right">
+                <ul class="site_info_right_follow">
+                    <li class="site_info_right_follow_item">Follow us：</li>
+                    <li class="site_info_right_follow_item"><a href="#" class="item" title="Weibo 新浪微博"><i class="fa fa-weibo"></i></a></li>
+                    <li class="site_info_right_follow_item"><a href="#" class="item" title="Wechat 微信"><i class="fa fa-weixin"></i></a></li>
+                    <li class="site_info_right_follow_item"><a href="#" class="item" title="Twitter 推特"><i class="fa fa-twitter"></i></a></li>
+                    <li class="site_info_right_follow_item"><a href="#" class="item" title="Google+ 谷歌加"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="site_info_right_follow_item"><a href="#" class="item" title="Facebook 脸书"><i class="fa fa-facebook"></i></a></li>
+                </ul>
+                <!-- 关注我们的社交网络 -->
+            </div>
+        </div>
+        <!-- 网站信息结束 -->
+    </footer>
+    <!-- 底部完结 -->
+    <!-- javascript 引入 -->
 </body>
+
 </html>
