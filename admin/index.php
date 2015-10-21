@@ -41,15 +41,16 @@ if(checkAdminLogined()) {
 	<script src="../js/html5shiv.min.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+
+	<link rel="stylesheet" href="css/createProduct.css">
 </head>
 
 <body>
-
+<!--导航栏开始-->
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -69,28 +70,52 @@ if(checkAdminLogined()) {
 		</div>
 	</div>
 </nav>
-
+<!--导航栏结束-->
+<!--主体开始-->
 <div class="container-fluid">
 	<div class="row">
+		<!--选项卡开始-->
 		<div class="col-sm-3 col-md-2 sidebar">
 			<ul class="nav nav-sidebar">
 				<li class="active"><a href="#one" data-toggle="tab">首页</a></li>
 				<li><a href="#two" data-toggle="tab">订单</a></li>
-				<li><a href="#three" data-toggle="tab">产品</a></li>
-				<li><a href="#four" data-toggle="tab">用户</a></li>
+				<li><a href="#three" data-toggle="tab">商品</a></li>
+				<li><a href="#four" data-toggle="tab">物流</a></li>
+				<li><a href="#five" data-toggle="tab">统计</a></li>
+				<li><a href="#six" data-toggle="tab">设置</a></li>
 			</ul>
 		</div>
+		<!--选项卡结束-->
 
+		<!--主内容开始-->
 		<div class="tab-content col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			<!--第1页-->
 			<div class="tab-pane active" id="one">
 				<h1 class="page-header">one</h1>
 			</div>
 
-			<div class="tab-pane" id="two"><h1 class="page-header">two</h1>Lorem ipsum dolor sit amet, consectetur
-				adipisicing elit. Aperiam asperiores culpa, cumque deleniti eius excepturi illum iure maiores molestias nemo
-				nesciunt perspiciatis quae reiciendis reprehenderit tempora voluptatem voluptatum? Exercitationem, quia.
+			<!--第2页-->
+			<div class="tab-pane" id="two">
+				<div>
+					<h1 class="page-header">订单</h1>
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">未发货</a></li>
+						<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">已发货</a></li>
+						<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">已完成</a></li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="home">...</div>
+						<div role="tabpanel" class="tab-pane" id="profile">...</div>
+						<div role="tabpanel" class="tab-pane" id="messages">...</div>
+					</div>
+
+				</div>
 			</div>
 
+			<!--第3页-->
 			<div class="tab-pane" id="three">
 				<h1 class="page-header">three</h1>
 
@@ -99,12 +124,99 @@ if(checkAdminLogined()) {
 
 					<!-- 面板头 -->
 					<div class="panel-heading">
-						<button class="btn btn-default" onclick="getProducts();">刷新</button>
-						<button class="btn btn-default">创建商品</button>
+						<button class="btn btn-default" onclick="getProducts();">所有商品</button>
+						<button class="btn btn-default" onclick="createProduct();">创建商品</button>
 					</div>
 
+					<!--创建产品-->
+					<form action="product.server.php" id="createProductForm">
+						<div class="row">
+							<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="input-group">
+											<span class="input-group-addon">名称</span>
+											<input class="form-control" type="text" name="productName" placeholder="名称">
+										</div>
+									</div>
+
+									<div class="col-xs-12">
+										<div class="input-group">
+											<span class="input-group-addon">编号</span>
+											<input class="form-control" type="text" name="productName" placeholder="编号">
+										</div>
+									</div>
+
+									<div class="col-xs-6">
+										<div class="input-group">
+											<span class="input-group-addon">现价</span>
+											<input class="form-control" type="text" name="productName" placeholder="现价">
+										</div>
+									</div>
+									<div class="col-xs-6">
+										<div class="input-group">
+											<span class="input-group-addon">原价</span>
+											<input class="form-control" type="text" name="productName" placeholder="原价">
+										</div>
+									</div>
+									<div class="col-xs-12">
+										<div class="input-group">
+											<span class="input-group-addon">库存</span>
+											<input class="form-control" type="text" name="productName" placeholder="库存">
+										</div>
+									</div>
+									<div class="col-xs-6">
+										<div class="input-group">
+											<span class="input-group-addon">规格</span>
+											<input class="form-control" type="text" name="productName" placeholder="规格">
+											<span class="input-group-addon">pieces / lot </span>
+										</div>
+									</div>
+									<div class="col-xs-6">
+										<div class="input-group">
+											<span class="input-group-addon">重量</span>
+											<input class="form-control" type="text" name="productName" placeholder="重量">
+											<span class="input-group-addon">kg</span>
+										</div>
+									</div>
+									<div class="col-xs-12">
+										<div class="input-group">
+											<span class="input-group-addon">尺寸</span>
+											<input class="form-control" type="text" name="productName" placeholder="长">
+											<span class="input-group-addon">x</span>
+											<input class="form-control" type="text" name="productName" placeholder="宽">
+											<span class="input-group-addon">x</span>
+											<input class="form-control" type="text" name="productName" placeholder="高">
+											<label class="input-group-addon" for="unity">单位</label>
+											<select class="form-control input-group-addon" id="unity">
+												<option>cm </option>
+											</select>
+
+										</div>
+									</div>
+									<div class="col-xs-12">
+										<div class="input-group">
+											<label class="input-group-addon" for="category">分类</label>
+											<select class="form-control" id="category">
+												<option>未分类</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-xs-12">
+										<label class="" for="description">商品详情</label>
+										<textarea class="form-control" rows="8" id="description"></textarea>
+									</div>
+									<div class="col-xs-12">
+										<button class="btn btn-primary" type="submit">确定</button>
+										<button class="btn btn-default">取消</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+
 					<!-- 产品表格 -->
-					<table class="table table-hover table-striped">
+					<table class="table table-hover table-striped" id="productTable">
 						<thead>
 						<tr>
 							<th>商品号</th>
@@ -124,7 +236,7 @@ if(checkAdminLogined()) {
 					<!--面板尾-->
 					<div class="panel-footer">
 						<!--翻页-->
-						<nav>
+						<nav id="productsTablePagination">
 							<ul class="pagination">
 								<li>
 									<a href="#" aria-label="Previous">
@@ -143,17 +255,39 @@ if(checkAdminLogined()) {
 								</li>
 							</ul>
 						</nav>
+						<!--创建产品工具按钮组-->
+						<div class="btn-group" role="group" id="productsTableBottom" style="display: inline-block;">
+							<button type="button" class="btn btn-default">确认</button>
+							<button type="button" class="btn btn-default">重置</button>
+						</div>
 					</div>
-				</div>
+				</form>
 			</div>
 
-			<div class="tab-pane" id="four"><h1 class="page-header">four</h1>Lorem ipsum dolor sit amet, consectetur
+			</div>
+
+			<!--第4页-->
+			<div class="tab-pane" id="four"><h1 class="page-header">物流</h1>Lorem ipsum dolor sit amet, consectetur
 				adipisicing elit. Aspernatur, commodi dolore fuga in incidunt laborum maiores minima minus nam nihil, porro
 				quae repellendus rerum sint tenetur ullam, veritatis. Magni, tempora.</div>
+
+			<!--第5页-->
+			<div class="tab-pane" id="five"><h1 class="page-header">统计</h1>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores necessitatibus saepe voluptas. Amet debitis
+				dicta dolores laboriosam magnam nulla! Aperiam corporis dolorum excepturi, ipsam rem sint voluptatem? Eos, excepturi vero?
+			</div>
+
+			<!--第6页-->
+			<div class="tab-pane" id="six"><h1 class="page-header">设置</h1>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi atque deleniti dicta dolor dolore
+				ducimus enim, facilis ipsam necessitatibus nihil, obcaecati officiis quibusdam ratione repellat sit,
+				tempore voluptates. Illo?
+			</div>
 		</div>
+		<!--主内容结束-->
 	</div>
 </div>
-
+<!--主体结束-->
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -161,8 +295,16 @@ if(checkAdminLogined()) {
 <script src="js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="js/ie10-viewport-bug-workaround.js"></script>
-
+<!--自定义js开始-->
 <script>
+	//创建产品
+	function createProduct(){
+		$("#productTable,#productsTablePagination").hide();
+		$("#createProductForm").show();
+
+	}
+
+	//绘制表格行
 	function drawTable(data){
 		$("#tab").append("\
         <tr>\
@@ -179,6 +321,7 @@ if(checkAdminLogined()) {
         </tr>");
 	}
 
+	//绘制表格
 	function drawTables(data){
 		$("#tab").empty();
 		for(var i=0;i<data.length;i++){
@@ -187,6 +330,8 @@ if(checkAdminLogined()) {
 	}
 
 	function getProducts() {
+		$("#productTable,#productsTablePagination").show();
+		$("#createProductForm").hide();
 		$.ajax({
 			type: "GET",
 			url: "product.server.php",
