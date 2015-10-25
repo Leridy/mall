@@ -4,6 +4,16 @@
 	description:The main javascript function file of mall
 */
 
+
+/*通用函数元素获取方法*/
+var g = function (id) {
+    if(id.substr(0,1)=='.'){
+        return document.getElementsByClassName(id.substr(1));
+    }
+    return document.getElementById(id)
+}
+
+// 
 function detectBrowser() {
     var browser = navigator.appName
     var b_version = navigator.appVersion
@@ -44,3 +54,15 @@ function detectBrowser() {
 
 window.onload=detectBrowser();
 //浏览器检测 提示 IE8 及以下浏览器 更换浏览器
+
+
+
+/*付款页面价格计算，单件价格计算，并显示
+up:单价
+*/
+var CountSubtotal = (function(){
+
+});
+
+
+/*判断商品是否被选中  选中则修改背景色*/

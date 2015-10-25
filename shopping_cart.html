@@ -93,8 +93,8 @@
         <div class="shopping_cart container">
             <div class="cart_container">
                 <div class="title_bar">
-                    <input type="checkbox" name="check_product" value="" class="checkbox">
-                    <label for="ckeck_all">确认勾选全部商品</label>
+                    <input type="checkbox" name="check_product" value="" class="checkbox" >
+                    <label for="check_all">确认勾选全部商品</label>
                     <span class="check_all">Check All</span>
                     <span class="product">Products</span>
                     <div class="right">
@@ -105,9 +105,9 @@
                     </div>
                 </div>
                 <!-- 列表头部完结 -->
-                <div class="cart_item">
-                    <input type="checkbox" name="check_product" value="" class="checkbox">
-                    <label for="ckeck_all">确认勾选当前商品</label>
+                <div class="cart_item" id="1">
+                    <input type="checkbox" name="check_product" value="" class="checkbox" onchange="check()">
+                    <label for="check_all">确认勾选当前商品</label>
                     <div class="product">
                         <a href="#" title="">
                             <img src="./images/logo.png" alt="ptoduct">
@@ -118,7 +118,7 @@
                     </div>
                     <div class="right">
                         <span class="unit_price">12.5</span>
-                        <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off" class="quantity">
+                        <input type="number" name="quantity" id="venderid_pid_1" value="1" min="1" max="9999" maxlength="5" autocomplete="off" class="quantity">
                         <span class="subtotal">12.5</span>
                         <div class="option"><a href="#" title="delete">Delete</a>
                             <a href="#" title="Add to wish list">Add to wish list</a>
@@ -127,7 +127,7 @@
                 </div>
                 <div class="cart_item">
                     <input type="checkbox" name="check_product" value="" class="checkbox">
-                    <label for="ckeck_all">确认勾选当前商品</label>
+                    <label for="check_all">确认勾选当前商品</label>
                     <div class="product">
                         <a href="#" title="">
                             <img src="./images/logo.png" alt="ptoduct">
@@ -138,7 +138,7 @@
                     </div>
                     <div class="right">
                         <span class="unit_price">12.5</span>
-                        <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off" class="quantity">
+                        <input type="number" name="quantity" id="venderid_pid_1" value="1" min="1" max="9999" maxlength="5" autocomplete="off" class="quantity" onchange="CountSubtotal()">
                         <span class="subtotal">12.5</span>
                         <div class="option"><a href="#" title="delete">Delete</a>
                             <a href="#" title="delete">Add to wish list</a>
@@ -147,7 +147,7 @@
                 </div>
                 <div class="cart_item">
                     <input type="checkbox" name="check_product" value="" class="checkbox">
-                    <label for="ckeck_all">确认勾选当前商品</label>
+                    <label for="check_all">确认勾选当前商品</label>
                     <div class="product">
                         <a href="#" title="">
                             <img src="./images/logo.png" alt="ptoduct">
@@ -158,7 +158,7 @@
                     </div>
                     <div class="right">
                         <span class="unit_price">12.5</span>
-                        <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off" class="quantity">
+                        <input type="number" name="quantity" id="" value="1" min="1" max="9999" maxlength="5" autocomplete="off" class="quantity">
                         <span class="subtotal">12.5</span>
                         <div class="option"><a href="#" title="delete">Delete</a>
                             <a href="#" title="delete">Add to wish list</a>
@@ -167,7 +167,7 @@
                 </div>
                 <div class="cart_item">
                     <input type="checkbox" name="check_product" value="" class="checkbox">
-                    <label for="ckeck_all">确认勾选当前商品</label>
+                    <label for="check_all">确认勾选当前商品</label>
                     <div class="product">
                         <a href="#" title="">
                             <img src="./images/logo.png" alt="ptoduct">
@@ -178,7 +178,7 @@
                     </div>
                     <div class="right">
                         <span class="unit_price">12.5</span>
-                        <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off" class="quantity">
+                        <input type="number" name="quantity" id="venderid_pid_1" value="1" min="1" max="9999" maxlength="5" autocomplete="off" class="quantity">
                         <span class="subtotal">12.5</span>
                         <div class="option"><a href="#" title="delete">Delete</a>
                             <a href="#" title="Add to wish list">Add to wish list</a>
@@ -187,7 +187,7 @@
                 </div>
                 <div class="cart_item">
                     <input type="checkbox" name="check_product" value="" class="checkbox">
-                    <label for="ckeck_all">确认勾选当前商品</label>
+                    <label for="check_all">确认勾选当前商品</label>
                     <div class="product">
                         <a href="#" title="">
                             <img src="./images/logo.png" alt="ptoduct">
@@ -198,7 +198,7 @@
                     </div>
                     <div class="right">
                         <span class="unit_price">12.5</span>
-                        <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off" class="quantity">
+                        <input type="number" name="quantity" id="venderid_pid_1" value="1" min="1" max="9999" maxlength="5" autocomplete="off" class="quantity">
                         <span class="subtotal">12.5</span>
                         <div class="option"><a href="#" title="delete">Delete</a>
                             <a href="#" title="Add to wish list">Add to wish list</a>
@@ -209,7 +209,7 @@
             </div>
             <div class="payment_box">
                 <input type="checkbox" name="check_product" value="" class="checkbox">
-                <label for="ckeck_all">确认勾选全部商品</label>
+                <label for="check_all">确认勾选全部商品</label>
                 <span class="check_all">Check All</span>
                 <a href="#" title="delete">Delete</a>
                 <a href="#" title="Add to wish list">Add to wish list</a>
