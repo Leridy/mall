@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置文本编码 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 设置浏览器对最新和html5属性的支持 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!-- 检测显示器窗口大小 禁止浏览器初始缩放-->
+    <meta name="keywords" content="">
+    <!-- 设置网站关键字关键字 -->
+    <meta name="description" content="">
+    <!-- 网站描述 -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- 主css接入 -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- 网页标签初始化css接入 -->
+    <link rel="stylesheet" type="text/css" href="./css/messenger-theme-air.css">
+    <link rel="stylesheet" type="text/css" href="./css/messenger.css">
+    <!-- 引入提示栏组件css -->
+    <!-- <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.css"> -->
+    <link rel="stylesheet" href="css/font-awesome-4.4.0/css/font-awesome.min.css">
+    <!-- font-awesome接入 -->
+    <title>Shopping Cart</title>
+    <!-- 网站标题 -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+	  <script src="js/html5shiv.min.js"></script>
+	  <script src="./js/jquery-1.11.3.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div class="site_top ">
+        <div class="site_top_left">
+            <a class="welcome" href="#"><i class="fa fa-home"></i> Welcome to XX shop</a>
+        </div>
+        <!-- 顶部栏左侧 -->
+        <div class="site_top_right">
+            <ul class="userinfo">
+                <!-- 用户信息 -->
+                <li class="userinfo_item hide"><a href="#" title="Sign In"><i class="fa fa-user"></i> Sign In</a></li>
+                <!-- 无登陆情况下 登陆按钮 通过hide类控制显示-->
+                <li class="userinfo_item hide"><a href="#" title="Sign Up"><i class="fa fa-sign-in"></i> Sign Up</a></li>
+                <!-- 无登陆情况下 注册按钮 通过hide类控制显示-->
+                <li class="userinfo_item "><img src="images/logo.png" alt="Userhead" id="logo"></li>
+                <!-- 用户头像 -->
+                <li class="userinfo_item "><a href="#" id="name" title="Leridy">Leridy</a></li>
+                <!-- 用户名 -->
+                <li class="userinfo_item "><a href="#" title="shopping cart"><i class="fa fa-shopping-cart"></i><span class="cart-num">1000</span> Cart</a></li>
+                <!-- 购物车 -->
+                <li class="userinfo_item "><a href="#" title="sign out"><i class="fa fa-sign-out"></i> Exit</a></li>
+                <!-- 退出 -->
+            </ul>
+        </div>
+        <!-- 顶部栏右侧 -->
+    </div>
+    <!-- 顶栏完结 -->
+    <div class="page_body">
+        <nav class="nav container-inside">
+            <div class="nav_logo">
+                <a href="#" title="HOME PAGE"> </a>
+            </div>
+            <!-- 导航栏logo/标志 -->
+            <ul class="nav_list">
+                <li class="nav_list_item"> <a href="#">Home</a></li>
+                <li class="nav_list_item aChild"> <a href="#">Products</a>
+                    <!-- aChild 控制 相关显示属性  -->
+                    <ul class="nav_list_child">
+                        <li class="child_item"><a href="#">Prints</a></li>
+                        <li class="child_item"><a href="#">Prints Parts</a></li>
+                        <li class="child_item"><a href="#">Prints Parts</a></li>
+                        <li class="child_item"><a href="#">Prints Parts</a></li>
+                        <li class="child_item"><a href="#">Prints Parts</a></li>
+                    </ul>
+                </li>
+                <li class="nav_list_item"> <a href="#">Sell Items</a></li>
+                <li class="nav_list_item"> <a href="#">Top Selling</a></li>
+                <li class="nav_list_item"> <a href="#">New Arrivals</a></li>
+            </ul>
+            <!-- 导航栏选项 -->
+            <div class="nav_search">
+                <form id="searchForm" class="" action="" method="get">
+                    <label for="search" class="hide">站内搜索</label>
+                    <input class="nav_search_input" type="search" id="search" name="keyword" autocomplete="off" placeholder="Search...">
+                    <button type="submit"> <i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <!-- 导航栏搜索框 -->
+        </nav>
+        <!-- 导航完结 页面内容在下-->
+        <div class="shopping_cart container">
+            <div class="cart_container">
+                <div class="title_bar">
+                    <input type="checkbox" name="check_product" value="" class="checkbox">
+                    <label for="ckeck_all">确认勾选全部商品</label>
+                    <span class="check_all">Check All</span>
+                    <span class="product">Products</span>
+                    <div class="right">
+                        <span class="unit_price">Unit Price (US $)</span>
+                        <span class="quantity">Quantity</span>
+                        <span class="subtotal">Subtotal (US $)</span>
+                        <span class="option">Option</span>
+                    </div>
+                </div>
+                <!-- 列表头部完结 -->
+                <div class="cart_item">
+                    <input type="checkbox" name="check_product" value="" class="checkbox">
+                    <label for="ckeck_all">确认勾选当前商品</label>
+                    <div class="product">
+                        <a href="#" title="">
+                            <img src="./images/logo.png" alt="ptoduct">
+                            <span class="product_name">free shipping RM1-6397-000 Separation Pad Assembly-Tray2 for LaserJet P2035 P2055 5pcs/lot laser printer part</span></a>
+                        <span class="unit_type">
+										Unit Type :lot (5 pieces/lot)
+									</span>
+                    </div>
+                    <div class="right">
+                        <span class="unit_price">12.5</span>
+                        <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off" class="quantity">
+                        <span class="subtotal">12.5</span>
+                        <div class="option"><a href="#" title="delete">Delete</a>
+                            <a href="#" title="Add to wish list">Add to wish list</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart_item">
+                    <input type="checkbox" name="check_product" value="" class="checkbox">
+                    <label for="ckeck_all">确认勾选当前商品</label>
+                    <div class="product">
+                        <a href="#" title="">
+                            <img src="./images/logo.png" alt="ptoduct">
+                            <span class="product_name">free shipping RM1-6397-000 Separation Pad Assembly-Tray2 for LaserJet P2035 P2055 5pcs/lot laser printer part</span></a>
+                        <span class="unit_type">
+										Unit Type :lot (5 pieces/lot)
+									</span>
+                    </div>
+                    <div class="right">
+                        <span class="unit_price">12.5</span>
+                        <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off" class="quantity">
+                        <span class="subtotal">12.5</span>
+                        <div class="option"><a href="#" title="delete">Delete</a>
+                            <a href="#" title="delete">Add to wish list</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart_item">
+                    <input type="checkbox" name="check_product" value="" class="checkbox">
+                    <label for="ckeck_all">确认勾选当前商品</label>
+                    <div class="product">
+                        <a href="#" title="">
+                            <img src="./images/logo.png" alt="ptoduct">
+                            <span class="product_name">free shipping RM1-6397-000 Separation Pad Assembly-Tray2 for LaserJet P2035 P2055 5pcs/lot laser printer part</span></a>
+                        <span class="unit_type">
+										Unit Type :lot (5 pieces/lot)
+									</span>
+                    </div>
+                    <div class="right">
+                        <span class="unit_price">12.5</span>
+                        <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off" class="quantity">
+                        <span class="subtotal">12.5</span>
+                        <div class="option"><a href="#" title="delete">Delete</a>
+                            <a href="#" title="delete">Add to wish list</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart_item">
+                    <input type="checkbox" name="check_product" value="" class="checkbox">
+                    <label for="ckeck_all">确认勾选当前商品</label>
+                    <div class="product">
+                        <a href="#" title="">
+                            <img src="./images/logo.png" alt="ptoduct">
+                            <span class="product_name">free shipping RM1-6397-000 Separation Pad Assembly-Tray2 for LaserJet P2035 P2055 5pcs/lot laser printer part</span></a>
+                        <span class="unit_type">
+										Unit Type :lot (5 pieces/lot)
+									</span>
+                    </div>
+                    <div class="right">
+                        <span class="unit_price">12.5</span>
+                        <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off" class="quantity">
+                        <span class="subtotal">12.5</span>
+                        <div class="option"><a href="#" title="delete">Delete</a>
+                            <a href="#" title="Add to wish list">Add to wish list</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart_item">
+                    <input type="checkbox" name="check_product" value="" class="checkbox">
+                    <label for="ckeck_all">确认勾选当前商品</label>
+                    <div class="product">
+                        <a href="#" title="">
+                            <img src="./images/logo.png" alt="ptoduct">
+                            <span class="product_name">free shipping RM1-6397-000 Separation Pad Assembly-Tray2 for LaserJet P2035 P2055 5pcs/lot laser printer part</span></a>
+                        <span class="unit_type">
+										Unit Type :lot (5 pieces/lot)
+									</span>
+                    </div>
+                    <div class="right">
+                        <span class="unit_price">12.5</span>
+                        <input type="number" name="quantity" id="product_info_quantity" value="1" min="1" max="9999" maxlength="5" autocomplete="off" class="quantity">
+                        <span class="subtotal">12.5</span>
+                        <div class="option"><a href="#" title="delete">Delete</a>
+                            <a href="#" title="Add to wish list">Add to wish list</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 商品列表完毕 下部分为结算框-->
+            </div>
+            <div class="payment_box">
+                <input type="checkbox" name="check_product" value="" class="checkbox">
+                <label for="ckeck_all">确认勾选全部商品</label>
+                <span class="check_all">Check All</span>
+                <a href="#" title="delete">Delete</a>
+                <a href="#" title="Add to wish list">Add to wish list</a>
+                <div class="right">
+                    <div class="price">
+                        <p>A total of <span id="product_num">2</span> items were selected total price (Excluding Freight) :US$ <span id="total_price">300</span></p>
+                    </div>
+                    <a href="#" title="To pay" class="pay_button">To Pay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 页面主题完结 footer在下 -->
+    <footer class="footer " id="footer">
+        <ul class="footer_svc container">
+            <li><i class="fa fa-suitcase"></i> 24 Hours Rapid Delivery</li>
+            <li><i class="fa fa-credit-card"></i> Pay By Credit Card</li>
+            <li><i class="fa fa-globe"></i> Global Express</li>
+            <li><i class="fa fa-thumb-tack"></i> Good Service</li>
+        </ul>
+        <div class="footer_links">
+            <dl class="col-links">
+                <dt>Help Center</dt>
+                <dd><a href="#" rel="nofollow">Shopping Guilding</a></dd>
+                <dd><a href="#" rel="nofollow">Shopping Guilding</a></dd>
+                <dd><a href="#" rel="nofollow">Shopping Guilding</a></dd>
+            </dl>
+            <dl class="col-links">
+                <dt>Support</dt>
+                <dd><a href="#" rel="nofollow">After-sales Service</a></dd>
+                <dd><a href="#" rel="nofollow">After-sales Service</a></dd>
+                <dd><a href="#" rel="nofollow">After-sales Service</a></dd>
+            </dl>
+            <dl class="col-links">
+                <dt>Home of Us</dt>
+                <dd><a href="#" rel="nofollow">Shipping FAQ</a></dd>
+                <dd><a href="#" rel="nofollow">Shipping FAQ</a></dd>
+                <dd><a href="#" rel="nofollow">Shipping FAQ</a></dd>
+            </dl>
+            <dl class="col-links">
+                <dt> Policy</dt>
+                <dd><a href="#" rel="nofollow">Privacy Policy</a></dd>
+                <dd><a href="#" rel="nofollow">Privacy Policy</a></dd>
+                <dd><a href="#" rel="nofollow">Privacy Policy</a></dd>
+            </dl>
+            <dl class="col-links">
+                <dt>Links</dt>
+                <dd><a href="http://www.leridy.pw">Leridy</a></dd>
+                <dd><a href="http://www.leridy.pw">Leridy</a></dd>
+                <dd><a href="http://www.leridy.pw">Leridy</a></dd>
+            </dl>
+            <div class="footer_contact">
+                <p class="phone">+086-027-8888888</p>
+                <p>Monday~Sunday 8:00-18：00</p>
+                <p>（UTC+8 Time Zone）</p>
+                <p>China Mainland</p>
+                <a href="#" class="btn btn-small">
+                    <i class="fa fa-commenting-o"></i> Online Service
+                </a>
+            </div>
+        </div>
+        <!-- 底部链接结束 -->
+        <div class="site_info container-inside">
+            <a href="#" class="copyright" title="copyright">&copy; 2015 XX Mall ALL Rights Reserved</a> | Site Support：<a href="http://www.leridy.pw" title="技术支持"><i class="fa fa-cogs"></i> Leridy Group</a> | ICP：<a href="http://www.beian.gov.cn" title="备案">鄂ICP备100888888</a>
+            <div class="site_info_right">
+                <ul class="site_info_right_follow">
+                    <li class="site_info_right_follow_item">Follow us：</li>
+                    <li class="site_info_right_follow_item"><a href="#" class="item" title="Weibo 新浪微博"><i class="fa fa-weibo"></i></a></li>
+                    <li class="site_info_right_follow_item"><a href="#" class="item" title="Wechat 微信"><i class="fa fa-weixin"></i></a></li>
+                    <li class="site_info_right_follow_item"><a href="#" class="item" title="Twitter 推特"><i class="fa fa-twitter"></i></a></li>
+                    <li class="site_info_right_follow_item"><a href="#" class="item" title="Google+ 谷歌加"><i class="fa fa-google-plus"></i></a></li>
+                    <li class="site_info_right_follow_item"><a href="#" class="item" title="Facebook 脸书"><i class="fa fa-facebook"></i></a></li>
+                </ul>
+                <!-- 关注我们的社交网络 -->
+            </div>
+        </div>
+        <!-- 网站信息结束 -->
+    </footer>
+    <!-- 底部完结 -->
+    <!-- javascript 引入 -->
+    <script src="./js/jquery.min.js" type="text/javascript" charset="utf-8" async defer></script>
+    <script type="text/javascript" src="./js/messenger.min.js" charset="utf-8" async defer></script>
+    <script src="./js/main.js" type="text/javascript" charset="utf-8" async defer></script>
+    <!-- javascript 完毕 -->
+</body>
+
+</html>
