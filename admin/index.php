@@ -246,8 +246,7 @@ if(checkAdminLogined()) {
                                             <div class="col-xs-12">
                                                 <div class="input-group">
                                                     <label class="input-group-addon" for="category">分类</label>
-                                                    <select class="form-control" id="category">
-                                                        <option>未分类</option>
+                                                    <select class="form-control" id="category" name="category">
                                                     </select>
                                                 </div>
                                             </div>
@@ -363,6 +362,16 @@ if(checkAdminLogined()) {
             }
         });
     }
+
+    function drawCategory(data){
+        $("#category").append("<option value="+data['id']+">"+data['categoryName']+"</option>")
+    }
+    //生成分类
+    function drawCategories(data){
+        for(var i=0;i<data.length;i++){
+            drawCategory(data[i]);
+        }
+    }
     //获取分类
     function getCategories() {
         $.ajax({
@@ -370,7 +379,7 @@ if(checkAdminLogined()) {
             url: "category.server.php",
             dataType: "json",
             success: function (data) {
-                return data;
+                drawCategories(data);
             },
             error: function (jqXHR) {
                 alert("发生错误：" + jqXHR.status);
@@ -378,7 +387,7 @@ if(checkAdminLogined()) {
         });
     }
     //初始化
-    $(document).ready();
+    $(document).ready(getCategories());
 </script>
 </body>
 </html>
