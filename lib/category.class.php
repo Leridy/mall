@@ -1,4 +1,8 @@
 <?php
+/**
+ * Class category
+ * 分类类
+ */
 class category
 {
     protected $id;
@@ -34,5 +38,13 @@ class category
         return isset($this->categoryName)?$this->categoryName:$this->getCategoryNameById();
     }
 
-
+    public function getAllCategory(){
+        $sql="SELECT * FROM category";
+        $row=fetchAll($sql);
+        $arr=array();
+        foreach($row as $key=>$value){
+            $arr[$value['id']]=$value['categoryName'];
+        }
+        return $arr;
+    }
 }
