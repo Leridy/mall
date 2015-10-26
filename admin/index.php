@@ -280,8 +280,6 @@ if(checkAdminLogined()) {
                         <div role="tabpanel" class="tab-pane" id="categoryManage">
                             <h1>分类管理</h1>
 
-
-
                             <!--面板尾-->
                             <div class="panel-footer">
                                 <!--创建产品工具按钮组-->
@@ -351,6 +349,7 @@ if(checkAdminLogined()) {
             drawTable(data[i]);
         }
     }
+    //获取商品
     function getProducts() {
         $.ajax({
             type: "GET",
@@ -358,6 +357,20 @@ if(checkAdminLogined()) {
             dataType: "json",
             success: function (data) {
                 drawTables(data);
+            },
+            error: function (jqXHR) {
+                alert("发生错误：" + jqXHR.status);
+            }
+        });
+    }
+    //获取分类
+    function getCategories() {
+        $.ajax({
+            type: "GET",
+            url: "category.server.php",
+            dataType: "json",
+            success: function (data) {
+                return data;
             },
             error: function (jqXHR) {
                 alert("发生错误：" + jqXHR.status);
