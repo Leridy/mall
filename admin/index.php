@@ -79,7 +79,7 @@ if(checkAdminLogined()) {
 			<ul class="nav nav-sidebar">
 				<li class="active"><a href="#one" data-toggle="tab">首页</a></li>
 				<li><a href="#two" data-toggle="tab">订单</a></li>
-				<li><a href="#three" data-toggle="tab">商品</a></li>
+				<li><a href="#three" data-toggle="tab" onclick="getProducts()">商品</a></li>
 				<li><a href="#four" data-toggle="tab">物流</a></li>
 				<li><a href="#five" data-toggle="tab">统计</a></li>
 				<li><a href="#six" data-toggle="tab">设置</a></li>
@@ -129,7 +129,7 @@ if(checkAdminLogined()) {
 					</div>
 
 					<!--创建产品-->
-					<form action="product.server.php" id="createProductForm">
+					<form action="product.server.php" id="createProductForm" method="post" enctype="multipart/form-data">
 						<div class="row">
 							<div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 								<div class="row">
@@ -150,44 +150,44 @@ if(checkAdminLogined()) {
 									<div class="col-xs-6">
 										<div class="input-group">
 											<span class="input-group-addon">现价</span>
-											<input class="form-control" type="text" name="productName" placeholder="现价">
+											<input class="form-control" type="text" name="nowPrice" placeholder="现价">
 										</div>
 									</div>
 									<div class="col-xs-6">
 										<div class="input-group">
 											<span class="input-group-addon">原价</span>
-											<input class="form-control" type="text" name="productName" placeholder="原价">
+											<input class="form-control" type="text" name="fillPrice" placeholder="原价">
 										</div>
 									</div>
 									<div class="col-xs-12">
 										<div class="input-group">
 											<span class="input-group-addon">库存</span>
-											<input class="form-control" type="text" name="productName" placeholder="库存">
+											<input class="form-control" type="text" name="num" placeholder="库存">
 										</div>
 									</div>
 									<div class="col-xs-6">
 										<div class="input-group">
 											<span class="input-group-addon">规格</span>
-											<input class="form-control" type="text" name="productName" placeholder="规格">
+											<input class="form-control" type="text" name="unitType" placeholder="规格">
 											<span class="input-group-addon">pieces / lot </span>
 										</div>
 									</div>
 									<div class="col-xs-6">
 										<div class="input-group">
 											<span class="input-group-addon">重量</span>
-											<input class="form-control" type="text" name="productName" placeholder="重量">
+											<input class="form-control" type="text" name="weight" placeholder="重量">
 											<span class="input-group-addon">kg</span>
 										</div>
 									</div>
 									<div class="col-xs-12">
 										<div class="input-group">
 											<span class="input-group-addon">尺寸</span>
-											<input class="form-control" type="text" name="productName" placeholder="长">
+											<input class="form-control" type="text" name="sizeLong" placeholder="长">
 											<span class="input-group-addon">x</span>
-											<input class="form-control" type="text" name="productName" placeholder="宽">
+											<input class="form-control" type="text" name="sizeWidth" placeholder="宽">
 											<span class="input-group-addon">x</span>
-											<input class="form-control" type="text" name="productName" placeholder="高">
-											<label class="input-group-addon" for="unity">单位</label>
+											<input class="form-control" type="text" name="sizeHeight" placeholder="高">
+											<label class="input-group-addon" for="sizeUnit">单位</label>
 											<select class="form-control input-group-addon" id="unity">
 												<option>cm </option>
 											</select>
@@ -207,8 +207,10 @@ if(checkAdminLogined()) {
 										<textarea class="form-control" rows="8" id="description"></textarea>
 									</div>
 									<div class="col-xs-12">
-										<button class="btn btn-primary" type="submit">确定</button>
-										<button class="btn btn-default">取消</button>
+										<div class="input-group">
+											<button class="btn btn-primary" type="submit">确定</button>
+											<button class="btn btn-default">取消</button>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -346,7 +348,7 @@ if(checkAdminLogined()) {
 	}
 
 	//初始化
-	$(document).ready(getProducts());
+	$(document).ready();
 </script>
 </body>
 </html>
