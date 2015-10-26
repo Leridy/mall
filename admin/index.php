@@ -107,9 +107,9 @@ if(checkAdminLogined()) {
 
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="home">...</div>
-                        <div role="tabpanel" class="tab-pane" id="profile">...</div>
-                        <div role="tabpanel" class="tab-pane" id="messages">...</div>
+                        <div role="tabpanel" class="tab-pane active" id="home">1</div>
+                        <div role="tabpanel" class="tab-pane" id="profile">2</div>
+                        <div role="tabpanel" class="tab-pane" id="messages">3</div>
                     </div>
 
                 </div>
@@ -124,146 +124,175 @@ if(checkAdminLogined()) {
 
                     <!-- 面板头 -->
                     <div class="panel-heading">
-                        <button class="btn btn-default" onclick="getProducts();">所有商品</button>
-                        <button class="btn btn-default" onclick="createProduct();">创建商品</button>
+<!--                        <button class="btn btn-default" onclick="getProducts();">所有商品</button>-->
+<!--                        <button class="btn btn-default" onclick="createProduct();">创建商品</button>-->
+                        <ul class="nav nav-pills" role="tablist">
+                            <li role="presentation" class="active"><a href="#productList" aria-controls="productList" role="tab" data-toggle="tab">所有商品</a></li>
+                            <li role="presentation"><a href="#createProduct" aria-controls="createProduct" role="tab" data-toggle="tab">创建商品</a></li>
+                            <li role="presentation"><a href="#categoryManage" aria-controls="categoryManage" role="tab" data-toggle="tab">管理分类</a></li>
+                        </ul>
                     </div>
 
-                    <!--创建产品-->
-                    <form action="product.server.php" id="createProductForm" method="post" enctype="multipart/form-data">
-                        <div class="row">
-                            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                    <div class="tab-content">
+                        <!-- 产品表格 -->
+                        <div role="tabpanel" class="tab-pane active" id="productList">
+                            <table class="table table-hover table-striped" id="productTable">
+                                <thead>
+                                <tr>
+                                    <th>商品号</th>
+                                    <th>名称</th>
+                                    <th>编号</th>
+                                    <th>现价</th>
+                                    <th>原价</th>
+                                    <th>库存</th>
+                                    <th>详情</th>
+                                    <th>上架</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tab">
+                                </tbody>
+                            </table>
+
+                            <!--面板尾-->
+                            <div class="panel-footer">
+                                <!--翻页-->
+                                <nav id="productsTablePagination">
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li>
+                                            <a href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!--创建产品-->
+                        <div role="tabpanel" class="tab-pane" id="createProduct">
+                            <form action="product.server.php" id="createProductForm" method="post" enctype="multipart/form-data">
                                 <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">名称</span>
-                                            <input class="form-control" type="text" name="productName" placeholder="名称">
-                                        </div>
-                                    </div>
+                                    <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">名称</span>
+                                                    <input class="form-control" type="text" name="productName" placeholder="名称">
+                                                </div>
+                                            </div>
 
-                                    <div class="col-xs-12">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">编号</span>
-                                            <input class="form-control" type="text" name="productName" placeholder="编号">
-                                        </div>
-                                    </div>
+                                            <div class="col-xs-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">编号</span>
+                                                    <input class="form-control" type="text" name="productName" placeholder="编号">
+                                                </div>
+                                            </div>
 
-                                    <div class="col-xs-6">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">现价</span>
-                                            <input class="form-control" type="text" name="nowPrice" placeholder="现价">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">原价</span>
-                                            <input class="form-control" type="text" name="fillPrice" placeholder="原价">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">库存</span>
-                                            <input class="form-control" type="text" name="num" placeholder="库存">
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">规格</span>
-                                            <input class="form-control" type="text" name="unitType" placeholder="规格">
-                                            <span class="input-group-addon">pieces / lot </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">重量</span>
-                                            <input class="form-control" type="text" name="weight" placeholder="重量">
-                                            <span class="input-group-addon">kg</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">尺寸</span>
-                                            <input class="form-control" type="text" name="sizeLong" placeholder="长">
-                                            <span class="input-group-addon">x</span>
-                                            <input class="form-control" type="text" name="sizeWidth" placeholder="宽">
-                                            <span class="input-group-addon">x</span>
-                                            <input class="form-control" type="text" name="sizeHeight" placeholder="高">
-                                            <label class="input-group-addon" for="sizeUnit">单位</label>
-                                            <select class="form-control input-group-addon" id="unity">
-                                                <option>cm </option>
-                                            </select>
+                                            <div class="col-xs-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">现价</span>
+                                                    <input class="form-control" type="text" name="nowPrice" placeholder="现价">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">原价</span>
+                                                    <input class="form-control" type="text" name="fillPrice" placeholder="原价">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">库存</span>
+                                                    <input class="form-control" type="text" name="num" placeholder="库存">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">规格</span>
+                                                    <input class="form-control" type="text" name="unitType" placeholder="规格">
+                                                    <span class="input-group-addon">pieces / lot </span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">重量</span>
+                                                    <input class="form-control" type="text" name="weight" placeholder="重量">
+                                                    <span class="input-group-addon">kg</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">尺寸</span>
+                                                    <input class="form-control" type="text" name="sizeLong" placeholder="长">
+                                                    <span class="input-group-addon">x</span>
+                                                    <input class="form-control" type="text" name="sizeWidth" placeholder="宽">
+                                                    <span class="input-group-addon">x</span>
+                                                    <input class="form-control" type="text" name="sizeHeight" placeholder="高">
+                                                    <label class="input-group-addon" for="sizeUnit">单位</label>
+                                                    <select class="form-control input-group-addon" id="unity">
+                                                        <option>cm </option>
+                                                    </select>
 
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12">
-                                        <div class="input-group">
-                                            <label class="input-group-addon" for="category">分类</label>
-                                            <select class="form-control" id="category">
-                                                <option>未分类</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12">
-                                        <label class="" for="description">商品详情</label>
-                                        <textarea class="form-control" rows="8" id="description"></textarea>
-                                    </div>
-                                    <div class="col-xs-12">
-                                        <div class="input-group">
-                                            <button class="btn btn-primary" type="submit">确定</button>
-                                            <button class="btn btn-default">取消</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <div class="input-group">
+                                                    <label class="input-group-addon" for="category">分类</label>
+                                                    <select class="form-control" id="category">
+                                                        <option>未分类</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <label class="" for="description">商品详情</label>
+                                                <textarea class="form-control" rows="8" id="description"></textarea>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <div class="input-group">
+                                                    <button class="btn btn-primary" type="submit">确定</button>
+                                                    <button class="btn btn-default">取消</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                            </form>
+
+                            <!--面板尾-->
+                            <div class="panel-footer">
+                                <!--创建产品工具按钮组-->
+                                <div class="btn-group" role="group" id="productsTableBottom" style="display: inline-block;">
+                                    <button type="button" class="btn btn-default">确认</button>
+                                    <button type="button" class="btn btn-default">重置</button>
+                                </div>
                             </div>
                         </div>
-                    </form>
 
-                    <!-- 产品表格 -->
-                    <table class="table table-hover table-striped" id="productTable">
-                        <thead>
-                        <tr>
-                            <th>商品号</th>
-                            <th>名称</th>
-                            <th>编号</th>
-                            <th>现价</th>
-                            <th>原价</th>
-                            <th>库存</th>
-                            <th>详情</th>
-                            <th>上架</th>
-                        </tr>
-                        </thead>
-                        <tbody id="tab">
-                        </tbody>
-                    </table>
+                        <!-- 分类管理 -->
+                        <div role="tabpanel" class="tab-pane" id="categoryManage">
+                            分类管理
 
-                    <!--面板尾-->
-                    <div class="panel-footer">
-                        <!--翻页-->
-                        <nav id="productsTablePagination">
-                            <ul class="pagination">
-                                <li>
-                                    <a href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <!--创建产品工具按钮组-->
-                        <div class="btn-group" role="group" id="productsTableBottom" style="display: inline-block;">
-                            <button type="button" class="btn btn-default">确认</button>
-                            <button type="button" class="btn btn-default">重置</button>
+                            <!--面板尾-->
+                            <div class="panel-footer">
+                                <!--创建产品工具按钮组-->
+                                <div class="btn-group" role="group" id="productsTableBottom" style="display: inline-block;">
+                                    <button type="button" class="btn btn-default">确认</button>
+                                    <button type="button" class="btn btn-default">重置</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    </form>
+
                 </div>
 
             </div>
@@ -301,8 +330,8 @@ if(checkAdminLogined()) {
 <script>
     //创建产品
     function createProduct(){
-        $("#productTable,#productsTablePagination").hide();
-        $("#createProductForm").show();
+//        $("#productTable,#productsTablePagination").hide();
+//        $("#createProductForm").show();
     }
     //绘制表格行
     function drawTable(data){
@@ -328,8 +357,8 @@ if(checkAdminLogined()) {
         }
     }
     function getProducts() {
-        $("#productTable,#productsTablePagination").show();
-        $("#createProductForm").hide();
+//        $("#productTable,#productsTablePagination").show();
+//        $("#createProductForm").hide();
         $.ajax({
             type: "GET",
             url: "product.server.php",
