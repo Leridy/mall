@@ -124,8 +124,6 @@ if(checkAdminLogined()) {
 
                     <!-- 面板头 -->
                     <div class="panel-heading">
-<!--                        <button class="btn btn-default" onclick="getProducts();">所有商品</button>-->
-<!--                        <button class="btn btn-default" onclick="createProduct();">创建商品</button>-->
                         <ul class="nav nav-pills" role="tablist">
                             <li role="presentation" class="active"><a href="#productList" aria-controls="productList" role="tab" data-toggle="tab">所有商品</a></li>
                             <li role="presentation"><a href="#createProduct" aria-controls="createProduct" role="tab" data-toggle="tab">创建商品</a></li>
@@ -280,7 +278,9 @@ if(checkAdminLogined()) {
 
                         <!-- 分类管理 -->
                         <div role="tabpanel" class="tab-pane" id="categoryManage">
-                            分类管理
+                            <h1>分类管理</h1>
+
+
 
                             <!--面板尾-->
                             <div class="panel-footer">
@@ -328,11 +328,6 @@ if(checkAdminLogined()) {
 <script src="js/ie10-viewport-bug-workaround.js"></script>
 <!--自定义js开始-->
 <script>
-    //创建产品
-    function createProduct(){
-//        $("#productTable,#productsTablePagination").hide();
-//        $("#createProductForm").show();
-    }
     //绘制表格行
     function drawTable(data){
         $("#tab").append("\
@@ -357,8 +352,6 @@ if(checkAdminLogined()) {
         }
     }
     function getProducts() {
-//        $("#productTable,#productsTablePagination").show();
-//        $("#createProductForm").hide();
         $.ajax({
             type: "GET",
             url: "product.server.php",
