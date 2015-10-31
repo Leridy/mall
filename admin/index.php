@@ -178,65 +178,65 @@ if(checkAdminLogined()) {
 
                         <!--创建产品-->
                         <div role="tabpanel" class="tab-pane" id="createProduct">
-                            <form action="product.server.php" id="createProductForm" method="post" enctype="multipart/form-data">
+                            <form id="createProductForm" method="post" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                                         <div class="row">
                                             <div class="col-xs-12">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">名称</span>
-                                                    <input class="form-control" type="text" name="productName" placeholder="名称">
+                                                    <input class="form-control" type="text" name="productName" value="product name" id="input-productName" placeholder="名称">
                                                 </div>
                                             </div>
 
                                             <div class="col-xs-12">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">编号</span>
-                                                    <input class="form-control" type="text" name="productName" placeholder="编号">
+                                                    <input class="form-control" type="text" name="sn" id="input-sn" placeholder="编号">
                                                 </div>
                                             </div>
 
                                             <div class="col-xs-6">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">现价</span>
-                                                    <input class="form-control" type="text" name="nowPrice" placeholder="现价">
+                                                    <input class="form-control" type="text" name="nowPrice" id="input-nowPrice" placeholder="现价">
                                                 </div>
                                             </div>
                                             <div class="col-xs-6">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">原价</span>
-                                                    <input class="form-control" type="text" name="fillPrice" placeholder="原价">
+                                                    <input class="form-control" type="text" name="fillPrice" id="input-fillPrice" placeholder="原价">
                                                 </div>
                                             </div>
                                             <div class="col-xs-12">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">库存</span>
-                                                    <input class="form-control" type="text" name="num" placeholder="库存">
+                                                    <input class="form-control" type="text" name="num" id="input-num" placeholder="库存">
                                                 </div>
                                             </div>
                                             <div class="col-xs-6">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">规格</span>
-                                                    <input class="form-control" type="text" name="unitType" placeholder="规格">
+                                                    <input class="form-control" type="text" name="unitType" id="input-unitType" placeholder="规格">
                                                     <span class="input-group-addon">pieces / lot </span>
                                                 </div>
                                             </div>
                                             <div class="col-xs-6">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">重量</span>
-                                                    <input class="form-control" type="text" name="weight" placeholder="重量">
+                                                    <input class="form-control" type="text" name="weight" id="input-weight" placeholder="重量">
                                                     <span class="input-group-addon">kg</span>
                                                 </div>
                                             </div>
                                             <div class="col-xs-12">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">尺寸</span>
-                                                    <input class="form-control" type="text" name="sizeLong" placeholder="长">
+                                                    <input class="form-control" type="text" name="sizeLong" id="input-sizeLong" placeholder="长">
                                                     <span class="input-group-addon">x</span>
-                                                    <input class="form-control" type="text" name="sizeWidth" placeholder="宽">
+                                                    <input class="form-control" type="text" name="sizeWidth" id="input-sizeWidth" placeholder="宽">
                                                     <span class="input-group-addon">x</span>
-                                                    <input class="form-control" type="text" name="sizeHeight" placeholder="高">
-                                                    <label class="input-group-addon" for="sizeUnit">单位</label>
+                                                    <input class="form-control" type="text" name="sizeHeight" id="input-sizeHeight" placeholder="高">
+                                                    <label class="input-group-addon" for="unity">单位</label>
                                                     <select class="form-control input-group-addon" id="unity">
                                                         <option>cm </option>
                                                     </select>
@@ -252,11 +252,11 @@ if(checkAdminLogined()) {
                                             </div>
                                             <div class="col-xs-12">
                                                 <label class="" for="description">商品详情</label>
-                                                <textarea class="form-control" rows="8" id="description"></textarea>
+                                                <textarea class="form-control" rows="8" id="description" name="description"></textarea>
                                             </div>
                                             <div class="col-xs-12">
                                                 <div class="input-group">
-                                                    <button class="btn btn-primary" type="submit">确定</button>
+                                                    <a class="btn btn-primary" id="createProductSubmit">确定</a>
                                                     <button class="btn btn-default">取消</button>
                                                 </div>
                                             </div>
@@ -278,6 +278,18 @@ if(checkAdminLogined()) {
                         <!-- 分类管理 -->
                         <div role="tabpanel" class="tab-pane" id="categoryManage">
                             <h1>分类管理</h1>
+
+                            <div class="row">
+                                <div class="col-xs-5 categoryLeft">
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon">名称</span>
+                                        <input class="form-control" type="text" name="productName" placeholder="名称">
+                                    </div>
+
+                                </div>
+                                <div class="col-xs-7">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                            </div>
 
                             <!--面板尾-->
                             <div class="panel-footer">
@@ -325,6 +337,36 @@ if(checkAdminLogined()) {
 <script src="js/ie10-viewport-bug-workaround.js"></script>
 <!--自定义js开始-->
 <script>
+    $("#createProductSubmit").click(function(){
+        $.ajax({
+            type: "POST",
+            url: "createProduct.server.php",
+            dataType: "json",
+            data:{
+                "act":"createProduct",
+                "productName":$("#input-productName").val(),
+                "sn":$("#input-sn").val(),
+                "nowPrice":$("#input-nowPrice").val(),
+                "fillPrice":$("#input-fillPrice").val(),
+                "num":$("#input-num").val(),
+                "unitType":$("#input-unitType").val(),
+                "weight":$("#input-weight").val(),
+                "input":$("#input-sizeLong").val(),
+                "sizeWidth":$("#input-sizeWidth").val(),
+                "sizeHeight":$("#input-sizeHeight").val(),
+                "unity":$("#unity").val(),
+                "category":$("#category").val(),
+                "description":$("#description").val()
+            },
+            success: function (data) {
+
+            },
+            error: function (jqXHR) {
+                alert("发生错误：" + jqXHR.status);
+            }
+        });
+    });
+
     //绘制表格行
     function drawTable(data){
         $("#tab").append("\
