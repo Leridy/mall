@@ -6,3 +6,8 @@
 #createProductForm{
     /*margin: 30px;*/
 }
+
+.categoryLeft{
+    padding-left: 15px;
+    padding-right: 15px;
+}
