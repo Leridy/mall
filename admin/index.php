@@ -337,6 +337,7 @@ if(checkAdminLogined()) {
 <script src="js/ie10-viewport-bug-workaround.js"></script>
 <!--自定义js开始-->
 <script>
+    //商品提交按钮
     $("#createProductSubmit").click(function(){
         $.ajax({
             type: "POST",
@@ -381,8 +382,9 @@ if(checkAdminLogined()) {
             <button class=\"btn btn-success btn-sm\">修改</button>\
           </td>\
         <td>上架</td>\
-        </tr>");
-    }
+        </tr>\
+        ");
+     }
     //绘制表格
     function drawTables(data){
         $("#tab").empty();

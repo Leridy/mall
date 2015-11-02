@@ -75,7 +75,7 @@ class product
      * 从对象插入产品属性到数据库
      */
     public function insertProduct(){
-        insert("products",$this->data);
+        return insert("products",$this->data);
     }
 
     /**
