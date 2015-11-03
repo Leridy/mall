@@ -5,7 +5,7 @@
  */
 class product
 {
-    protected $data=array(
+    public $data=array(
         "id"            =>null,           //产品id
         "productName"   =>null,           //名称
         "brand"         =>null,           //品牌
