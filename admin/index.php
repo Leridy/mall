@@ -384,18 +384,37 @@ if(checkAdminLogined()) {
     //绘制表格行
     function drawTable(data){
         $("#tab").append("\
-        <tr>\
-          <td>"+data['id']+"</td>\
-          <td>"+data['productName']+"</td>\
-          <td>"+data['sn']+"</td>\
-          <td>"+data['nowPrice']+"</td>\
-          <td>"+data['fillPrice']+"</td>\
-          <td>"+data['num']+"</td>\
-          <td>\
-            <button class=\"btn btn-success btn-sm\">修改</button>\
-          </td>\
-        <td>上架</td>\
-        </tr>\
+            <tr>\
+                <td>"+data['id']+"</td>\
+                <td>"+data['productName']+"</td>\
+                <td>"+data['sn']+"</td>\
+                <td>"+data['nowPrice']+"</td>\
+                <td>"+data['fillPrice']+"</td>\
+                <td>"+data['num']+"</td>\
+                <td>\
+                    <div class=\"btn-group\">\
+                        <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\
+                        操作 <span class=\"caret\"></span>\
+                        </button>\
+                        <ul class=\"dropdown-menu\">\
+                            <li><a href=\"\">编辑</a></li>\
+                            <li><a href=\"\">查看</a></li>\
+                            <li role=\"separator\" class=\"divider\"></li>\
+                            <li><a href=\"\">删除</a></li>\
+                        </ul>\
+                    </div>\
+                </td>\
+                <td>\
+                    <label>\
+                        <input type=\"checkbox\"> 上架\
+                    </label>\
+                </td>\
+                <td>\
+                    <label>\
+                        <input type=\"checkbox\"> 热销\
+                    </label>\
+                </td>\
+            </tr>\
         ");
      }
     //绘制表格
