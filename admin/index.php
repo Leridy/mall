@@ -283,12 +283,23 @@ if(checkAdminLogined()) {
                                 <div class="col-xs-5 categoryLeft">
 
                                     <div class="input-group">
-                                        <span class="input-group-addon">名称</span>
-                                        <input class="form-control" type="text" name="productName" placeholder="名称">
+                                        <span class="input-group-addon">分类名称</span>
+                                        <input class="form-control" type="text" name="productName" placeholder="分类名称">
                                     </div>
 
                                 </div>
-                                <div class="col-xs-7">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                                <div class="col-xs-7">
+                                    <table class="table table-hover table-striped" id="categoryTable">
+                                        <thead>
+                                        <tr>
+                                            <th>分类编号</th>
+                                            <th>分类名称</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="categoryTableBody">
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
 
                             <!--面板尾-->
@@ -407,15 +418,32 @@ if(checkAdminLogined()) {
         });
     }
 
+    //绘制单个分类选项
     function drawCategory(data){
         $("#category").append("<option value="+data['id']+">"+data['categoryName']+"</option>")
     }
-    //生成分类
+    //绘制多个分类选项
     function drawCategories(data){
         for(var i=0;i<data.length;i++){
             drawCategory(data[i]);
         }
     }
+    //绘制单个分类表格
+    function drawCategoriesTable(data){
+        for(var i=0;i<data.length;i++){
+            drawCategoryTable(data[i]);
+        }
+    }
+    //绘制多个分类表格
+    function drawCategoryTable(data){
+        $("#categoryTableBody").append("\
+        <tr>\
+            <td>"+data['id']+"</td>\
+            <td>"+data['categoryName']+"</td>\
+        </tr>\
+        ")
+    }
+
     //获取分类
     function getCategories() {
         $.ajax({
@@ -424,6 +452,7 @@ if(checkAdminLogined()) {
             dataType: "json",
             success: function (data) {
                 drawCategories(data);
+                drawCategoriesTable(data);
             },
             error: function (jqXHR) {
                 alert("发生错误：" + jqXHR.status);
