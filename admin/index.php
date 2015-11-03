@@ -280,15 +280,16 @@ if(checkAdminLogined()) {
                             <h1>分类管理</h1>
 
                             <div class="row">
-                                <div class="col-xs-5 categoryLeft">
+                                <div class="col-sm-12 col-md-5 categoryLeft">
 
                                     <div class="input-group">
-                                        <span class="input-group-addon">分类名称</span>
-                                        <input class="form-control" type="text" name="productName" placeholder="分类名称">
+                                        <span class="input-group-addon">添加分类</span>
+                                        <input class="form-control" id="productName" type="text" name="productName" placeholder="分类名称">
+                                        <span class="input-group-addon btn btn-default">添加</span>
                                     </div>
 
                                 </div>
-                                <div class="col-xs-7">
+                                <div class="col-sm-12 col-md-7">
                                     <table class="table table-hover table-striped" id="categoryTable">
                                         <thead>
                                         <tr>
