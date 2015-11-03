@@ -280,7 +280,7 @@ if(checkAdminLogined()) {
                             <h1>分类管理</h1>
 
                             <div class="row">
-                                <div class="col-sm-12 col-md-5 categoryLeft">
+                                <div class="col-md-12 col-lg-5 categoryLeft">
 
                                     <div class="input-group">
                                         <span class="input-group-addon">添加分类</span>
@@ -289,7 +289,7 @@ if(checkAdminLogined()) {
                                     </div>
 
                                 </div>
-                                <div class="col-sm-12 col-md-7">
+                                <div class="col-md-12 col-lg-7">
                                     <table class="table table-hover table-striped" id="categoryTable">
                                         <thead>
                                         <tr>
