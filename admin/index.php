@@ -145,6 +145,7 @@ if(checkAdminLogined()) {
                                     <th>库存</th>
                                     <th>详情</th>
                                     <th>上架</th>
+                                    <th>热销</th>
                                 </tr>
                                 </thead>
                                 <tbody id="tab">
