@@ -134,9 +134,23 @@ if(checkAdminLogined()) {
                     <div class="tab-content">
                         <!-- 产品表格 -->
                         <div role="tabpanel" class="tab-pane active" id="productList">
+                            <div class="btn-group all-select">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                批量操作 <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">批量操作</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="">删除</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group all-select">
+                                <button type="button" class="btn btn-default">应用</button>
+                            </div>
                             <table class="table table-hover table-striped" id="productTable">
                                 <thead>
                                 <tr>
+                                    <th><input type="checkbox" id="allSelect" placeholder="全选"></th>
                                     <th>商品号</th>
                                     <th>名称</th>
                                     <th>编号</th>
@@ -385,6 +399,11 @@ if(checkAdminLogined()) {
     function drawTable(data){
         $("#tab").append("\
             <tr>\
+                <td>\
+                    <label>\
+                        <input type=\"checkbox\">\
+                    </label>\
+                </td>\
                 <td>"+data['id']+"</td>\
                 <td>"+data['productName']+"</td>\
                 <td>"+data['sn']+"</td>\
