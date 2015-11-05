@@ -295,9 +295,9 @@ if(checkAdminLogined()) {
                             <h1>分类管理</h1>
 
                             <div class="row">
-                                <div class="col-md-12 col-lg-5 categoryLeft">
+                                <div class="col-md-12 col-lg-5">
 
-                                    <div class="input-group">
+                                    <div class="input-group categoryLeft">
                                         <span class="input-group-addon">添加分类</span>
                                         <input class="form-control" id="productName" type="text" name="productName" placeholder="分类名称">
                                         <span class="input-group-addon btn btn-default">添加</span>
@@ -379,7 +379,7 @@ if(checkAdminLogined()) {
                 "num":$("#input-num").val(),
                 "unitType":$("#input-unitType").val(),
                 "weight":$("#input-weight").val(),
-                "input":$("#input-sizeLong").val(),
+                "sizeLong":$("#input-sizeLong").val(),
                 "sizeWidth":$("#input-sizeWidth").val(),
                 "sizeHeight":$("#input-sizeHeight").val(),
                 "unity":$("#unity").val(),
@@ -436,6 +436,7 @@ if(checkAdminLogined()) {
             </tr>\
         ");
      }
+
     //绘制表格
     function drawTables(data){
         $("#tab").empty();
@@ -443,6 +444,7 @@ if(checkAdminLogined()) {
             drawTable(data[i]);
         }
     }
+
     //获取商品
     function getProducts() {
         $.ajax({
@@ -462,18 +464,21 @@ if(checkAdminLogined()) {
     function drawCategory(data){
         $("#category").append("<option value="+data['id']+">"+data['categoryName']+"</option>")
     }
+
     //绘制多个分类选项
     function drawCategories(data){
         for(var i=0;i<data.length;i++){
             drawCategory(data[i]);
         }
     }
+
     //绘制单个分类表格
     function drawCategoriesTable(data){
         for(var i=0;i<data.length;i++){
             drawCategoryTable(data[i]);
         }
     }
+
     //绘制多个分类表格
     function drawCategoryTable(data){
         $("#categoryTableBody").append("\
@@ -499,6 +504,7 @@ if(checkAdminLogined()) {
             }
         });
     }
+
     //初始化
     $(document).ready(getCategories());
 </script>
