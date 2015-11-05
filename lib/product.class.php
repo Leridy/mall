@@ -88,10 +88,11 @@ class product
 
     /**
      * 删除该对象对应的数据库信息
+     * @return int
      */
     public function deleteProduct(){
         $this->getIdByProductName();
-        delete("products","id = ".$this->data["id"]);
+        return delete("products","id = ".$this->data["id"]);
     }
 
     protected function deleteImages(){
