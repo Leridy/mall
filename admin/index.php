@@ -364,6 +364,25 @@ if(checkAdminLogined()) {
 <script src="js/ie10-viewport-bug-workaround.js"></script>
 <!--自定义js开始-->
 <script>
+    //删除商品
+    function deleteProduct(id){
+        $.ajax({
+            type: "POST",
+            url: "deleteProduct.server.php",
+            dataType: "json",
+            data:{
+                "act":"deleteProduct",
+                "productId":id
+            },
+            success: function (data) {
+                getProducts();
+            },
+            error: function (jqXHR) {
+                alert("发生错误：" + jqXHR.status);
+            }
+        });
+    }
+
     //商品提交按钮
     $("#createProductSubmit").click(function(){
         $.ajax({
@@ -416,10 +435,10 @@ if(checkAdminLogined()) {
                         操作 <span class=\"caret\"></span>\
                         </button>\
                         <ul class=\"dropdown-menu\">\
-                            <li><a href=\"\">编辑</a></li>\
-                            <li><a href=\"\">查看</a></li>\
+                            <li><a class=\"btn\" href=\"\">编辑</a></li>\
+                            <li><a class=\"btn\" href=\"../index.php?productId="+data['id']+"\" target=\"_blank\">查看</a></li>\
                             <li role=\"separator\" class=\"divider\"></li>\
-                            <li><a href=\"\">删除</a></li>\
+                            <li><a class=\"btn\" onclick=\"deleteProduct("+data['id']+")\">删除</a></li>\
                         </ul>\
                     </div>\
                 </td>\
