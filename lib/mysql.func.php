@@ -10,6 +10,7 @@
  */
 function connect(){
     $link=mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_DBNAME) or die("数据库连接失败Error:".mysqli_errno($link).":".mysqli_error($link));
+    mysqli_set_charset($link, 'utf8');
     return $link;
 }
 
