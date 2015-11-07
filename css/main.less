@@ -297,9 +297,9 @@ body {
                 // 导航栏项目中链接的内间距
             }
             .nav_list_child {
-                z-index: 100;
-                opacity: 0;
-                top: -1000px;
+                z-index: -10;
+                opacity: 0.5;
+                top:120px;
                 position: absolute;
                 width: 150px;
                 list-style: none;
@@ -319,6 +319,7 @@ body {
                         }
                     }
                     a {
+                        z-index: 100;
                         display: block;
                         padding: 0;
                         width: 110px;
@@ -330,6 +331,7 @@ body {
                 background-color: #f0f0f0;
                 border-bottom: @theme_color solid 3px;
                 &>.nav_list_child {
+                    z-index: 100;
                     display: block;
                     position: absolute;
                     top: 100px;
@@ -351,9 +353,9 @@ body {
         .transition(border;
         0.1s);
         &:hover {
-            border-color: #cccccc;
+            border-color: @theme_color;
             & button {
-                outline: 1px #cccccc solid;
+                outline: 1px @theme_color solid;
                 // 当nav_search层鼠标移入时button outline属性变化
             }
         }
@@ -370,10 +372,12 @@ body {
             .transition(all;
             0.2s);
             &:focus {
-                outline: 1px solid @theme_color;
+                outline-color:@theme_color;
+                animation: breathing 2s ease-out infinite alternate both;
                 // border:1px solid @theme_color;
                 & + button {
-                    outline: 1px @theme_color solid;
+                    //outline: 1px @theme_color solid;
+                    animation: breathing 2s ease-out infinite alternate both;
                 }
             }
             // 搜索框 输入部分 样式
@@ -496,7 +500,26 @@ footer {
     }
 }
 
-
+@-webkit-keyframes breathing {
+    0% { box-shadow: 0 0 5px @theme_color; }
+    50% { box-shadow: 0 0 25px @theme_color; }
+    100%{box-shadow: 0 0 5px @theme_color;}
+}
+@-o-keyframes breathing {
+    0% { box-shadow: 0 0 5px @theme_color; }
+    50% { box-shadow: 0 0 25px @theme_color; }
+    100%{box-shadow: 0 0 5px @theme_color;}
+}
+@-moz-keyframes breathing {
+    0% { box-shadow: 0 0 5px @theme_color; }
+    50% { box-shadow: 0 0 25px @theme_color; }
+    100%{box-shadow: 0 0 5px @theme_color;}
+}
+@keyframes breathing {
+    0% { box-shadow: 0 0 5px @theme_color; }
+    50% { box-shadow: 0 0 25px @theme_color; }
+    100%{box-shadow: 0 0 5px @theme_color;}
+}
 /********************************************主体型样式结束，单独颜面样式从下方开始***************************************************/
 
 
@@ -2117,4 +2140,55 @@ footer {
             }
         }
     }
+}
+
+
+/* 订单页样式 */
+
+.order_form{
+    padding: 5px;
+    border:  1px solid @theme_color;
+    background-color: @theme_color + 80;
+    .button{
+        margin: 0 5px;
+        border: 0;
+        color: #fff;
+        font-size: 12px;
+        background-color: @theme_color;
+        padding: 3px;
+        border-radius: 3px;
+        .transition(all;0.4s);
+        &:hover{
+            background-color: #fff;
+            color:@theme_color;
+        }
+    }
+}
+
+#order_state{
+    .state_top{
+        border-bottom: 1px dashed @theme_color;
+        height:30px;
+        line-height: 30px;
+        strong{
+            span{
+                margin-left: 5px;
+                color:#12A000;
+            }
+        }
+        .tool_bar{
+            float: right;
+        }
+    }
+
+    .state_bottom{
+        p{
+            font-size: 14px;
+        }
+    }
+}
+
+#order_form_info{
+    margin-top: 30px!important;
+
 }
