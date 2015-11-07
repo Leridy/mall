@@ -47,11 +47,12 @@ function update($table,$array,$where=null){
         $str.=$sep.$key."='".$val."'";
     }
     $sql="update {$table} set {$str} ".($where==null?null:" where ".$where);
-    $result=mysql_query($sql);
+    $link=connect();
+    $result=mysqli_query($link,$sql);
     //var_dump($result);
     //var_dump(mysql_affected_rows());exit;
     if($result){
-        return mysql_affected_rows();
+        return mysqli_affected_rows($link);
     }else{
         return false;
     }
