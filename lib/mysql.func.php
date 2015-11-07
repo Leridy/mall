@@ -80,7 +80,7 @@ function delete($table,$where=null){
 function fetchOne($sql,$result_type=MYSQL_ASSOC){
     $link=connect();
     $result=mysqli_query($link,$sql);
-    return $result==false? array():mysqli_fetch_array($result,$result_type);
+    return $result==false||true? array():mysqli_fetch_array($result,$result_type);
 }
 
 
