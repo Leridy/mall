@@ -109,9 +109,124 @@
         </div>
 
         <div class="order_form container" id="order_form_info">
-        	<h1 class="title">
-        		
-        	</h1>
+        	<h3 class="title">Order form information</h3>
+        	<div class="order_form_details">
+        		<div class="payment_info">
+        			<table class="payment_info_table">
+        				<caption>Payment Information</caption>
+        				<tbody>
+        					<tr>
+        						<td id="DaifuName">Payment:<span id="payment_mod"> Online payment</span></td>
+        						<!-- 支付方式 <span id="payment_mod"></span> 内容通过ajax从后台获取 默认为在线支付-->
+        						<td id="DaifuPeople">Payment by:<span id="payment_company"> alipay</span></td>
+        						<!-- 支付人员（支付的公司） <span id="payment_company"></span> 内容通过ajax从后台获取 支付公司 举例（支付宝  MasterCard 等支付方式）-->
+        					</tr>
+
+        					<tr>
+        						<td id="product_price">Product price: US$<span id="product_price_num">100</span></td>
+        						<td id="shipping_fee">Shipping fee: US$<span id="shipping_fee_num">100</span></td><!-- 邮费-->
+        						<td id="coupon">Coupon: US$<span id="coupon_num">0</span></td><!--优费券-->
+        					</tr>
+
+        					<tr>
+        						<td id="discount_amount">Discount amount: US$<span id="discount_amount_num">0</span></td><!--优惠总金额-->
+        						<td id="actual_shipping_fee">Actual shipping fee: US$<span id="actual_shipping_fee_num">100</span></td><!-- 实际邮费-->
+        						<td id="gift_card">Gift card: US$<span id="coupon_num">0</span></td><!--礼品卡-->
+        					</tr>
+
+        					<tr>
+        						<td id="total_amount">Total amount: US$ <span id="total_amount_num">200</span></td><!-- 总价格 -->
+        						<td id="time_of_payment">Time of payment: <span id="time_of_payment">2015-11-07  12:20:36</span></td>
+        					</tr>
+        				</tbody>
+        			</table>
+
+
+        		</div>
+        		<!-- 付款细节 -->
+
+        		<div id="info_details">
+        			<header id="info_header" >
+        				<strong>Other Information</strong>
+        			</header><!-- /info_header -->
+        			<dl id="consignee_info">
+        				<dt>Consignee information</dt>
+        				<dd>
+        					<ul>
+        						<li>Consignee: Leridy Lei</li>
+        						<li>Receiving address: U.S.A Texas XXXXcity Center street 7th block 422 3rd floor 2B Leridy's work station</li>
+        						<li>Tel.:01-02126-65</li>
+        						<li>E-mail:leiyudibb@gmail.com</li>
+        					</ul>
+        				</dd>
+        			</dl><!--收件人信息-->
+
+
+        			<dl id="distribution_methods">
+        				<dt>Distribution methods</dt>
+        				<dd>
+        					<ul>
+        						<li>Shipping company: ePacket</li>
+        						<li>Shipping fee: US$ 100</li>
+
+        					</ul>
+        				</dd>
+        			</dl><!--送货方式-->
+
+        				<table id="product_list_table">
+        					<caption>Product list</caption>
+        					<thead>
+        						<tr>
+        							<th colspan="1" scope="col" id="product_id">Product id</th>
+        							<th colspan="1" scope="col" id="product_photo">Product photo</th>
+        							<th colspan="1" scope="col" id="product_name">Product name</th>
+        							<th colspan="1" scope="col" id="unit_price">Unit price</th>
+        							<th colspan="1" scope="col" id="quantity">Quantity</th>
+        							<th colspan="1" scope="col" id="option">Options</th>
+        						</tr>
+        					</thead>
+        					<tbody>
+        						<tr>
+        							<td colspan="1" headers="product_id">pt12555224</td>
+        							<td colspan="1" headers="product_photo"><img src="./images/logo.png" alt="name" class="product_photo_image"></td>
+        							<td colspan="1" headers="product_name" class="product_name"><a href="#" title="">free shipping RM1-6397-000 Separation Pad Assembly-Tray2 for LaserJet P2035 P2055 5pcs/lot laser printer part</a></td>
+        							<td colspan="1" headers="unit_price">US$ 100</td>
+        							<td colspan="1" headers="quantity"> 1 </th>
+        							<td colspan="1" headers="option">
+        							<input type="button" name="refund" value="Refund" class="button">/
+        							<input type="button" name="refund" value="Buy one more time" class="button">
+        							</th>
+
+        						</tr>
+
+        						<tr>
+        							<td colspan="1" headers="product_id">pt12555224</td>
+        							<td colspan="1" headers="product_photo"><img src="./images/logo.png" alt="name" class="product_photo_image"></td>
+        							<td colspan="1" headers="product_name" class="product_name"><a href="#" title="">free shipping RM1-6397-000 Separation Pad Assembly-Tray2 for LaserJet P2035 P2055 5pcs/lot laser printer part</a></td>
+        							<td colspan="1" headers="unit_price">US$ 100</td>
+        							<td colspan="1" headers="quantity"> 1 </th>
+        							<td colspan="1" headers="option">
+        							<input type="button" name="refund" value="Refund" class="button">/
+        							<input type="button" name="refund" value="Buy one more time" class="button">
+        							</th>
+
+        						</tr>
+        					</tbody>
+        				</table>						
+        			
+        		</div>
+
+
+
+        	</div>
+        	<div id="total">
+       			<ul>
+       				<li>Product total price: US$ 100</li>
+       				<li>-discount: US$ 0</li>
+      				<li>+Shipping fee: US$ 100</li>
+       			</ul>
+        		<div id="should_pay">Amount payable: <span>US$ 200</span></div>
+        	</div>
         </div>
 
 	</div>

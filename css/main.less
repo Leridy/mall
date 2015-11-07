@@ -299,7 +299,7 @@ body {
             .nav_list_child {
                 z-index: -10;
                 opacity: 0.5;
-                top:120px;
+                top: 120px;
                 position: absolute;
                 width: 150px;
                 list-style: none;
@@ -372,7 +372,7 @@ body {
             .transition(all;
             0.2s);
             &:focus {
-                outline-color:@theme_color;
+                outline-color: @theme_color;
                 animation: breathing 2s ease-out infinite alternate both;
                 // border:1px solid @theme_color;
                 & + button {
@@ -501,25 +501,54 @@ footer {
 }
 
 @-webkit-keyframes breathing {
-    0% { box-shadow: 0 0 5px @theme_color; }
-    50% { box-shadow: 0 0 25px @theme_color; }
-    100%{box-shadow: 0 0 5px @theme_color;}
+    0% {
+        box-shadow: 0 0 5px @theme_color;
+    }
+    50% {
+        box-shadow: 0 0 25px @theme_color;
+    }
+    100% {
+        box-shadow: 0 0 5px @theme_color;
+    }
 }
+
 @-o-keyframes breathing {
-    0% { box-shadow: 0 0 5px @theme_color; }
-    50% { box-shadow: 0 0 25px @theme_color; }
-    100%{box-shadow: 0 0 5px @theme_color;}
+    0% {
+        box-shadow: 0 0 5px @theme_color;
+    }
+    50% {
+        box-shadow: 0 0 25px @theme_color;
+    }
+    100% {
+        box-shadow: 0 0 5px @theme_color;
+    }
 }
+
 @-moz-keyframes breathing {
-    0% { box-shadow: 0 0 5px @theme_color; }
-    50% { box-shadow: 0 0 25px @theme_color; }
-    100%{box-shadow: 0 0 5px @theme_color;}
+    0% {
+        box-shadow: 0 0 5px @theme_color;
+    }
+    50% {
+        box-shadow: 0 0 25px @theme_color;
+    }
+    100% {
+        box-shadow: 0 0 5px @theme_color;
+    }
 }
+
 @keyframes breathing {
-    0% { box-shadow: 0 0 5px @theme_color; }
-    50% { box-shadow: 0 0 25px @theme_color; }
-    100%{box-shadow: 0 0 5px @theme_color;}
+    0% {
+        box-shadow: 0 0 5px @theme_color;
+    }
+    50% {
+        box-shadow: 0 0 25px @theme_color;
+    }
+    100% {
+        box-shadow: 0 0 5px @theme_color;
+    }
 }
+
+
 /********************************************主体型样式结束，单独颜面样式从下方开始***************************************************/
 
 
@@ -2114,7 +2143,7 @@ footer {
             font-size: 13px;
             margin-left: 10px;
             text-align: center;
-            width:10%;
+            width: 10%;
         }
         .right {
             width: 50%;
@@ -2132,7 +2161,7 @@ footer {
                 }
             }
             .pay_button {
-                width:15%;
+                width: 15%;
                 font-weight: bold;
                 background-color: @theme_color;
                 color: #fff;
@@ -2145,11 +2174,11 @@ footer {
 
 /* 订单页样式 */
 
-.order_form{
+.order_form {
     padding: 5px;
-    border:  1px solid @theme_color;
+    border: 1px solid @theme_color;
     background-color: @theme_color + 80;
-    .button{
+    .button {
         margin: 0 5px;
         border: 0;
         color: #fff;
@@ -2157,38 +2186,166 @@ footer {
         background-color: @theme_color;
         padding: 3px;
         border-radius: 3px;
-        .transition(all;0.4s);
-        &:hover{
+        .transition(all;
+        0.4s);
+        &:hover {
             background-color: #fff;
-            color:@theme_color;
+            color: @theme_color;
         }
     }
 }
 
-#order_state{
-    .state_top{
+#order_state {
+    .state_top {
         border-bottom: 1px dashed @theme_color;
-        height:30px;
+        height: 30px;
         line-height: 30px;
-        strong{
-            span{
+        strong {
+            span {
                 margin-left: 5px;
-                color:#12A000;
+                color: #12A000;
             }
         }
-        .tool_bar{
+        .tool_bar {
             float: right;
         }
     }
-
-    .state_bottom{
-        p{
+    .state_bottom {
+        p {
             font-size: 14px;
         }
     }
 }
 
-#order_form_info{
+#order_form_info {
     margin-top: 30px!important;
-
+    overflow: hidden;
+    .title {
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .order_form_details {
+        background-color: #fff;
+        padding-bottom: 20px;
+        .payment_info {
+            border-bottom: 1px solid @theme_color;
+            .payment_info_table {
+                width: 100%;
+                caption {
+                    font-weight: bold;
+                    border-bottom: 1px dotted @theme_color;
+                    height: 25px;
+                    line-height: 25px;
+                }
+                tr {
+                    font-size: 14px;
+                    td {
+                        padding: 5px 10px;
+                        span {
+                            font-weight: 600;
+                        }
+                        span[id$="_num"] {
+                            color: red;
+                            &:before {
+                                content: " ";
+                            }
+                        }
+                    }
+                    #total_amount {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        #info_details {
+            #info_header {
+                border-bottom: 1px dotted @theme_color;
+                text-align: center;
+            }
+            dl {
+                font-size: 14px;
+                dt {
+                    padding: 5px 10px;
+                    font-weight: bold;
+                }
+                dd {
+                    padding: 0 10px;
+                    display: inline-block;
+                    ul {
+                        list-style: none;
+                    }
+                }
+            }
+            #product_list_table {
+                width: 95%;
+                margin: 0 auto;
+                border: 1px solid #f0f0f0;
+                caption {
+                    font-weight: bold;
+                }
+                th {
+                    border-top: 1px solid #DEDEDE;
+                    border-bottom: 1px solid #DEDEDE;
+                    background-color: #f0f0f0;
+                }
+                #product_id {
+                    width: 10%;
+                }
+                #product_photo {
+                    width: 13%;
+                }
+                #product_name {
+                    width: 40%;
+                }
+                #option {
+                    width: 20%;
+                }
+                tbody {
+                    tr {
+                        td {
+                            height: 60px;
+                            text-align: center;
+                            margin-left: 20px;
+                            border-right: 1px solid #f0f0f0;
+                            border-bottom: 1px solid #f0f0f0;
+                            font-size: 14px;
+                            vertical-align: middle;
+                            .product_photo_image {
+                                height: 50px;
+                                width: 50px;
+                                vertical-align: middle;
+                            }
+                            .button {
+                                margin-top: 5px;
+                                &:hover {
+                                    background-color: #f0f0f0;
+                                }
+                            }
+                        }
+                        .product_name {
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #total {
+        float: right;
+        text-align: right;
+        margin-right: 20px;
+        padding: 10px;
+        ul {
+            padding-bottom: 5px;
+            list-style: none;
+            border-bottom: 2px solid #c1c1c1;
+        }
+        #should_pay{
+            font-size: 20px;
+            span{
+                color: red;
+                font-weight: bold;
+            }
+        }
+    }
 }
