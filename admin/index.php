@@ -292,11 +292,10 @@ if(checkAdminLogined()) {
 
                         <!-- 分类管理 -->
                         <div role="tabpanel" class="tab-pane" id="categoryManage">
-                            <h1>分类管理</h1>
 
                             <div class="row">
                                 <div class="col-md-12 col-lg-5">
-
+                                    <h2 class="page-header">添加分类</h2>
                                     <div class="input-group categoryLeft">
                                         <span class="input-group-addon">添加分类</span>
                                         <input class="form-control" id="productName" type="text" name="productName" placeholder="分类名称">
@@ -305,11 +304,13 @@ if(checkAdminLogined()) {
 
                                 </div>
                                 <div class="col-md-12 col-lg-7">
+                                    <h2 class="page-header">所有分类</h2>
                                     <table class="table table-hover table-striped" id="categoryTable">
                                         <thead>
                                         <tr>
                                             <th>分类编号</th>
                                             <th>分类名称</th>
+                                            <th>详情</th>
                                         </tr>
                                         </thead>
                                         <tbody id="categoryTableBody">
@@ -503,7 +504,7 @@ if(checkAdminLogined()) {
         $("#categoryTableBody").append("\
         <tr>\
             <td>"+data['id']+"</td>\
-            <td>"+data['categoryName']+"</td>\
+            <td>"+data['categoryName']+"<br>"+data['cname']+"</td>\
         </tr>\
         ")
     }
