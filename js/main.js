@@ -60,9 +60,6 @@ window.onload=detectBrowser();
 /*付款页面价格计算，单件价格计算，并显示
 up:单价
 */
-var CountSubtotal = (function(){
-
-});
 
 
-/*判断商品是否被选中  选中则修改背景色*/
+
