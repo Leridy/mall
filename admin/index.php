@@ -296,11 +296,20 @@ if(checkAdminLogined()) {
                             <div class="row">
                                 <div class="col-md-12 col-lg-5">
                                     <h2 class="page-header">添加分类</h2>
-                                    <div class="input-group categoryLeft">
-                                        <span class="input-group-addon">添加分类</span>
-                                        <input class="form-control" id="productName" type="text" name="productName" placeholder="分类名称">
-                                        <span class="input-group-addon btn btn-default">添加</span>
+                                    <div class="categoryLeft">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">分类名称</span>
+                                            <input class="form-control" id="input-categoryName" type="text" name="categoryName" placeholder="category name">
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">分类别名</span>
+                                            <input class="form-control" id="input-CName" type="text" name="CName" placeholder="分类别名">
+                                        </div>
+                                        <div class="input-group">
+                                            <button class="btn btn-default" id="createCategorySubmit">确定</button>
+                                        </div>
                                     </div>
+
 
                                 </div>
                                 <div class="col-md-12 col-lg-7">
@@ -365,6 +374,29 @@ if(checkAdminLogined()) {
 <script src="js/ie10-viewport-bug-workaround.js"></script>
 <!--自定义js开始-->
 <script>
+
+    //添加分类按钮
+    $("#createCategorySubmit").click(function(){
+        $.ajax({
+            type: "POST",
+            url: "category.server.php",
+            dataType: "json",
+            data:{
+                "act":"create",
+                "categoryName":$("#input-categoryName").val(),
+                "CName":$("#input-CName").val()
+            },
+            success: function (data) {
+                drawCategories(data);
+                drawCategoriesTable(data);
+                alert("添加分类成功");
+            },
+            error: function (jqXHR) {
+                alert("发生错误：" + jqXHR.status);
+            }
+        });
+    });
+
     //删除商品
     function deleteProduct(id){
         $.ajax({
@@ -415,7 +447,7 @@ if(checkAdminLogined()) {
         });
     });
 
-    //绘制表格行
+    //绘制商品表格行
     function drawTable(data){
         $("#tab").append("\
             <tr>\
@@ -487,26 +519,102 @@ if(checkAdminLogined()) {
 
     //绘制多个分类选项
     function drawCategories(data){
+        $("#categoryTableBody").empty();
         for(var i=0;i<data.length;i++){
             drawCategory(data[i]);
         }
     }
 
+    //更新分类按钮
+    function updateCategory(id){
+
+    }
+
+    //显示更新分类按钮
+    function showUpdateCategory(id){
+        $("#category"+id).addClass("hidden");
+        $("#editCategoryButton"+id).addClass("hidden");
+        $("#updateCategoryInput"+id).removeClass("hidden");
+        $("#updateButton"+id).removeClass("hidden");
+    }
+
+    //更新分类按钮
+    function cancelUpdateCategory(id){
+        $("#category"+id).removeClass("hidden");
+        $("#editCategoryButton"+id).removeClass("hidden");
+        $("#updateCategoryInput"+id).addClass("hidden");
+        $("#updateButton"+id).addClass("hidden");
+    }
+
     //绘制单个分类表格
+    function drawCategoryTable(data){
+        $("#categoryTableBody").append('\
+        <tr>\
+            <td>'+data['id']+'</td>\
+            <td>\
+                <div class="row" id="category'+data['id']+'">\
+                    <div class="col-md-12 col-lg-6">\
+                        <p>'+data['categoryName']+'</p>\
+                    </div>\
+                    <div class="col-md-12 col-lg-6">\
+                        <p>'+data['cname']+'</p>\
+                    </div>\
+                </div>\
+                <div class="row hidden" id="updateCategoryInput'+data['id']+'">\
+                    <div class="col-md-12 col-lg-6">\
+                        <input class="form-control" id="input-new-categoryName" type="text" name="categoryName" placeholder="'+data['categoryName']+'">\
+                    </div>\
+                    <div class="col-md-12 col-lg-6">\
+                        <input class="form-control" id="input-new-cname" type="text" name="categoryName" placeholder="'+data['cname']+'">\
+                    </div>\
+                </div>\
+            </td>\
+            <td>\
+                <div class="btn-group" id="editCategoryButton'+data['id']+'">\
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\
+                    操作 <span class="caret"></span>\
+                    </button>\
+                    <ul class="dropdown-menu">\
+                        <li><a class="btn" onclick="showUpdateCategory(' +data['id']+ ')">编辑</a></li>\
+                        <li role="separator" class="divider"></li>\
+                        <li><a class="btn" onclick="deleteCategory(' +data['id']+ ')">删除</a></li>\
+                    </ul>\
+                </div>\
+                <div class="btn-group hidden" id="updateButton'+data['id']+'" >\
+                    <a class="btn btn-default" onclick="updateCategory(' +data['id']+ ')">更新</a>\
+                    <a class="btn btn-default" onclick="cancelUpdateCategory(' +data['id']+ ')">取消</a>\
+                </div>\
+            </td>\
+        </tr>\
+        ');
+    }
+
+    //绘制多个分类表格
     function drawCategoriesTable(data){
         for(var i=0;i<data.length;i++){
             drawCategoryTable(data[i]);
         }
     }
 
-    //绘制多个分类表格
-    function drawCategoryTable(data){
-        $("#categoryTableBody").append("\
-        <tr>\
-            <td>"+data['id']+"</td>\
-            <td>"+data['categoryName']+"<br>"+data['cname']+"</td>\
-        </tr>\
-        ")
+    //删除分类
+    function deleteCategory(id){
+        $.ajax({
+            type: "POST",
+            url: "category.server.php",
+            dataType: "json",
+            data:{
+                "act":"delete",
+                "id":id
+            },
+            success: function (data) {
+                drawCategories(data);
+                drawCategoriesTable(data);
+                alert("删除分类成功");
+            },
+            error: function (jqXHR) {
+                alert("发生错误：" + jqXHR.status);
+            }
+        });
     }
 
     //获取分类
