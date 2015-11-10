@@ -21,8 +21,8 @@ class category
     }
 
     public function updateCategory(){
-        $str = "categoryName = '".$this->categoryName."', cname =".$this->CName."'";
-        $row = update($this->table,$str,'id ='.$this->id);
+        $arr = array('categoryName'=>$this->categoryName,'cname'=>$this->CName);
+        $row = update($this->table,$arr,'id ='.$this->id);
         return $row;
     }
 
