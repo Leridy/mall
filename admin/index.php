@@ -260,8 +260,8 @@ if(checkAdminLogined()) {
                                             </div>
                                             <div class="col-xs-12">
                                                 <div class="input-group">
-                                                    <label class="input-group-addon" for="category">分类</label>
-                                                    <select class="form-control" id="category" name="category">
+                                                    <label class="input-group-addon" for="categorySelect">分类</label>
+                                                    <select class="form-control" id="categorySelect" name="category">
                                                     </select>
                                                 </div>
                                             </div>
@@ -514,12 +514,12 @@ if(checkAdminLogined()) {
 
     //绘制单个分类选项
     function drawCategory(data){
-        $("#category").append("<option value="+data['id']+">"+data['categoryName']+"</option>")
+        $("#categorySelect").append("<option value="+data['id']+">"+data['categoryName']+"</option>")
     }
 
     //绘制多个分类选项
     function drawCategories(data){
-        $("#categoryTableBody").empty();
+        $("#categorySelect").empty();
         for(var i=0;i<data.length;i++){
             drawCategory(data[i]);
         }
@@ -609,6 +609,7 @@ if(checkAdminLogined()) {
 
     //绘制多个分类表格
     function drawCategoriesTable(data){
+        $("#categoryTableBody").empty();
         for(var i=0;i<data.length;i++){
             drawCategoryTable(data[i]);
         }
