@@ -33,25 +33,25 @@
     <div class="container">
 
       <form class="form-signin" action="./doLogin.php" method="post">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">登录</h2>
 
         <label for="inputUsername" class="sr-only">Username</label>
-        <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Email address">
+        <input type="text" name="username" id="inputUsername" class="form-control" placeholder="用户名">
 
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password">
+        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="密码">
 
         <label for="verify" class="sr-only">Verify</label>
         <input type="text" name="verify" id="verify" class="form-control" placeholder="请输入图片中的数字">
 
-        <img src="../getVerify.php" alt="" onclick="document.getElementById('verify').src='../getVerify.php'"/>
-        <a href="javascript:void(0)" onclick="document.getElementById('verify').src='../getVerify.php'">看不清</a><br>
+        <img src="../getVerify.php" alt="" id="verifyImage" onclick="document.getElementById('verifyImage').src='../getVerify.php'"/>
+        <a href="javascript:void(0)" onclick="document.getElementById('verifyImage').src='../getVerify.php'">看不清</a><br>
         <div class="checkbox">
           <label>
-            <input type="checkbox" value="remember-me"> Remember me
+            <input type="checkbox" value="remember-me"> 记住密码
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
       </form>
 
     </div> <!-- /container -->
