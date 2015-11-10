@@ -527,7 +527,25 @@ if(checkAdminLogined()) {
 
     //更新分类按钮
     function updateCategory(id){
-
+        $.ajax({
+            type: "POST",
+            url: "category.server.php",
+            dataType: "json",
+            data:{
+                "act":"update",
+                "id":id,
+                "categoryName":$("#input-new-categoryName"+id).val(),
+                "CName":$("#input-new-cname"+id).val()
+            },
+            success: function (data) {
+                drawCategories(data);
+                drawCategoriesTable(data);
+                alert("更新分类成功");
+            },
+            error: function (jqXHR) {
+                alert("发生错误：" + jqXHR.status);
+            }
+        });
     }
 
     //显示更新分类按钮
@@ -562,10 +580,10 @@ if(checkAdminLogined()) {
                 </div>\
                 <div class="row hidden" id="updateCategoryInput'+data['id']+'">\
                     <div class="col-md-12 col-lg-6">\
-                        <input class="form-control" id="input-new-categoryName" type="text" name="categoryName" placeholder="'+data['categoryName']+'">\
+                        <input class="form-control" id="input-new-categoryName'+data['id']+'" type="text" name="categoryName" placeholder="'+data['categoryName']+'">\
                     </div>\
                     <div class="col-md-12 col-lg-6">\
-                        <input class="form-control" id="input-new-cname" type="text" name="categoryName" placeholder="'+data['cname']+'">\
+                        <input class="form-control" id="input-new-cname'+data['id']+'" type="text" name="categoryName" placeholder="'+data['cname']+'">\
                     </div>\
                 </div>\
             </td>\
@@ -580,7 +598,7 @@ if(checkAdminLogined()) {
                         <li><a class="btn" onclick="deleteCategory(' +data['id']+ ')">删除</a></li>\
                     </ul>\
                 </div>\
-                <div class="btn-group hidden" id="updateButton'+data['id']+'" >\
+                <div class="btn-group hidden" id="updateButton'+data['id']+ '">\
                     <a class="btn btn-default" onclick="updateCategory(' +data['id']+ ')">更新</a>\
                     <a class="btn btn-default" onclick="cancelUpdateCategory(' +data['id']+ ')">取消</a>\
                 </div>\
