@@ -580,10 +580,10 @@ if(checkAdminLogined()) {
                 </div>\
                 <div class="row hidden" id="updateCategoryInput'+data['id']+'">\
                     <div class="col-md-12 col-lg-6">\
-                        <input class="form-control" id="input-new-categoryName'+data['id']+'" type="text" name="categoryName" placeholder="'+data['categoryName']+'">\
+                        <input class="form-control" id="input-new-categoryName'+data['id']+'" type="text" name="categoryName" placeholder="'+data['categoryName']+'" value="'+data['categoryName']+'">\
                     </div>\
                     <div class="col-md-12 col-lg-6">\
-                        <input class="form-control" id="input-new-cname'+data['id']+'" type="text" name="categoryName" placeholder="'+data['cname']+'">\
+                        <input class="form-control" id="input-new-cname'+data['id']+'" type="text" name="categoryName" placeholder="'+data['cname']+'" value="'+data['cname']+'">\
                     </div>\
                 </div>\
             </td>\
