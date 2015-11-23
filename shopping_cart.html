@@ -95,7 +95,7 @@
                 <thead class="title_bar">
                     <tr>
                         <th colspan="1" scope="col" class="check_all">
-                            <input type="checkbox" name="check_product" value="" class="checkbox">
+                            <input type="checkbox" name="check_product" class="checkbox check_all_box " onclick="checkAll(this)">
                             <label for="check_all" style="display:none;">确认勾选全部商品</label>
                             <span>All</span>
                         </th>
@@ -110,7 +110,7 @@
                     <tr class="cart_item" id="cart_item_1">
                         <td class="check_all">
                             <input type="checkbox" name="check_product" value="" class="checkbox" id="cart_item_1_check" onchange="productChecked(this)">
-                            <label for="check_all" style="display:none;">确认勾选当前商品</label>
+                            <label for="check_product" style="display:none;">确认勾选当前商品</label>
                         </td>
                         <td class="product">
                             <a href="#" title="">
@@ -135,7 +135,7 @@
                     <tr class="cart_item" id="cart_item_2">
                         <td class="check_all">
                             <input type="checkbox" name="check_product" value="" class="checkbox" id="cart_item_2_check" onchange="productChecked(this)">
-                            <label for="check_all" style="display:none;">确认勾选当前商品</label>
+                            <label for="check_product" style="display:none;">确认勾选当前商品</label>
                         </td>
                         <td class="product">
                             <a href="#" title="">
@@ -159,7 +159,7 @@
                     <tr class="cart_item" id="cart_item_3">
                         <td class="check_all">
                             <input type="checkbox" name="check_product" value="" class="checkbox" id="cart_item_3_check" onchange="productChecked(this)">
-                            <label for="check_all" style="display:none;">确认勾选当前商品</label>
+                            <label for="check_product" style="display:none;">确认勾选当前商品</label>
                         </td>
                         <td class="product">
                             <a href="#" title="">
@@ -184,7 +184,7 @@
                     <tr class="cart_item" id="cart_item_4">
                         <td class="check_all">
                             <input type="checkbox" name="check_product" value="" class="checkbox" id="cart_item_4_check" onchange="productChecked(this)">
-                            <label for="check_all" style="display:none;">确认勾选当前商品</label>
+                            <label for="check_product" style="display:none;">确认勾选当前商品</label>
                         </td>
                         <td class="product">
                             <a href="#" title="">
@@ -207,7 +207,7 @@
                 </tbody>
             </table>
             <div class="payment_box">
-                <input type="checkbox" name="check_product" value="" class="checkbox">
+                <input type="checkbox" name="check_product" value="" class="checkbox check_all_box " onclick="checkAll(this)">
                 <label for="check_all">确认勾选全部商品</label>
                 <span class="check_all">Check All</span>
                 <a href="#" title="delete">Delete</a>
@@ -291,9 +291,9 @@
     <!-- javascript 引入 -->
     <script src="./js/jquery.min.js" type="text/javascript" charset="utf-8" async defer></script>
     <script type="text/javascript" src="./js/messenger.min.js" charset="utf-8" async defer></script>
+    <script src="./js/main.js" type="text/javascript" charset="utf-8" async defer></script>
     <script src="js/cart.js" type="text/javascript" charset="utf-8" async defer></script>
     <!--购物车js 仅在购物车中接入，需jQuery支持-->
-    <script src="./js/main.js" type="text/javascript" charset="utf-8" async defer></script>
     <!-- javascript 完毕 -->
 </body>
 

@@ -14,6 +14,9 @@ var productChecked=function(id){
         $(parentId).addClass("product_checked");
     }else{
         $(parentId).removeClass("product_checked");
+        var checkAllBox = document.getElementsByClassName('check_all_box');
+        checkAllBox[0].checked=false;
+        checkAllBox[1].checked=false;
     }
 };
 
@@ -31,3 +34,31 @@ var countSubtotal=function(id){
 	$(subtotal).html(q_val*u_val);
 
 }
+
+
+/*购物车全选功能*/
+
+var checkAll=function(checkAllBox){
+	var allBox = document.getElementsByClassName('checkbox');
+
+	console.log('run');
+	if (checkAllBox.checked) {
+		for(key in allBox){
+			allBox[key].checked=true;
+			if($(allBox[key]).attr("id")){
+				productChecked(allBox[key]);
+			}
+		}
+	}else{
+		for(key in allBox){
+			allBox[key].checked=false;
+			if($(allBox[key]).attr("id")){
+				productChecked(allBox[key]);
+			}
+		}
+	}
+
+
+}
+
+
