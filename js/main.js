@@ -55,6 +55,7 @@ function detectBrowser() {
 window.onload=function(){
     detectBrowser();
     var checkAllBox = document.getElementsByClassName('check_all_box');
+    
 }
 //浏览器检测 提示 IE8 及以下浏览器 更换浏览器
 

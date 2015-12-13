@@ -753,23 +753,23 @@ footer {
 
 /************************************************* 首页展示页面样式完结 搜索结果页开始 ************************************/
 
-.filter_box {
+.filter_box{
     background-color: #fff;
     padding: 18px 0;
-    .filter_list_wrap {
+    .filter_list_wrap{
         border-bottom: 1px solid #c0c0c0;
         position: relative;
-        &:first-child {
-            border-top: 0;
+        &:first-child{
+            border-top:0;
         }
-        .filter_list {
-            width: 95%;
+        .filter_list{
+            width:95%;
             height: 45px;
             position: relative;
             padding-left: 70px;
-            ;
+            overflow: hidden;
             .clearfix;
-            dt {
+            dt{
                 display: block;
                 color: #b0b0b0;
                 left: 0px;
@@ -777,29 +777,32 @@ footer {
                 top: 11px;
                 width: 72px;
             }
-            dd {
+            dd{
+
                 float: left;
                 width: 14%;
                 padding: 12px 0;
-                margin-right: 1%;
+                margin-right:1%;
             }
-            .more {
+            .more{
                 position: absolute;
                 line-height: 45px;
                 right: 0px;
             }
-            .active>a {
-                color: @theme_color
+            .active>a{
+                    color:@theme_color
             }
+
         }
     }
-    .view_filter {
+    .view_filter{
         margin-top: 10px;
-        a {
+        a{
             display: inline-block;
             margin-right: 30px;
         }
     }
+
 }
 
 
